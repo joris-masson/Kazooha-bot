@@ -6,8 +6,16 @@ from discord_components import DiscordComponents, Select, SelectOption
 from discord_components_paginator import Paginator, PaginatorStyle
 from dotenv import load_dotenv
 
-from books import la_renarde_qui_nageait_dans_la_mer_de_pissenlits, anthologie_de_la_poesie_brutocollinus, la_melancolie_de_vera, collection_de_byakuyakoku, chroniques_d_un_ivrogne, ballade_de_l_ecuyer, archives_de_jueyun, anthologie_de_poemes_brutocollinus, fleurs_pour_la_princesse_fischl, princesse_neige_et_les_six_nains, foret_de_bambou_au_clair_de_lune, contes_de_l_allee_toki, coutumes_de_liyue, guide_de_voyage_en_teyvat, etude_des_coutumes_brutocollinus, nouvelles_chroniques_des_six_kitsunes, histoire_du_chevalier_errant, journal_d_un_inconnu, journal_de_l_aventurier_roald
+from books import la_renarde_qui_nageait_dans_la_mer_de_pissenlits, anthologie_de_la_poesie_brutocollinus, la_melancolie_de_vera, collection_de_byakuyakoku, chroniques_d_un_ivrogne, ballade_de_l_ecuyer, archives_de_jueyun, anthologie_de_poemes_brutocollinus, fleurs_pour_la_princesse_fischl, princesse_neige_et_les_six_nains, foret_de_bambou_au_clair_de_lune, contes_de_l_allee_toki, coutumes_de_liyue, guide_de_voyage_en_teyvat, etude_des_coutumes_brutocollinus, nouvelles_chroniques_des_six_kitsunes, histoire_du_chevalier_errant, journal_d_un_inconnu, journal_de_l_aventurier_roald, journal_du_vagabond, l_archon_invisible, l_epee_solitaire_du_mont_desole, la_brise_de_la_foret, le_bris_de_l_arme_divine, princesse_mina_de_la_nation_dechue, theories_etranges_du_kiyoshiken_shingakeuchi
 from quest_books import avec_les_dieux_prologue, aventures_en_montagne_et_en_mer, biographie_de_gunnhildr, chroniques_de_sangonomiya, debat_sur_le_vice_roi_de_l_est, inscriptions_sur_tablettes_de_pierres_i, journal_d_inspection_ancien, journal_epais, la_vie_de_la_pretresse_mouun, les_yakshas_gardiens_adeptes, mille_ans_de_solitude, perle_precieuse, premier_disciple_du_clan_guhua, versets_d_equilibrium, histoire_des_rois_et_des_clans
+
+progress = {
+    "to_do": 8,
+    "in_progress": 0,
+    "done": 39
+}
+
+progress_percentage = (100 * progress["done"]) / sum(progress.values())
 
 dico_book = {
     "la_renarde_qui_nageait_dans_la_mer_de_pissenlits": la_renarde_qui_nageait_dans_la_mer_de_pissenlits.book,
@@ -29,6 +37,13 @@ dico_book = {
     "histoire_du_chevalier_errant": histoire_du_chevalier_errant.book,
     "journal_d_un_inconnu": journal_d_un_inconnu.book,
     "journal_de_l_aventurier_roald": journal_de_l_aventurier_roald.book,
+    "journal_du_vagabond": journal_du_vagabond.book,
+    "l_archon_invisible": l_archon_invisible.book,
+    "l_epee_solitaire_du_mont_desole": l_epee_solitaire_du_mont_desole.book,
+    "la_brise_de_la_foret": la_brise_de_la_foret.book,
+    "le_bris_de_l_arme_divine": le_bris_de_l_arme_divine.book,
+    "princesse_mina_de_la_nation_dechue": princesse_mina_de_la_nation_dechue.book,
+    "theories_etranges_du_kiyoshiken_shingakeuchi": theories_etranges_du_kiyoshiken_shingakeuchi.book,
 }
 
 dico_quest_books = {
@@ -46,7 +61,7 @@ dico_quest_books = {
     "perle_precieuse": perle_precieuse.book,
     "premier_disciple_du_clan_guhua": premier_disciple_du_clan_guhua.book,
     "versets_d_equilibrium": versets_d_equilibrium.book,
-    "histoire_des_rois_et_des_clans": histoire_des_rois_et_des_clans.book
+    "histoire_des_rois_et_des_clans": histoire_des_rois_et_des_clans.book,
 }
 
 kazooha = commands.Bot(command_prefix=";", help_command=None)
@@ -59,10 +74,10 @@ TOKEN = os.getenv("TOKEN")
 @kazooha.event
 async def on_ready():
     print(f'{kazooha.user.name} s\'est connecté à Discord')
-    await kazooha.change_presence(status=discord.Status.online, activity=discord.Game("être mis à jour..."))  # Défini le jeu du bot
+    await kazooha.change_presence(status=discord.Status.online, activity=discord.Game(f"être complet à {round(progress_percentage, 1)}%"))  # Défini le jeu du bot
 
 
-@kazooha.command(name="questBooks")
+@kazooha.command(name="questBooks", aliases=["questBook", "qb"])
 async def show_quest_books(ctx):
     global dico_quest_books
 
@@ -111,49 +126,69 @@ async def show_quest_books(ctx):
     await paginator.start()
 
 
-@kazooha.command(name="collections")
-async def show_collection(ctx):
+@kazooha.command(name="collections", aliases=["collection", "archives", "archive"])
+async def show_collection(ctx, num: int):
     global dico_book
 
     await ctx.message.delete()
 
-    selector = await ctx.send(
-        "Veuillez selectionner un livre:",
-        components=[
-            Select(
-                placeholder="Liste des collections disponibles",
-                options=[
-                    SelectOption(label="Anthologie de la poésie Brutocollinus", value="Anthologie de la poesie Brutocollinus"),
-                    SelectOption(label="Anthologie de poèmes Brutocollinus", value="Anthologie de poemes Brutocollinus"),
-                    SelectOption(label="Archives de Jueyun", value="Archives de Jueyun"),
-                    SelectOption(label="Ballade de l’écuyer", value="Ballade de l_ecuyer"),
-                    SelectOption(label="Chroniques d’un ivrogne", value="Chroniques d_un ivrogne"),
-                    SelectOption(label="Collection de Byakuyakoku", value="Collection de Byakuyakoku"),
-                    SelectOption(label="Contes de l’Allée Toki", value="Contes de l_Allee Toki"),
-                    SelectOption(label="Coutumes de Liyue", value="Coutumes de Liyue"),
-                    SelectOption(label="Étude des coutumes Brutocollinus", value="etude des coutumes Brutocollinus"),
-                    SelectOption(label="Guide de voyage en Teyvat", value="Guide de voyage en Teyvat"),
-                    SelectOption(label="Histoire du chevalier errant", value="Histoire du chevalier errant"),
-                    SelectOption(label="Journal d'un inconnu", value="Journal d un inconnu"),
-                    SelectOption(label="Journal de l’aventurier Roald", value="Journal de l aventurier Roald"),
-
-                    SelectOption(label="Fleurs pour la Princesse Fischl", value="Fleurs pour la Princesse Fischl"),
-                    SelectOption(label="Forêt de bambou au clair de lune", value="Foret de bambou au clair de lune"),
-                    SelectOption(label="La Mélancolie de Véra", value="La Melancolie de Vera"),
-                    SelectOption(label="La Renarde qui nageait dans la mer de pissenlits", value="La Renarde qui nageait dans la mer de pissenlits"),
-                    SelectOption(label="Nouvelles chroniques des six Kitsunes", value="Nouvelles chroniques des six Kitsunes"),
-                    SelectOption(label="Princesse Neige et les Six Nains", value="Princesse Neige et les Six Nains")
-                ]
-            )
-        ]
-    )
+    if num == 1:
+        selector = await ctx.send(
+            "Veuillez selectionner un livre:",
+            components=[
+                Select(
+                    placeholder="Liste des collections disponibles",
+                    options=[
+                        SelectOption(label="Anthologie de la poésie Brutocollinus", value="Anthologie de la poesie Brutocollinus"),
+                        SelectOption(label="Anthologie de poèmes Brutocollinus", value="Anthologie de poemes Brutocollinus"),
+                        SelectOption(label="Archives de Jueyun", value="Archives de Jueyun"),
+                        SelectOption(label="Ballade de l’écuyer", value="Ballade de l_ecuyer"),
+                        SelectOption(label="Chroniques d’un ivrogne", value="Chroniques d_un ivrogne"),
+                        SelectOption(label="Collection de Byakuyakoku", value="Collection de Byakuyakoku"),
+                        SelectOption(label="Contes de l’Allée Toki", value="Contes de l_Allee Toki"),
+                        SelectOption(label="Coutumes de Liyue", value="Coutumes de Liyue"),
+                        SelectOption(label="Étude des coutumes Brutocollinus", value="etude des coutumes Brutocollinus"),
+                        SelectOption(label="Fleurs pour la Princesse Fischl", value="Fleurs pour la Princesse Fischl"),
+                        SelectOption(label="Forêt de bambou au clair de lune", value="Foret de bambou au clair de lune"),
+                        SelectOption(label="Guide de voyage en Teyvat", value="Guide de voyage en Teyvat"),
+                        SelectOption(label="Histoire du chevalier errant", value="Histoire du chevalier errant"),
+                        SelectOption(label="Journal d'un inconnu", value="Journal d un inconnu"),
+                        SelectOption(label="Journal de l’aventurier Roald", value="Journal de l aventurier Roald"),
+                        SelectOption(label="Journal du vagabond", value="Journal du vagabond"),
+                        SelectOption(label="L’Archon invisible", value="L Archon invisible"),
+                        SelectOption(label="L’Épée solitaire du mont désolé", value="L epee solitaire du mont desole"),
+                        SelectOption(label="La Brise de la Forêt", value="La Brise de la Foret"),
+                        SelectOption(label="La Mélancolie de Véra", value="La Melancolie de Vera"),
+                        SelectOption(label="La Renarde qui nageait dans la mer de pissenlits", value="La Renarde qui nageait dans la mer de pissenlits"),
+                        SelectOption(label="Le Bris de l’arme divine", value="Le Bris de l arme divine"),
+                        SelectOption(label="Nouvelles chroniques des six Kitsunes", value="Nouvelles chroniques des six Kitsunes"),
+                        SelectOption(label="Princesse Mina de la nation déchue", value="Princesse Mina de la nation dechue"),
+                        SelectOption(label="Princesse Neige et les Six Nains", value="Princesse Neige et les Six Nains"),
+                    ]
+                )
+            ]
+        )
+    elif num == 2:
+        selector = await ctx.send(
+            "Veuillez selectionner un livre:",
+            components=[
+                Select(
+                    placeholder="Liste des collections disponibles",
+                    options=[
+                        SelectOption(label="Théories étranges du Kiyoshiken Shinkageuchi", value="Theories etranges du Kiyoshiken Shinkageuchi"),
+                    ]
+                )
+            ]
+        )
+    else:
+        await ctx.send("Cette page n'existe pas(il y en a 2)")
 
     interaction = await kazooha.wait_for("select_option")
 
     await selector.delete()
 
     the_book = interaction.values[0].lower().replace(' ', '_')
-    print(f"Demande d'accès à {the_book}...\nAccès donné!")
+    print(f"Demande d'accès à {the_book} par @{ctx.message.author.name}({ctx.message.author.id}) dans #{ctx.message.channel.name}({ctx.message.channel.id}) sur le serveur {ctx.message.guild.name}({ctx.message.guild.id})...\nAccès donné!")
 
     embeds = [
         discord.Embed(title=f"{interaction.values[0]} - page {page}", description=dico_book[the_book][page]) for page in range(1, len(dico_book[the_book]) + 1)
