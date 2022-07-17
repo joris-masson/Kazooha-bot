@@ -6,13 +6,13 @@ from discord_components import DiscordComponents, Select, SelectOption
 from discord_components_paginator import Paginator, PaginatorStyle
 from dotenv import load_dotenv
 
-from books import la_renarde_qui_nageait_dans_la_mer_de_pissenlits, anthologie_de_la_poesie_brutocollinus, la_melancolie_de_vera, collection_de_byakuyakoku, chroniques_d_un_ivrogne, ballade_de_l_ecuyer, archives_de_jueyun, anthologie_de_poemes_brutocollinus, fleurs_pour_la_princesse_fischl, princesse_neige_et_les_six_nains, foret_de_bambou_au_clair_de_lune, contes_de_l_allee_toki, coutumes_de_liyue, guide_de_voyage_en_teyvat, etude_des_coutumes_brutocollinus, nouvelles_chroniques_des_six_kitsunes, histoire_du_chevalier_errant, journal_d_un_inconnu, journal_de_l_aventurier_roald, journal_du_vagabond, l_archon_invisible, l_epee_solitaire_du_mont_desole, la_brise_de_la_foret, le_bris_de_l_arme_divine, princesse_mina_de_la_nation_dechue, theories_etranges_du_kiyoshiken_shingakeuchi, perle_du_coeur, reves_brises, une_legende_d_epee, les_guerres_d_hamawaran, la_princesse_sanglier, le_coeur_de_la_source
+from books import la_renarde_qui_nageait_dans_la_mer_de_pissenlits, anthologie_de_la_poesie_brutocollinus, la_melancolie_de_vera, collection_de_byakuyakoku, chroniques_d_un_ivrogne, ballade_de_l_ecuyer, archives_de_jueyun, anthologie_de_poemes_brutocollinus, fleurs_pour_la_princesse_fischl, princesse_neige_et_les_six_nains, foret_de_bambou_au_clair_de_lune, contes_de_l_allee_toki, coutumes_de_liyue, guide_de_voyage_en_teyvat, etude_des_coutumes_brutocollinus, nouvelles_chroniques_des_six_kitsunes, histoire_du_chevalier_errant, journal_d_un_inconnu, journal_de_l_aventurier_roald, journal_du_vagabond, l_archon_invisible, l_epee_solitaire_du_mont_desole, la_brise_de_la_foret, le_bris_de_l_arme_divine, princesse_mina_de_la_nation_dechue, theories_etranges_du_kiyoshiken_shingakeuchi, perle_du_coeur, reves_brises, une_legende_d_epee, les_guerres_d_hamawaran, la_princesse_sanglier, le_coeur_de_la_source, la_tour_de_mondstadt, la_legende_de_vennessa
 from quest_books import avec_les_dieux_prologue, aventures_en_montagne_et_en_mer, biographie_de_gunnhildr, chroniques_de_sangonomiya, debat_sur_le_vice_roi_de_l_est, inscriptions_sur_tablettes_de_pierres_i, journal_d_inspection_ancien, journal_epais, la_vie_de_la_pretresse_mouun, les_yakshas_gardiens_adeptes, mille_ans_de_solitude, perle_precieuse, premier_disciple_du_clan_guhua, versets_d_equilibrium, histoire_des_rois_et_des_clans
 
 progress = {
-    "to_do": 2,
+    "to_do": 0,
     "in_progress": 0,
-    "done": 45
+    "done": 47
 }
 
 progress_percentage = (100 * progress["done"]) / sum(progress.values())
@@ -50,6 +50,8 @@ dico_book = {
     "les_guerres_d_hamawaran": les_guerres_d_hamawaran.book,
     "la_princesse_sanglier": la_princesse_sanglier.book,
     "le_coeur_de_la_source": le_coeur_de_la_source.book,
+    "la_tour_de_mondstadt": la_tour_de_mondstadt.book,
+    "la_legende_de_vennessa": la_legende_de_vennessa.book,
 }
 
 dico_quest_books = {
@@ -164,12 +166,12 @@ async def show_collection(ctx, num: int):
                         SelectOption(label="L’Archon invisible", value="L Archon invisible"),
                         SelectOption(label="L’Épée solitaire du mont désolé", value="L epee solitaire du mont desole"),
                         SelectOption(label="La Brise de la Forêt", value="La Brise de la Foret"),
+                        SelectOption(label="La Légende de Vennessa", value="La Legende de Vennessa"),
                         SelectOption(label="La Mélancolie de Véra", value="La Melancolie de Vera"),
                         SelectOption(label="La Princesse sanglier", value="La Princesse sanglier"),
                         SelectOption(label="La Renarde qui nageait dans la mer de pissenlits", value="La Renarde qui nageait dans la mer de pissenlits"),
+                        SelectOption(label="La Tour de Mondstadt", value="La Tour de Mondstadt"),
                         SelectOption(label="Le Bris de l’arme divine", value="Le Bris de l arme divine"),
-                        SelectOption(label="Le cœur de la source", value="Le coeur de la source"),
-                        SelectOption(label="Les guerres d’Hamawaran", value="Les guerres d Hamawaran"),
                     ]
                 )
             ]
@@ -181,6 +183,8 @@ async def show_collection(ctx, num: int):
                 Select(
                     placeholder="Liste des collections disponibles",
                     options=[
+                        SelectOption(label="Le cœur de la source", value="Le coeur de la source"),
+                        SelectOption(label="Les guerres d’Hamawaran", value="Les guerres d Hamawaran"),
                         SelectOption(label="Nouvelles chroniques des six Kitsunes", value="Nouvelles chroniques des six Kitsunes"),
                         SelectOption(label="Perle du cœur", value="Perle du coeur"),
                         SelectOption(label="Princesse Mina de la nation déchue", value="Princesse Mina de la nation dechue"),
