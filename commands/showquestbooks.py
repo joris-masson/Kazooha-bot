@@ -3,15 +3,18 @@ import discord
 from discord.ext import commands
 from discord_components import Select, SelectOption
 from discord_components_paginator import Paginator, PaginatorStyle
+from utils.functions import log
 
 
 class ShowQuestBooks(commands.Cog):
     def __init__(self, bot: commands.Bot, dico_quest_books: dict):
         self.bot = bot
         self.dico_quest_books = dico_quest_books
+        log(f"'{__name__}' initialisé")
 
     @commands.command(name="questBooks", aliases=["questBook", "qb"])
     async def show_quest_books(self, ctx):
+        log(f"{__name__} utilisé par @{ctx.message.author.name}({ctx.message.author.id}) dans #{ctx.message.channel.name}({ctx.message.channel.id}) sur le serveur {ctx.message.guild.name}({ctx.message.guild.id})")
         await ctx.message.delete()
         selector = await ctx.send(
             "Veuillez selectionner un livre:",
@@ -47,7 +50,6 @@ class ShowQuestBooks(commands.Cog):
         await selector.delete()
 
         the_book = interaction.values[0].lower().replace(' ', '_')
-        print(f"Demande d'accès à {the_book} par @{ctx.message.author.name}({ctx.message.author.id}) dans #{ctx.message.channel.name}({ctx.message.channel.id}) sur le serveur {ctx.message.guild.name}({ctx.message.guild.id})...\nAccès donné!")
 
         embeds = [
             discord.Embed(title=f"{interaction.values[0]} - page {page}", description=self.dico_quest_books[the_book][page]) for page in range(1, len(self.dico_quest_books[the_book]) + 1)

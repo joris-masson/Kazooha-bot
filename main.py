@@ -6,6 +6,7 @@ import discord
 from discord.ext import commands
 from discord_components import DiscordComponents
 from dotenv import load_dotenv
+from utils.functions import log
 
 # données additionnelles
 from data.dico_quest_books import dico_quest_books
@@ -40,7 +41,7 @@ maintenance = False  # si le bot est en maintenance
 async def on_ready():
     global maintenance
 
-    print(f'{kazooha.user.name} s\'est connecté à Discord')
+    log(f'{kazooha.user.name} s\'est connecté à Discord')
     if maintenance:
         await kazooha.change_presence(status=discord.Status.do_not_disturb, activity=discord.Game(f"être mis à jour"))  # Défini le jeu du bot
     else:

@@ -1,12 +1,15 @@
 from discord.ext import commands
+from utils.functions import log
 
 
 class Help(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
+        log(f"'{__name__}' initialisé")
 
     @commands.command(name="help", aliases=["aide"])
     async def help_command(self, ctx):
+        log(f"{__name__} utilisé par @{ctx.message.author.name}({ctx.message.author.id}) dans #{ctx.message.channel.name}({ctx.message.channel.id}) sur le serveur {ctx.message.guild.name}({ctx.message.guild.id})")
         await ctx.message.delete()
         await ctx.send("""Bonjour, je suis le bot Kazooha, voici ma description:
 

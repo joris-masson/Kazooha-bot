@@ -1,13 +1,16 @@
 from discord.ext import commands
 from discord_components import Button
+from utils.functions import log
 
 
 class Magie(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
+        log(f"'{__name__}' initialisé")
 
     @commands.command(name="magie")
     async def magic_access(self, ctx):
+        log(f"{__name__} utilisé par @{ctx.message.author.name}({ctx.message.author.id}) dans #{ctx.message.channel.name}({ctx.message.channel.id}) sur le serveur {ctx.message.guild.name}({ctx.message.guild.id})")
         if ctx.guild.id == 950118071425724466:
             warning_message1 = await ctx.send("https://c.tenor.com/sLgNruA4tsgAAAAS/warning-lights.gif")
             message_with_button = await ctx.send(
