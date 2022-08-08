@@ -24,7 +24,31 @@ class ShowArtifacts(commands.Cog):
                     Select(
                         placeholder="Liste des collections disponibles",
                         options=[
+                            SelectOption(label="Âme des profondeurs", value="Ame des profondeurs"),
+                            SelectOption(label="Amour chéri", value="Amour cheri"),
+                            SelectOption(label="Ancien rituel royal", value="Ancien rituel royal"),
+                            SelectOption(label="Artiste Martial", value="Artiste martial"),
                             SelectOption(label="Aventurier", value="aventurier"),
+                            SelectOption(label="Bande Vagabonde", value="Bande vagabonde"),
+                            SelectOption(label="Berserker", value="Berserker"),
+                            SelectOption(label="Briseur de glace", value="Briseur de glace"),
+                            SelectOption(label="Chanceux", value="Chanceux"),
+                            SelectOption(label="Chevalerie ensanglantée", value="Chevalerie ensanglantee"),
+                            SelectOption(label="Coeur du brave", value="Coeur du brave"),
+                            SelectOption(label="Coeur du gardien", value="Coeur du gardien"),
+                            SelectOption(label="Colère du tonnerre", value="Colere du tonerre"),
+                            SelectOption(label="Coquille des rêves opulents", value="Coquille des reves opulents"),
+                            SelectOption(label="Dompteur de foudre", value="Dompteur de foudre"),
+                            SelectOption(label="Echos d'une offrande", value="Echos d_une offrande"),
+                            SelectOption(label="Erudit", value="Erudit"),
+                            SelectOption(label="Instructeur", value="Instruteur"),
+                            SelectOption(label="Médecin itinérant", value="Medecin itinerant"),
+                            SelectOption(label="Miracle", value="Miracle"),
+                            SelectOption(label="Palourde aux teintes océaniques", value="Palourde aux teintes oceaniques"),
+                            SelectOption(label="Parieur", value="Parieur"),
+                            SelectOption(label="Rideau du Gladiateur", value="Rideu du Gladiateur"),
+                            SelectOption(label="Roche ancienne", value="Roche ancienne"),
+                            SelectOption(label="Ténacité du Millelithe", value="Tenacite du Millelithe"),
                         ]
                     )
                 ]

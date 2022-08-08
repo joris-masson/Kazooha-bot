@@ -1,6 +1,30 @@
-from artifacts import aventurier
+from artifacts import aventurier, ame_des_profondeurs, amour_cheri, ancien_rituel_royal, artiste_martial, bande_vagabonde, berserker, briseur_de_glace, chanceux, chevalerie_ensanglantee, coeur_du_brave, coeur_du_gardien, colere_du_tonnerre, coquille_des_reves_opulents, dompteur_de_foudre, echos_d_une_offrande, erudit, exile, instructeur, medecin_itinerant, miracle, palourde_aux_teintes_oceaniques, parieur, rideau_du_gladiateur, roche_ancienne, tenacite_du_millelithe
 
 dico_artifacts = {
     "aventurier": aventurier.artifact,
-
+    "amour_cheri": amour_cheri.artifact,
+    "ame_des_profondeurs": ame_des_profondeurs.artifact,
+    "ancien_rituel_royal": ancien_rituel_royal.artifact,
+    "artiste_martial": artiste_martial.artifact,
+    "bande_vagabonde": bande_vagabonde.artifact,
+    "berserker": berserker.artifact,
+    "briseur_de_glace": briseur_de_glace.artifact,
+    "chanceux": chanceux.artifact,
+    "chevalerie_ensanglantee": chevalerie_ensanglantee.artifact,
+    "coeur_du_brave": coeur_du_brave.artifact,
+    "coeur_du_gardien": coeur_du_gardien.artifact,
+    "colere_du_tonnerre": colere_du_tonnerre.artifact,
+    "coquille_des_reves_opulents": coquille_des_reves_opulents.artifact,
+    "dompteur_de_foudre": dompteur_de_foudre.artifact,
+    "echos_d_une_offrande": echos_d_une_offrande.artifact,
+    "erudit": erudit.artifact,
+    "exile": exile.artifact,
+    "instructeur": instructeur.artifact,
+    "medecin_itinerant": medecin_itinerant.artifact,
+    "miracle": miracle.artifact,
+    "palourde_aux_teintes_oceaniques": palourde_aux_teintes_oceaniques.artifact,
+    "parieur": parieur.artifact,
+    "rideau_du_gladiateur": rideau_du_gladiateur.artifact,
+    "roche_ancienne": roche_ancienne.artifact,
+    "tenacite_du_millelithe": tenacite_du_millelithe.artifact,
 }

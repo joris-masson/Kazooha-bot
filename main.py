@@ -26,7 +26,7 @@ load_dotenv()  # prépare le chargement du token
 TOKEN = os.getenv("TOKEN")  # charge le token
 
 launched = False  # si la commande pour afficher les livres est lancée
-maintenance = True  # si le bot est en maintenance
+maintenance = False  # si le bot est en maintenance
 
 
 # ----- events -----
