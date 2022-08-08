@@ -31,9 +31,8 @@ DiscordComponents(kazooha)  # fait en sorte que le bot puisse utiliser les compo
 load_dotenv()  # prépare le chargement du token
 TOKEN = os.getenv("TOKEN")  # charge le token
 
-# TODO faire en sorte que les commandes de livres puissent être lancées en même temps
 launched = False  # si la commande pour afficher les livres est lancée
-maintenance = True  # si le bot est en maintenance
+maintenance = False  # si le bot est en maintenance
 
 
 # ----- events -----
