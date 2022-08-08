@@ -11,17 +11,10 @@ from utils.functions import log
 # données additionnelles
 from data.dico_quest_books import dico_quest_books
 from data.dico_books import dico_books
+from data.dico_artifacts import dico_artifacts
 
 # imports des commandes
-# TODO faire ça en une ligne avec un from commands import*
-from commands.showartifacts import ShowArtifacts
-from commands.showcollection import ShowCollection
-from commands.showquestbooks import ShowQuestBooks
-from commands.help import Help
-from commands.idtotime import IdToTime
-from commands.serverstat import ServerStat
-from commands.magie import Magie
-
+from commands import*
 
 intents = discord.Intents.all()  # définis les permissions je crois
 intents.members = True  # euh... je comprends pas pourquoi je dois le préciser alors que normalement elles y sont toutes
@@ -33,7 +26,7 @@ load_dotenv()  # prépare le chargement du token
 TOKEN = os.getenv("TOKEN")  # charge le token
 
 launched = False  # si la commande pour afficher les livres est lancée
-maintenance = False  # si le bot est en maintenance
+maintenance = True  # si le bot est en maintenance
 
 
 # ----- events -----
@@ -49,7 +42,7 @@ async def on_ready():
 
 
 # ----- commandes -----
-kazooha.add_cog(ShowArtifacts(kazooha))
+kazooha.add_cog(ShowArtifacts(kazooha, dico_artifacts))
 kazooha.add_cog(ShowCollection(kazooha, dico_books))
 kazooha.add_cog(ShowQuestBooks(kazooha, dico_quest_books))
 kazooha.add_cog(Help(kazooha))
