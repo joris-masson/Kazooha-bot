@@ -25,21 +25,36 @@ DiscordComponents(kazooha)  # fait en sorte que le bot puisse utiliser les compo
 load_dotenv()  # prépare le chargement du token
 TOKEN = os.getenv("TOKEN")  # charge le token
 
-launched = False  # si la commande pour afficher les livres est lancée
 maintenance = False  # si le bot est en maintenance
+connected = False  # si le bot est connecté, pour éviter que les logs fassent n'importe quoi
 
 
 # ----- events -----
 @kazooha.event
+async def on_connect():
+    global connected
+
+    connected = True
+    log(f'{kazooha.user.name} s\'est connecté à Discord')
+
+
+@kazooha.event
 async def on_ready():
     global maintenance
 
-    log(f'{kazooha.user.name} s\'est connecté à Discord')
+    log(f'{kazooha.user.name} est prêt!')
     if maintenance:
         await kazooha.change_presence(status=discord.Status.do_not_disturb, activity=discord.Game(f"être mis à jour"))  # Défini le jeu du bot
     else:
         await kazooha.change_presence(status=discord.Status.online, activity=discord.Game(f"vous donner des infos sur le jeu"))  # Défini le jeu du bot
 
+
+@kazooha.event
+async def on_disconnect():
+    global connected
+    if connected:
+        log(f"{kazooha.user.name} a été déconnecté de Discord")
+        connected = False
 
 # ----- commandes -----
 kazooha.add_cog(ShowArtifacts(kazooha, dico_artifacts))
@@ -49,6 +64,8 @@ kazooha.add_cog(Help(kazooha))
 kazooha.add_cog(IdToTime(kazooha))
 kazooha.add_cog(ServerStat(kazooha))
 kazooha.add_cog(Magie(kazooha))
+kazooha.add_cog(DetectArtwork(kazooha))
+kazooha.add_cog(DetectImage(kazooha))
 
 
 kazooha.run(TOKEN)  # lance le bot
