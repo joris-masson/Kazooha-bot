@@ -25,7 +25,7 @@ DiscordComponents(kazooha)  # fait en sorte que le bot puisse utiliser les compo
 load_dotenv()  # prépare le chargement du token
 TOKEN = os.getenv("TOKEN")  # charge le token
 
-maintenance = True  # si le bot est en maintenance
+maintenance = False  # si le bot est en maintenance
 connected = False  # si le bot est connecté, pour éviter que les logs fassent n'importe quoi
 
 

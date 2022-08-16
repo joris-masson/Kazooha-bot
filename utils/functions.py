@@ -5,11 +5,18 @@ import requests
 import saucenao_api
 import imagehash
 import re
+import os
 
 from saucenao_api import SauceNao
+from saucenao_api.errors import LongLimitReachedError, ShortLimitReachedError
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
 from PIL import Image
+from dotenv import load_dotenv
+
+load_dotenv()
+SAUCENAO_TOKEN = os.getenv("SAUCENAO_TOKEN")
+SAUCENAO_TOKEN2 = os.getenv("SAUCENAO_TOKEN2")
 
 
 async def get_channel_stat(channel: discord.TextChannel) -> tuple[int, dict[str: int]]:
@@ -77,6 +84,7 @@ def compare_image(link1: str, link2: str) -> bool:
     else:
         return False
 
+
 def check_if_matching_in_link(base_image: str, link: str) -> bool:
     all_images = get_all_images(link)
     for image_link in all_images:
@@ -90,9 +98,13 @@ def get_link_from_message(msg: discord.Message) -> str:
 
 
 def detect_from_link(link: str) -> saucenao_api.BasicSauce:
+    global SAUCENAO_TOKEN, SAUCENAO_TOKEN2
     if link[0] == '<':
         link = link[1:-1]
-    results = SauceNao('43ae64cdd682d11da5561eff5bccdd0c9707789b').from_url(link)
+    try:
+        results = SauceNao(SAUCENAO_TOKEN, numres=1).from_url(link)
+    except LongLimitReachedError or ShortLimitReachedError:
+        results = SauceNao(SAUCENAO_TOKEN2, numres=1).from_url(link)
     return results[0]
 
 
