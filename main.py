@@ -6,7 +6,7 @@ import discord
 from discord.ext import commands
 from discord_components import DiscordComponents
 from dotenv import load_dotenv
-from utils.functions import log
+from utils.functions import log, detect_image
 
 # données additionnelles
 from data.dico_quest_books import dico_quest_books
@@ -25,7 +25,7 @@ DiscordComponents(kazooha)  # fait en sorte que le bot puisse utiliser les compo
 load_dotenv()  # prépare le chargement du token
 TOKEN = os.getenv("TOKEN")  # charge le token
 
-maintenance = False  # si le bot est en maintenance
+maintenance = True  # si le bot est en maintenance
 connected = False  # si le bot est connecté, pour éviter que les logs fassent n'importe quoi
 
 
@@ -56,6 +56,12 @@ async def on_disconnect():
         log(f"{kazooha.user.name} a été déconnecté de Discord")
         connected = False
 
+
+@kazooha.event
+async def on_message(msg: discord.Message):
+    await detect_image(msg)
+    await kazooha.process_commands(msg)
+
 # ----- commandes -----
 kazooha.add_cog(ShowArtifacts(kazooha, dico_artifacts))
 kazooha.add_cog(ShowCollection(kazooha, dico_books))
@@ -64,8 +70,6 @@ kazooha.add_cog(Help(kazooha))
 kazooha.add_cog(IdToTime(kazooha))
 kazooha.add_cog(ServerStat(kazooha))
 kazooha.add_cog(Magie(kazooha))
-kazooha.add_cog(DetectArtwork(kazooha))
-kazooha.add_cog(DetectImage(kazooha))
 
 
 kazooha.run(TOKEN)  # lance le bot
