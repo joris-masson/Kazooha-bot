@@ -5,3 +5,4 @@ from commands.serverstat import ServerStat
 from commands.showartifacts import ShowArtifacts
 from commands.showcollection import ShowCollection
 from commands.showquestbooks import ShowQuestBooks
+from commands.getid import GetId

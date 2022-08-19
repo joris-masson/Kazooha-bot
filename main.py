@@ -7,6 +7,8 @@ from discord.ext import commands
 from discord_components import DiscordComponents
 from dotenv import load_dotenv
 from utils.functions import log, detect_image
+from utils.func import detect_message
+from utils.classes.recherche import Recherche
 
 # données additionnelles
 from data.dico_quest_books import dico_quest_books
@@ -35,14 +37,16 @@ async def on_connect():
     global connected
 
     connected = True
-    log(f'{kazooha.user.name} s\'est connecté à Discord')
+    log(f'{kazooha.user.name} est connecté!')
 
 
 @kazooha.event
 async def on_ready():
     global maintenance
 
-    log(f'{kazooha.user.name} est prêt!')
+    for guild in kazooha.guilds:
+        log(f"{kazooha.user.name} est prêt dans {guild.name}({guild.id})!")
+
     if maintenance:
         await kazooha.change_presence(status=discord.Status.do_not_disturb, activity=discord.Game(f"être mis à jour"))  # Défini le jeu du bot
     else:
@@ -59,7 +63,9 @@ async def on_disconnect():
 
 @kazooha.event
 async def on_message(msg: discord.Message):
-    await detect_image(msg)
+    await detect_message(msg)
+    # await detect_image(msg)
+    await Recherche(msg).reply_with_sauce()
     await kazooha.process_commands(msg)
 
 # ----- commandes -----
@@ -70,6 +76,7 @@ kazooha.add_cog(Help(kazooha))
 kazooha.add_cog(IdToTime(kazooha))
 kazooha.add_cog(ServerStat(kazooha))
 kazooha.add_cog(Magie(kazooha))
+kazooha.add_cog(GetId(kazooha))
 
 
 kazooha.run(TOKEN)  # lance le bot

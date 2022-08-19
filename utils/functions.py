@@ -56,7 +56,7 @@ def log(thing: str) -> None:
     date = datetime.datetime.now().strftime("%H:%M:%S")
     filename = datetime.datetime.now().strftime("%d-%m-%Y")
     ze_log = f"[{date}] - {thing}\n"
-    print(ze_log, end='')
+    print(f"[LOG] - {ze_log}", end='')
     with open(f"logs/{filename}.txt", 'a', encoding='utf-8') as log_file:
         log_file.write(ze_log)
 
@@ -105,6 +105,7 @@ def detect_from_link(link: str) -> saucenao_api.BasicSauce:
         results = SauceNao(SAUCENAO_TOKEN, numres=1).from_url(link)
     except LongLimitReachedError or ShortLimitReachedError:
         results = SauceNao(SAUCENAO_TOKEN2, numres=1).from_url(link)
+    log(f"Recherche effectuée, il en reste {results.long_remaining}")
     return results[0]
 
 
@@ -114,14 +115,14 @@ async def detect_image(message: discord.Message):
     if len(attachments) != 0:
         log(f"Message envoyé par @{message.author.name}({message.author.id}) contenant une image dans #{message.channel.name}({message.channel.id}) sur le serveur {message.guild.name}({message.guild.id})")
         for att in attachments:
-            if att.content_type.startswith("image") and not [element for element in ["http://", "https://"] if (element in message.content)]:
+            if att.content_type.startswith("image") and not [element for element in ["http://", "https://"] if (element in message.content)] and not ".gif" in att.filename.lower():
                 result = detect_from_link(att.url)
                 if result.similarity >= 70.0:
                     log(f"Source trouvée: Auteur: {result.author} Sauce: <{result.urls[0]}> Similarité: {result.similarity}%")
                     await message.reply(f"Merci d'indiquer la source dans le même message que votre image, sinon les modos vont vous tomber dessus :eyes:\nAuteur: {result.author}\nSauce: <{result.urls[0]}>\nSimilarité: {result.similarity}%")
                 else:
                     log(f"Source non trouvée, meilleur résultat: Auteur: {result.author} Sauce: <{result.urls[0]}> Similarité: {result.similarity}%")
-            elif att.content_type.startswith("image") and [element for element in ["http://", "https://"] if (element in message.content)]:
+            elif att.content_type.startswith("image") and [element for element in ["http://", "https://"] if (element in message.content)] and not ".gif" in att.filename.lower():
                 if not check_if_matching_in_link(att.url, get_link_from_message(message)):
                     result = detect_from_link(att.url)
                     if result.similarity >= 70.0:
