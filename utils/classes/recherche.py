@@ -4,21 +4,27 @@ import os
 
 from saucenao_api import SauceNao
 from saucenao_api.errors import LongLimitReachedError, ShortLimitReachedError
-from utils.functions import get_link_from_message, get_all_images, compare_image
+from utils.functions import get_link_from_message, get_all_images, compare_image, convert_discord_id_to_time
 from dotenv import load_dotenv
+from data.log_channels import log_channels
+from discord.ext import commands
+
 
 # TODO les logs
 class Recherche:
-    def __init__(self, msg: discord.Message):
-        load_dotenv()
-        self.SAUCENAO_TOKEN = os.getenv("SAUCENAO_TOKEN")
-        self.SAUCENAO_TOKEN2 = os.getenv("SAUCENAO_TOKEN2")
+    def __init__(self, msg: discord.Message, client: commands.Bot):
+        if msg.guild.id in log_channels:
+            self.client = client
 
-        self.msg = msg
-        self.images_link = self.__get_images()
-        self.sauces = []
-        if self.images_link is not None and not self.__check_if_good_sauce_provided():
-            self.sauces = self.__get_sauces()
+            load_dotenv()
+            self.SAUCENAO_TOKEN = os.getenv("SAUCENAO_TOKEN")
+            self.SAUCENAO_TOKEN2 = os.getenv("SAUCENAO_TOKEN2")
+
+            self.msg = msg
+            self.images_link = self.__get_images()
+            self.sauces = []
+            if self.images_link is not None and not self.__check_if_good_sauce_provided():
+                self.sauces = self.__get_sauces()
 
     def __get_images(self) -> list[discord.Attachment] or None:
         if not len(self.msg.attachments) == 0:
@@ -49,13 +55,23 @@ class Recherche:
             all_images = get_all_images(get_link_from_message(self.msg))
             for base_image in self.images_link:
                 for image_link in all_images:
-                    if not compare_image(base_image, image_link):
-                        return False
-            return True
+                    print(base_image, image_link)
+                    if compare_image(base_image, image_link):
+                        return True
+            return False
+        else:
+            return False
 
     async def reply_with_sauce(self):
         if len(self.sauces) != 0:
             reply = ""
             for sauce in self.sauces:
-                reply += f"Merci d'indiquer la source dans le même message que votre image, sinon les modos vont vous tomber dessus :eyes:\nAuteur: {sauce.author}\nSauce: <{sauce.urls[0]}>\nSimilarité: {sauce.similarity}%\n\n"
-            await self.msg.reply(reply)
+                reply += f"\nSource: Auteur: {sauce.author}\nSauce: <{sauce.urls[0]}>\nSimilarité: {sauce.similarity}%\n\n"
+
+            response = discord.Embed(
+                title=f"Message sans source dans #{self.msg.channel.name}, envoyé par {self.msg.author} le <t:{convert_discord_id_to_time(self.msg.id)}:F>",
+                url=self.msg.jump_url,
+                description=f"**Fautif: <@{self.msg.author.id}>**\n{reply}"
+            )
+
+            await self.client.get_channel(log_channels[self.msg.guild.id]).send(embed=response)

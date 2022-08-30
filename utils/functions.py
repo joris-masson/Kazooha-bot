@@ -32,6 +32,10 @@ async def get_channel_stat(channel: discord.TextChannel) -> tuple[int, dict[str:
     return len(messages), stats
 
 
+def convert_discord_id_to_time(discord_id: int):
+    return int((int(bin(discord_id)[:-22], 2) + 1420070400000) / 1000)
+
+
 def merge_dict(dict1: dict, dict2: dict) -> dict[str: int]:
     res = {}
     for key in dict1:
