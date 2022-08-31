@@ -6,7 +6,7 @@ import discord
 from discord.ext import commands
 from discord_components import DiscordComponents
 from dotenv import load_dotenv
-from utils.functions import log, detect_image
+from utils.functions import log
 from utils.func import detect_message
 from utils.classes.recherche import Recherche
 
@@ -65,7 +65,6 @@ async def on_disconnect():
 async def on_message(msg: discord.Message):
     global kazooha
     await detect_message(msg)
-    await detect_image(msg)
     await Recherche(msg, kazooha).reply_with_sauce()
     await kazooha.process_commands(msg)
 

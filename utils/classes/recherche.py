@@ -4,13 +4,12 @@ import os
 
 from saucenao_api import SauceNao
 from saucenao_api.errors import LongLimitReachedError, ShortLimitReachedError
-from utils.functions import get_link_from_message, get_all_images, compare_image, convert_discord_id_to_time
+from utils.functions import get_link_from_message, get_all_images, compare_image, convert_discord_id_to_time, log
 from dotenv import load_dotenv
 from data.log_channels import log_channels
 from discord.ext import commands
 
 
-# TODO les logs
 class Recherche:
     def __init__(self, msg: discord.Message, client: commands.Bot):
         if msg.guild.id in log_channels:
@@ -24,6 +23,7 @@ class Recherche:
             self.images_link = self.__get_images()
             self.sauces = []
             if self.images_link is not None and not self.__check_if_good_sauce_provided():
+                log(f"[IMG] - Recherche d'image initialisée dans <#{msg.channel.id} sur {msg.guild.name}, image envoyée par <@{msg.author.id}>")
                 self.sauces = self.__get_sauces()
 
     def __get_images(self) -> list[discord.Attachment] or None:
@@ -64,14 +64,16 @@ class Recherche:
 
     async def reply_with_sauce(self):
         if len(self.sauces) != 0:
+            await self.msg.add_reaction(emoji="⚠️")
             reply = ""
             for sauce in self.sauces:
                 reply += f"\nSource: Auteur: {sauce.author}\nSauce: <{sauce.urls[0]}>\nSimilarité: {sauce.similarity}%\n\n"
 
             response = discord.Embed(
-                title=f"Message sans source dans #{self.msg.channel.name}, envoyé par {self.msg.author} le <t:{convert_discord_id_to_time(self.msg.id)}:F>",
+                title=f"Image sans source dans #{self.msg.channel.name}, envoyé par {self.msg.author} le <t:{convert_discord_id_to_time(self.msg.id)}:F>",
                 url=self.msg.jump_url,
                 description=f"**Fautif: <@{self.msg.author.id}>**\n{reply}"
             )
 
             await self.client.get_channel(log_channels[self.msg.guild.id]).send(embed=response)
+            log("[IMG] - Source envoyée")
