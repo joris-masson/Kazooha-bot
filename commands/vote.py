@@ -38,7 +38,7 @@ class Vote(commands.Cog):
     async def vote(self, ctx, *args: str) -> None:
         if datetime.now() > datetime(2022, 9, 10, 23, 59, 59):
             await ctx.send("Désolé, le vote est terminé.\nLes résultats arriveront bientôt!")
-        elif not isinstance(ctx.channel, discord.channel.DMChannel) and ctx.guild.id == 952557533514592286:
+        elif not isinstance(ctx.channel, discord.channel.DMChannel):
             log(f"{__name__} utilisé par @{ctx.message.author.name}({ctx.message.author.id}) dans #{ctx.message.channel.name}({ctx.message.channel.id}) sur le serveur {ctx.message.guild.name}({ctx.message.guild.id})")
             await ctx.message.delete()
             embed = discord.Embed(
@@ -69,7 +69,7 @@ Si le vote est valide, vous devriez recevoir un message pour vous le confirmer!"
                 res_file.write(self.__encode_b64(res))
             await ctx.reply("Vote enregistré!\nVous pouvez toujours le changer en retapant la commande")
         else:
-            await ctx.reply("Désolé, le format de réponse n'est pas correcte, il faut qu'il y ait 9 notes, et que ces notes soient toutes entre 1 et 5.")
+            await ctx.reply("Désolé, le format de réponse n'est pas correct, il faut qu'il y ait 9 notes, et que ces notes soient toutes entre 1 et 5.")
 
     def __check_validity(self, votes) -> bool:
         vote_len = len(votes) == 9
