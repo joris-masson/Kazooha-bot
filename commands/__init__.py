@@ -6,3 +6,5 @@ from commands.showartifacts import ShowArtifacts
 from commands.showcollection import ShowCollection
 from commands.showquestbooks import ShowQuestBooks
 from commands.getid import GetId
+from commands.vote import Vote
+from commands.sendlink import SendLink

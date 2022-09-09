@@ -12,7 +12,7 @@ from discord.ext import commands
 
 class Recherche:
     def __init__(self, msg: discord.Message, client: commands.Bot):
-        if msg.guild.id in log_channels:
+        if not isinstance(msg.channel, discord.channel.DMChannel) and msg.guild.id in log_channels:
             self.client = client
 
             load_dotenv()
@@ -25,6 +25,8 @@ class Recherche:
             if self.images_link is not None and not self.__check_if_good_sauce_provided():
                 log(f"[IMG] - Recherche d'image initialisée dans <#{msg.channel.id} sur {msg.guild.name}, image envoyée par <@{msg.author.id}>")
                 self.sauces = self.__get_sauces()
+        else:
+            self.sauces = []
 
     def __get_images(self) -> list[discord.Attachment] or None:
         if not len(self.msg.attachments) == 0:
