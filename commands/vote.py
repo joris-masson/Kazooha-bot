@@ -65,7 +65,7 @@ Si le vote est valide, vous devriez recevoir un message pour vous le confirmer!"
             res = ''
             for elem in args:
                 res += elem
-            with open(rf"vote_results/{self.__encode_b64(ctx.author.name)}.txt", 'w') as res_file:
+            with open(rf"vote_results/{self.__encode_b64(ctx.author.id)}.txt", 'w') as res_file:
                 res_file.write(self.__encode_b64(res))
             await ctx.reply("Vote enregistré!\nVous pouvez toujours le changer en retapant la commande")
         else:
