@@ -23,7 +23,7 @@ class Recherche:
             self.images_link = self.__get_images()
             self.sauces = []
             if self.images_link is not None and not self.__check_if_good_sauce_provided():
-                log(f"[IMG] - Recherche d'image initialisée dans <#{msg.channel.id} sur {msg.guild.name}, image envoyée par <@{msg.author.id}>")
+                log(f"Recherche d'image initialisée dans #{msg.channel.name} sur {msg.guild.name}, image envoyée par @{msg.author}")
                 self.sauces = self.__get_sauces()
         else:
             self.sauces = []
@@ -47,9 +47,12 @@ class Recherche:
             try:
                 results = SauceNao(self.SAUCENAO_TOKEN, numres=1).from_url(link)
             except LongLimitReachedError or ShortLimitReachedError:
+                log("Limites passées, passage sur la seconde clé d'API Saucenao.")
                 results = SauceNao(self.SAUCENAO_TOKEN2, numres=1).from_url(link)
             if results[0].similarity > 70.0:
                 res.append(results[0])
+            else:
+                log(f"Source non trouvée, meilleur résultat: Source:\nAuteur: {results[0].author}\nSauce: <{results[0].urls[0]}>\nSimilarité: {results[0].similarity}%")
         return res
 
     def __check_if_good_sauce_provided(self):
@@ -58,24 +61,33 @@ class Recherche:
             for base_image in self.images_link:
                 for image_link in all_images:
                     print(base_image, image_link)
-                    if compare_image(base_image, image_link):
+                    if compare_image(base_image, image_link, 3):
                         return True
             return False
         else:
             return False
 
+    def __check_sauce(self):
+        for i in range(len(self.images_link)):
+            for image in get_all_images(self.sauces[i].urls[0]):
+                if not compare_image(image, self.images_link[i], 5):
+                    return False
+        return True
+
     async def reply_with_sauce(self):
         if len(self.sauces) != 0:
-            await self.msg.add_reaction(emoji="⚠️")
             reply = ""
             for sauce in self.sauces:
-                reply += f"\nSource: Auteur: {sauce.author}\nSauce: <{sauce.urls[0]}>\nSimilarité: {sauce.similarity}%\n\n"
+                if self.__check_sauce():
+                    reply += f"\nSource: Auteur: {sauce.author}\nSauce: <{sauce.urls[0]}>\nSimilarité: {sauce.similarity}%\n\n"
 
-            response = discord.Embed(
-                title=f"Image sans source dans #{self.msg.channel.name}, envoyé par {self.msg.author} le <t:{convert_discord_id_to_time(self.msg.id)}:F>",
-                url=self.msg.jump_url,
-                description=f"**Fautif: <@{self.msg.author.id}>**\n{reply}"
-            )
+            if reply != "":
+                await self.msg.add_reaction(emoji="⚠️")
+                response = discord.Embed(
+                    title=f"Image sans source dans #{self.msg.channel.name}, envoyé par {self.msg.author} le <t:{convert_discord_id_to_time(self.msg.id)}:F>",
+                    url=self.msg.jump_url,
+                    description=f"**Fautif: <@{self.msg.author.id}>**\n{reply}"
+                )
 
-            await self.client.get_channel(log_channels[self.msg.guild.id]).send(embed=response)
-            log("[IMG] - Source envoyée")
+                await self.client.get_channel(log_channels[self.msg.guild.id]).send(embed=response)
+                log("Source envoyée")

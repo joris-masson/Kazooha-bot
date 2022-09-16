@@ -78,10 +78,9 @@ def get_img_from_link(link: str) -> io.BytesIO:
     return io.BytesIO(requests.get(link).content)
 
 
-def compare_image(link1: str, link2: str) -> bool:
+def compare_image(link1: str, link2: str, cutoff: int) -> bool:
     hash0 = imagehash.average_hash(Image.open(get_img_from_link(link1)))
     hash1 = imagehash.average_hash(Image.open(get_img_from_link(link2)))
-    cutoff = 5  # maximum bits that could be different between the hashes.
 
     if hash0 - hash1 < cutoff:
         return True

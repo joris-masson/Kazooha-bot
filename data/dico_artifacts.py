@@ -1,4 +1,8 @@
-from artifacts import aventurier, ame_des_profondeurs, amour_cheri, ancien_rituel_royal, artiste_martial, bande_vagabonde, berserker, briseur_de_glace, chanceux, chevalerie_ensanglantee, coeur_du_brave, coeur_du_gardien, colere_du_tonnerre, coquille_des_reves_opulents, dompteur_de_foudre, echos_d_une_offrande, erudit, exile, instructeur, medecin_itinerant, miracle, palourde_aux_teintes_oceaniques, parieur, rideau_du_gladiateur, roche_ancienne, tenacite_du_millelithe
+from data.artifacts import ancien_rituel_royal, rideau_du_gladiateur, amour_cheri, briseur_de_glace, colere_du_tonnerre, \
+    coeur_du_brave, chevalerie_ensanglantee, instructeur, ame_des_profondeurs, coeur_du_gardien, parieur, \
+    tenacite_du_millelithe, erudit, echos_d_une_offrande, artiste_martial, dompteur_de_foudre, roche_ancienne, \
+    palourde_aux_teintes_oceaniques, miracle, medecin_itinerant, aventurier, berserker, exile, \
+    coquille_des_reves_opulents, chanceux, bande_vagabonde
 
 dico_artifacts = {
     "aventurier": aventurier.artifact,

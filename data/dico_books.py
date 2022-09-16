@@ -1,5 +1,13 @@
-from books import la_renarde_qui_nageait_dans_la_mer_de_pissenlits, anthologie_de_la_poesie_brutocollinus, la_melancolie_de_vera, collection_de_byakuyakoku, chroniques_d_un_ivrogne, ballade_de_l_ecuyer, archives_de_jueyun, anthologie_de_poemes_brutocollinus, fleurs_pour_la_princesse_fischl, princesse_neige_et_les_six_nains, foret_de_bambou_au_clair_de_lune, contes_de_l_allee_toki, coutumes_de_liyue, guide_de_voyage_en_teyvat, etude_des_coutumes_brutocollinus, nouvelles_chroniques_des_six_kitsunes, histoire_du_chevalier_errant, journal_d_un_inconnu, journal_de_l_aventurier_roald, journal_du_vagabond, l_archon_invisible, l_epee_solitaire_du_mont_desole, la_brise_de_la_foret, le_bris_de_l_arme_divine, princesse_mina_de_la_nation_dechue, theories_etranges_du_kiyoshiken_shingakeuchi, perle_du_coeur, reves_brises, une_legende_d_epee, les_guerres_d_hamawaran, la_princesse_sanglier, le_coeur_de_la_source, la_tour_de_mondstadt, la_legende_de_vennessa
-
+from data.books import anthologie_de_la_poesie_brutocollinus, journal_du_vagabond, \
+    nouvelles_chroniques_des_six_kitsunes, la_renarde_qui_nageait_dans_la_mer_de_pissenlits, \
+    l_epee_solitaire_du_mont_desole, ballade_de_l_ecuyer, la_melancolie_de_vera, etude_des_coutumes_brutocollinus, \
+    chroniques_d_un_ivrogne, journal_d_un_inconnu, la_princesse_sanglier, princesse_neige_et_les_six_nains, \
+    contes_de_l_allee_toki, fleurs_pour_la_princesse_fischl, anthologie_de_poemes_brutocollinus, \
+    guide_de_voyage_en_teyvat, reves_brises, l_archon_invisible, la_legende_de_vennessa, histoire_du_chevalier_errant, \
+    princesse_mina_de_la_nation_dechue, les_guerres_d_hamawaran, la_brise_de_la_foret, le_bris_de_l_arme_divine, \
+    le_coeur_de_la_source, archives_de_jueyun, foret_de_bambou_au_clair_de_lune, perle_du_coeur, \
+    theories_etranges_du_kiyoshiken_shingakeuchi, une_legende_d_epee, coutumes_de_liyue, collection_de_byakuyakoku, \
+    la_tour_de_mondstadt, journal_de_l_aventurier_roald
 
 dico_books = {
     "la_renarde_qui_nageait_dans_la_mer_de_pissenlits": la_renarde_qui_nageait_dans_la_mer_de_pissenlits.book,

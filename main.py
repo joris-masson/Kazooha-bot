@@ -77,7 +77,7 @@ kazooha.add_cog(IdToTime(kazooha))
 kazooha.add_cog(ServerStat(kazooha))
 kazooha.add_cog(Magie(kazooha))
 kazooha.add_cog(GetId(kazooha))
-kazooha.add_cog(Vote(kazooha))
+#  kazooha.add_cog(Vote(kazooha))
 kazooha.add_cog(SendLink(kazooha))
 
 kazooha.run(TOKEN)  # lance le bot

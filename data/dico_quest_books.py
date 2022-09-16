@@ -1,5 +1,8 @@
-from quest_books import avec_les_dieux_prologue, aventures_en_montagne_et_en_mer, biographie_de_gunnhildr, chroniques_de_sangonomiya, debat_sur_le_vice_roi_de_l_est, inscriptions_sur_tablettes_de_pierres_i, journal_d_inspection_ancien, journal_epais, la_vie_de_la_pretresse_mouun, les_yakshas_gardiens_adeptes, mille_ans_de_solitude, perle_precieuse, premier_disciple_du_clan_guhua, versets_d_equilibrium, histoire_des_rois_et_des_clans
-
+from data.quest_books import avec_les_dieux_prologue, histoire_des_rois_et_des_clans, journal_epais, \
+    mille_ans_de_solitude, versets_d_equilibrium, debat_sur_le_vice_roi_de_l_est, premier_disciple_du_clan_guhua, \
+    biographie_de_gunnhildr, aventures_en_montagne_et_en_mer, perle_precieuse, journal_d_inspection_ancien, \
+    la_vie_de_la_pretresse_mouun, chroniques_de_sangonomiya, les_yakshas_gardiens_adeptes, \
+    inscriptions_sur_tablettes_de_pierres_i
 
 dico_quest_books = {
     "avec_les_dieux_prologue": avec_les_dieux_prologue.book,
