@@ -64,7 +64,6 @@ async def on_disconnect():
 @kazooha.event
 async def on_message(msg: discord.Message):
     global kazooha
-    await detect_message(msg)
     await Recherche(msg, kazooha).reply_with_sauce()
     await kazooha.process_commands(msg)
 
