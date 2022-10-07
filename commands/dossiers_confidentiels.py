@@ -21,6 +21,7 @@ class DossiersConfidentiels(commands.Cog):
                     placeholder="Liste des dossiers disponibles",
                     options=[
                         SelectOption(label="Paimon", value="Paimon"),
+                        SelectOption(label="Alice", value="Alice")
                         ]
                 )
             ]
