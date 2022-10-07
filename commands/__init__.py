@@ -8,3 +8,4 @@ from commands.showquestbooks import ShowQuestBooks
 from commands.getid import GetId
 from commands.vote import Vote
 from commands.sendlink import SendLink
+from commands.dossiers_confidentiels import DossiersConfidentiels

@@ -7,6 +7,7 @@ from discord.ext import commands
 from discord_components import DiscordComponents
 from dotenv import load_dotenv
 from utils.functions import log
+from utils.func import detect_message
 from utils.classes.recherche import Recherche
 
 # données additionnelles
@@ -63,6 +64,7 @@ async def on_disconnect():
 @kazooha.event
 async def on_message(msg: discord.Message):
     global kazooha
+    await detect_message(msg)
     await Recherche(msg, kazooha).reply_with_sauce()
     await kazooha.process_commands(msg)
 
@@ -76,5 +78,6 @@ kazooha.add_cog(ServerStat(kazooha))
 kazooha.add_cog(Magie(kazooha))
 kazooha.add_cog(GetId(kazooha))
 kazooha.add_cog(SendLink(kazooha))
+kazooha.add_cog(DossiersConfidentiels(kazooha))
 
 kazooha.run(TOKEN)  # lance le bot
