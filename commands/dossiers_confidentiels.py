@@ -24,6 +24,7 @@ class DossiersConfidentiels(commands.Cog):
                         SelectOption(label="Asmoday", value="Asmoday"),
                         SelectOption(label="Dainsleif", value="Dainsleif"),
                         SelectOption(label="Paimon", value="Paimon"),
+                        SelectOption(label="Phanes", value="Phanes"),
                         SelectOption(label="Rhinedottir", value="Rhinedottir"),
                         ]
                 )
