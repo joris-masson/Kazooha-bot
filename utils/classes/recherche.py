@@ -11,9 +11,11 @@ from discord.ext import commands
 
 
 class Recherche:
-    def __init__(self, msg: discord.Message, client: commands.Bot):
+    def __init__(self, msg: discord.Message, client: commands.Bot, led):
         if not isinstance(msg.channel, discord.channel.DMChannel) and msg.guild.id in log_channels:
             self.client = client
+            self.led = led
+            self.led.set_color("jaune")
 
             load_dotenv()
             self.SAUCENAO_TOKEN = os.getenv("SAUCENAO_TOKEN")
@@ -27,6 +29,7 @@ class Recherche:
                 self.sauces = self.__get_sauces()
         else:
             self.sauces = []
+            led.stop()
 
     def __get_images(self) -> list[discord.Attachment] or None:
         if not len(self.msg.attachments) == 0:
@@ -91,3 +94,4 @@ class Recherche:
 
                 await self.client.get_channel(log_channels[self.msg.guild.id]).send(embed=response)
                 log("Source envoyée")
+        self.led.stop()

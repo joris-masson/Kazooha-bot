@@ -66,7 +66,7 @@ async def on_message(msg: discord.Message):
     global kazooha
     ma_led.set_color("cyan")
     await detect_message(msg)
-    await Recherche(msg, kazooha).reply_with_sauce()
+    await Recherche(msg, kazooha, ma_led).reply_with_sauce()
     await kazooha.process_commands(msg)
     ma_led.stop()
 
