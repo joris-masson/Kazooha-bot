@@ -5,8 +5,7 @@ import os
 
 async def detect_message(msg: discord.Message) -> None:
     date = datetime.datetime.now().strftime("%d-%m-%Y")
-    # not msg.author.bot and
-    if not len(msg.content) == 0:
+    if not msg.author.bot and not len(msg.content) == 0:
         time = datetime.datetime.now().strftime("%H:%M:%S")
 
         ze_log = f"[{time}] - {msg.author.name} a dit: {msg.content}\n"
@@ -44,3 +43,15 @@ async def image_log(msg: discord.Message, date: str) -> None:
             pass
         for att in msg.attachments:
             await att.save(f"image_logs/{date}/{msg.guild.name}/{msg.channel.name}/{msg.author.name}/{att.filename}")
+
+
+def contain_image(msg: discord.Message) -> bool:
+    try:
+        return len(msg.embeds[0].image) > 0
+    except IndexError:
+        return False
+
+
+async def delete_if_not_noice_image(msg: discord.Message):
+    if msg.guild.id == 950118071425724466 and msg.author.id == 1025308201824026644 and not contain_image(msg):
+        await msg.delete()

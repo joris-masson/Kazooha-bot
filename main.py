@@ -8,7 +8,7 @@ from discord.ext import commands
 from discord_components import DiscordComponents
 from dotenv import load_dotenv
 from utils.functions import log
-from utils.func import detect_message
+from utils.func import detect_message, delete_if_not_noice_image
 from utils.classes.recherche import Recherche
 from utils.classes.ledrgb import LedRgb
 
@@ -65,6 +65,7 @@ async def on_disconnect():
 async def on_message(msg: discord.Message):
     global kazooha
     ma_led.set_color("cyan")
+    await delete_if_not_noice_image(msg)
     await detect_message(msg)
     await Recherche(msg, kazooha, ma_led).reply_with_sauce()
     await kazooha.process_commands(msg)
