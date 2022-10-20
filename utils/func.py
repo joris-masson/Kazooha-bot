@@ -5,7 +5,8 @@ import os
 
 async def detect_message(msg: discord.Message) -> None:
     date = datetime.datetime.now().strftime("%d-%m-%Y")
-    if not msg.author.bot and not len(msg.content) == 0:
+    # not msg.author.bot and
+    if not len(msg.content) == 0:
         time = datetime.datetime.now().strftime("%H:%M:%S")
 
         ze_log = f"[{time}] - {msg.author.name} a dit: {msg.content}\n"

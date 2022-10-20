@@ -85,7 +85,7 @@ class Recherche:
                     reply += f"\nSource: Auteur: {sauce.author}\nSauce: <{sauce.urls[0]}>\nSimilarité: {sauce.similarity}%\n\n"
 
             if reply != "":
-                await self.msg.add_reaction(emoji="⚠️")
+                await self.msg.add_reaction(emoji='⚠')
                 response = discord.Embed(
                     title=f"Image sans source dans #{self.msg.channel.name}, envoyé par {self.msg.author} le <t:{convert_discord_id_to_time(self.msg.id)}:F>",
                     url=self.msg.jump_url,
