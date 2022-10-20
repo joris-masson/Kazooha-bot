@@ -86,7 +86,8 @@ class ShowArtifacts(commands.Cog):
         embeds = []
         for page in range(1, len(self.dico_artifacts[the_book]) + 1):
             embed = discord.Embed(title=f"{interaction.values[0]} - page {page}", description=self.dico_artifacts[the_book][page])
-            embed.set_thumbnail(url=f"http://176.159.155.219:53134/images/artifacts/icons/{interaction.values[0]}/{page}.png")
+            print(f"http://176.159.155.219:53134/images/artifacts/icons/{the_book}/{page}.png")
+            embed.set_thumbnail(url=f"http://176.159.155.219:53134/images/artifacts/icons/{the_book}/{page}.png")
             embeds.append(embed)
 
         paginator = Paginator(self.bot, ctx, PaginatorStyle.FIVE_BUTTONS_WITH_COUNT, embeds)
