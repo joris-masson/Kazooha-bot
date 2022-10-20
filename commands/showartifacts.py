@@ -36,25 +36,42 @@ class ShowArtifacts(commands.Cog):
                             SelectOption(label="Chevalerie ensanglantée", value="Chevalerie ensanglantee"),
                             SelectOption(label="Coeur du brave", value="Coeur du brave"),
                             SelectOption(label="Coeur du gardien", value="Coeur du gardien"),
+                            SelectOption(label="Coeur du voyageur", value="coeur_du_voyageur"),
                             SelectOption(label="Colère du tonnerre", value="Colere du tonerre"),
                             SelectOption(label="Coquille des rêves opulents", value="Coquille des reves opulents"),
                             SelectOption(label="Dompteur de foudre", value="Dompteur de foudre"),
-                            SelectOption(label="Echos d'une offrande", value="Echos d_une offrande"),
+                            SelectOption(label="Echos d'une offrande", value="Echos d une offrande"),
                             SelectOption(label="Erudit", value="Erudit"),
                             SelectOption(label="Instructeur", value="Instruteur"),
+                            SelectOption(label="Marcheur du feu", value="Marcheur du feu"),
                             SelectOption(label="Médecin itinérant", value="Medecin itinerant"),
                             SelectOption(label="Miracle", value="Miracle"),
+                            SelectOption(label="Ombre de la Verte Chasseuse", value="Ombre de la Verte Chasseuse"),
                             SelectOption(label="Palourde aux teintes océaniques", value="Palourde aux teintes oceaniques"),
                             SelectOption(label="Parieur", value="Parieur"),
+                        ]
+                    )
+                ]
+            )
+        elif num == 2:
+            selector = await ctx.send(
+                "Veuillez selectionner un livre:",
+                components=[
+                    Select(
+                        placeholder="Liste des collections disponibles",
+                        options=[
+                            SelectOption(label="Rêve Doré", value="Reve Dore"),
                             SelectOption(label="Rideau du Gladiateur", value="Rideu du Gladiateur"),
                             SelectOption(label="Roche ancienne", value="Roche ancienne"),
+                            SelectOption(label="Sorcière des flammes", value="Sorciere des flammes"),
+                            SelectOption(label="Souvenir de forêt", value="Souvenir de foret"),
                             SelectOption(label="Ténacité du Millelithe", value="Tenacite du Millelithe"),
                         ]
                     )
                 ]
             )
         else:
-            await ctx.send("Cette page n'existe pas(il y en a 1)")
+            await ctx.send("Cette page n'existe pas(il y en a 2)")
             return
 
         def check(res):
@@ -66,10 +83,11 @@ class ShowArtifacts(commands.Cog):
 
         the_book = interaction.values[0].lower().replace(' ', '_')
 
-        embeds = [
-            discord.Embed(title=f"{interaction.values[0]} - page {page}", description=self.dico_artifacts[the_book][page])
-            for page in range(1, len(self.dico_artifacts[the_book]) + 1)
-        ]
+        embeds = []
+        for page in range(1, len(self.dico_artifacts[the_book]) + 1):
+            embed = discord.Embed(title=f"{interaction.values[0]} - page {page}", description=self.dico_artifacts[the_book][page])
+            embed.set_thumbnail(url=f"http://176.159.155.219:53134/images/artifacts/icons/{interaction.values[0]}/{page}.png")
+            embeds.append(embed)
 
         paginator = Paginator(self.bot, ctx, PaginatorStyle.FIVE_BUTTONS_WITH_COUNT, embeds)
 
