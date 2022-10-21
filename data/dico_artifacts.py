@@ -2,13 +2,15 @@ from data.artifacts import ancien_rituel_royal, rideau_du_gladiateur, amour_cher
     coeur_du_brave, chevalerie_ensanglantee, instructeur, ame_des_profondeurs, coeur_du_gardien, parieur, \
     tenacite_du_millelithe, erudit, echos_d_une_offrande, artiste_martial, dompteur_de_foudre, roche_ancienne, \
     palourde_aux_teintes_oceaniques, miracle, medecin_itinerant, aventurier, berserker, exile, \
-    coquille_des_reves_opulents, chanceux, bande_vagabonde, coeur_du_voyageur, marcheur_du_feu, ombre_de_la_verte_chasseuse, reve_dore, sorciere_des_flammes_ardentes, souvenir_de_foret
+    coquille_des_reves_opulents, chanceux, bande_vagabonde, coeur_du_voyageur, marcheur_du_feu, ombre_de_la_verte_chasseuse, reve_dore, sorciere_des_flammes_ardentes, souvenir_de_foret, \
+    au_dela_cinabrin, embleme_du_destin_brise, flamme_bleme, meteore_inverse, reminiscence_nostalgique
 
 dico_artifacts = {
     "aventurier": aventurier.artifact,
     "amour_cheri": amour_cheri.artifact,
     "ame_des_profondeurs": ame_des_profondeurs.artifact,
     "ancien_rituel_royal": ancien_rituel_royal.artifact,
+    "au_dela_cinabrin": au_dela_cinabrin.artifact,
     "artiste_martial": artiste_martial.artifact,
     "bande_vagabonde": bande_vagabonde.artifact,
     "berserker": berserker.artifact,
@@ -22,14 +24,18 @@ dico_artifacts = {
     "coquille_des_reves_opulents": coquille_des_reves_opulents.artifact,
     "dompteur_de_foudre": dompteur_de_foudre.artifact,
     "echos_d_une_offrande": echos_d_une_offrande.artifact,
+    "embleme_du_destin_brise": embleme_du_destin_brise.artifact,
     "erudit": erudit.artifact,
     "exile": exile.artifact,
+    "flamme_bleme": flamme_bleme.artifact,
     "marcheur_du_feu": marcheur_du_feu.artifact,
     "instructeur": instructeur.artifact,
     "medecin_itinerant": medecin_itinerant.artifact,
+    "meteore_inverse": meteore_inverse.artifact,
     "miracle": miracle.artifact,
     "ombre_de_la_verte_chasseuse": ombre_de_la_verte_chasseuse.artifact,
     "palourde_aux_teintes_oceaniques": palourde_aux_teintes_oceaniques.artifact,
+    "reminiscence_nostalgique": reminiscence_nostalgique.artifact,
     "parieur": parieur.artifact,
     "reve_dore": reve_dore.artifact,
     "rideau_du_gladiateur": rideau_du_gladiateur.artifact,

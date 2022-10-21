@@ -28,6 +28,7 @@ class ShowArtifacts(commands.Cog):
                             SelectOption(label="Amour chéri", value="Amour cheri"),
                             SelectOption(label="Ancien rituel royal", value="Ancien rituel royal"),
                             SelectOption(label="Artiste Martial", value="Artiste martial"),
+                            SelectOption(label="Au-delà cinabrin", value="Au dela cinabrin"),
                             SelectOption(label="Aventurier", value="aventurier"),
                             SelectOption(label="Bande Vagabonde", value="Bande vagabonde"),
                             SelectOption(label="Berserker", value="Berserker"),
@@ -36,19 +37,18 @@ class ShowArtifacts(commands.Cog):
                             SelectOption(label="Chevalerie ensanglantée", value="Chevalerie ensanglantee"),
                             SelectOption(label="Coeur du brave", value="Coeur du brave"),
                             SelectOption(label="Coeur du gardien", value="Coeur du gardien"),
-                            SelectOption(label="Coeur du voyageur", value="coeur_du_voyageur"),
+                            SelectOption(label="Coeur du voyageur", value="coeur du voyageur"),
                             SelectOption(label="Colère du tonnerre", value="Colere du tonerre"),
                             SelectOption(label="Coquille des rêves opulents", value="Coquille des reves opulents"),
                             SelectOption(label="Dompteur de foudre", value="Dompteur de foudre"),
                             SelectOption(label="Echos d'une offrande", value="Echos d une offrande"),
+                            SelectOption(label="Emblème du destin brisé", value="Embleme du destin brise"),
                             SelectOption(label="Erudit", value="Erudit"),
+                            SelectOption(label="Exilé", value="Exile"),
+                            SelectOption(label="Flamme blème", value="Flamme bleme"),
                             SelectOption(label="Instructeur", value="Instruteur"),
                             SelectOption(label="Marcheur du feu", value="Marcheur du feu"),
                             SelectOption(label="Médecin itinérant", value="Medecin itinerant"),
-                            SelectOption(label="Miracle", value="Miracle"),
-                            SelectOption(label="Ombre de la Verte Chasseuse", value="Ombre de la Verte Chasseuse"),
-                            SelectOption(label="Palourde aux teintes océaniques", value="Palourde aux teintes oceaniques"),
-                            SelectOption(label="Parieur", value="Parieur"),
                         ]
                     )
                 ]
@@ -60,6 +60,11 @@ class ShowArtifacts(commands.Cog):
                     Select(
                         placeholder="Liste des collections disponibles",
                         options=[
+                            SelectOption(label="Metéore inversé", value="Meteore inverse"),
+                            SelectOption(label="Miracle", value="Miracle"),
+                            SelectOption(label="Ombre de la Verte Chasseuse", value="Ombre de la Verte Chasseuse"),
+                            SelectOption(label="Palourde aux teintes océaniques", value="Palourde aux teintes oceaniques"),
+                            SelectOption(label="Parieur", value="Parieur"),
                             SelectOption(label="Rêve Doré", value="Reve Dore"),
                             SelectOption(label="Rideau du Gladiateur", value="Rideu du Gladiateur"),
                             SelectOption(label="Roche ancienne", value="Roche ancienne"),
