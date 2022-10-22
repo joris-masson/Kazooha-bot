@@ -2,6 +2,8 @@ import datetime
 import discord
 import os
 
+from functions import log
+
 
 async def detect_message(msg: discord.Message) -> None:
     date = datetime.datetime.now().strftime("%d-%m-%Y")
@@ -54,4 +56,5 @@ def contain_image(msg: discord.Message) -> bool:
 
 async def delete_if_not_noice_image(msg: discord.Message):
     if msg.guild.id == 950118071425724466 and msg.author.id == 1025308201824026644 and not contain_image(msg):
+        log(f"Message supprimé: {msg.content}")
         await msg.delete()
