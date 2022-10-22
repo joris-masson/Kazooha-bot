@@ -2,7 +2,7 @@ import datetime
 import discord
 import os
 
-from functions import log
+from utils.functions import log
 
 
 async def detect_message(msg: discord.Message) -> None:
