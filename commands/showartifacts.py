@@ -99,4 +99,3 @@ class ShowArtifacts(commands.Cog):
 
         await paginator.start()
 
-
