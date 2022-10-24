@@ -65,7 +65,7 @@ async def on_disconnect():
 async def on_message(msg: discord.Message):
     global kazooha
     ma_led.set_color("cyan")
-    await delete_if_not_noice_image(msg)
+    # await delete_if_not_noice_image(msg)
     await detect_message(msg)
     await Recherche(msg, kazooha, ma_led).reply_with_sauce()
     await kazooha.process_commands(msg)
