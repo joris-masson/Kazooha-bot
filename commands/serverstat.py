@@ -1,3 +1,5 @@
+import os
+
 from discord.ext import commands
 from utils.functions import merge_dict, get_channel_stat
 from utils.functions import log
@@ -26,5 +28,19 @@ class ServerStat(commands.Cog):
                 res += f"{name} a laissé {global_stats[name]} messages soit {round((100 * global_stats[name]) / total_nb_of_messages, 2)}%\n"
         log(res)
         await ctx.message.delete()
+
+    @commands.command(name="getImages")
+    async def get_images(self, ctx, user_id: int):
+        for guild in self.bot.guilds:
+            for channel in guild.text_channels:
+                print(f"je cherche dans {guild.name}/{channel.name}")
+                for message in await channel.history(limit=None).flatten():
+                    if message.author.id == user_id and len(message.attachments) != 0:
+                        try:
+                            os.makedirs(rf"getImages/{user_id}")
+                        except FileExistsError:
+                            pass
+                        for att in message.attachments:
+                            await att.save(f"getImages/{user_id}/{att.filename}")
 
 
