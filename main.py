@@ -1,7 +1,6 @@
 # imports des modules principaux
 import os
 import discord
-import RPi.GPIO as GPIO
 
 # imports des modules secondaires
 from discord.ext import commands
