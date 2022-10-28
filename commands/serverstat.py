@@ -51,8 +51,9 @@ class ServerStat(commands.Cog):
         the_serv = ctx.guild
         res = {}
         res_msg = await ctx.send(str(res))
+        serv_emotes = []
         for emote in the_serv.emojis:
-            res[f"<:{emote.name}:{emote.id}>"] = 0
+            serv_emotes.append(f"<:{emote.name}:{emote.id}>")
         for channel in the_serv.text_channels:
             await res_msg.edit(content=f"Je compte dans <#{channel.id}>\n{str(res)}")
             for message in await channel.history(limit=None).flatten():
@@ -60,6 +61,9 @@ class ServerStat(commands.Cog):
                     custom_emojis = re.findall(r'<:\w*:\d*>', message.content)
                     if len(custom_emojis) >= 1:
                         for emoji in custom_emojis:
-                            if emoji in res.keys():
-                                res[emoji] += 1
-            await res_msg.edit(content=f"Jéfini\n{str(res)}")
+                            if emoji in serv_emotes:
+                                try:
+                                    res[emoji] += 1
+                                except KeyError:
+                                    res[emoji] = 1
+        await res_msg.edit(content=f"Jéfini\n{str(res)}")
