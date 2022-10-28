@@ -50,9 +50,11 @@ class ServerStat(commands.Cog):
         await ctx.message.delete()
         the_serv = ctx.guild
         res = {}
+        res_msg = await ctx.send(str(res))
         for emote in the_serv.emojis:
             res[f"<:{emote.name}:{emote.id}>"] = 0
         for channel in the_serv.text_channels:
+            await res_msg.edit(content=f"Je compte dans <#{channel.id}>\n{str(res)}")
             for message in await channel.history(limit=None).flatten():
                 if not message.author.bot:
                     custom_emojis = re.findall(r'<:\w*:\d*>', message.content)
@@ -60,4 +62,4 @@ class ServerStat(commands.Cog):
                         for emoji in custom_emojis:
                             if emoji in res.keys():
                                 res[emoji] += 1
-        await ctx.send(str(res))
+            await res_msg.edit(content=f"Jéfini\n{str(res)}")
