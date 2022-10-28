@@ -1,4 +1,6 @@
 import os
+import re
+import discord
 
 from discord.ext import commands
 from utils.functions import merge_dict, get_channel_stat
@@ -43,4 +45,19 @@ class ServerStat(commands.Cog):
                         for att in message.attachments:
                             await att.save(f"getImages/{user_id}/{att.filename}")
 
-
+    @commands.command(name="countEmotes")
+    async def count_emotes(self, ctx):
+        await ctx.message.delete()
+        the_serv = ctx.guild
+        res = {}
+        for emote in the_serv.emojis:
+            res[f"<:{emote.name}:{emote.id}>"] = 0
+        for channel in the_serv.text_channels:
+            for message in await channel.history(limit=None).flatten():
+                if not message.author.bot:
+                    custom_emojis = re.findall(r'<:\w*:\d*>', message.content)
+                    if len(custom_emojis) >= 1:
+                        for emoji in custom_emojis:
+                            if emoji in res.keys():
+                                res[emoji] += 1
+        await ctx.send(str(res))
