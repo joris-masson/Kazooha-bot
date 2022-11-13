@@ -71,7 +71,6 @@ async def on_message(msg: discord.Message):
     ma_led.stop()
 
 # ----- commandes -----
-kazooha.add_cog(Help(kazooha))
 kazooha.add_cog(ServerStat(kazooha))
 
 kazooha.run(TOKEN)  # lance le bot

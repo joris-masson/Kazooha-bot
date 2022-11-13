@@ -1,4 +1,4 @@
-from interactions import Extension, Client, extension_command, Option, OptionType, CommandContext, SelectMenu, SelectOption, File, Embed, extension_component, ComponentContext, Message
+from interactions import Extension, Client, extension_command, CommandContext, SelectMenu, SelectOption, Embed, extension_component, ComponentContext
 from interactions.ext.paginator import Page, Paginator
 from utils.functions import log
 from data.dico_quest_books import dico_quest_books

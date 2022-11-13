@@ -1,4 +1,4 @@
-from interactions import Extension, Client, extension_command, CommandContext, SelectMenu, SelectOption, File, Embed, extension_component, ComponentContext, Message
+from interactions import Extension, Client, extension_command, CommandContext, SelectMenu, SelectOption, File, Embed, extension_component, ComponentContext
 from utils.functions import log
 
 

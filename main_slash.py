@@ -18,6 +18,7 @@ kazooha.load("commands.slash.dossiers_confidentiels")
 kazooha.load("commands.slash.showquestbooks")
 kazooha.load("commands.slash.showartifacts")
 kazooha.load("commands.slash.showcollection")
+kazooha.load("commands.slash.help")
 
 
 @kazooha.command(
