@@ -73,13 +73,7 @@ async def on_message(msg: discord.Message):
 # ----- commandes -----
 kazooha.add_cog(ShowArtifacts(kazooha, dico_artifacts))
 kazooha.add_cog(ShowCollection(kazooha, dico_books))
-kazooha.add_cog(ShowQuestBooks(kazooha, dico_quest_books))
 kazooha.add_cog(Help(kazooha))
-kazooha.add_cog(IdToTime(kazooha))
 kazooha.add_cog(ServerStat(kazooha))
-kazooha.add_cog(Magie(kazooha))
-kazooha.add_cog(GetId(kazooha))
-kazooha.add_cog(SendLink(kazooha))
-kazooha.add_cog(DossiersConfidentiels(kazooha))
 
 kazooha.run(TOKEN)  # lance le bot

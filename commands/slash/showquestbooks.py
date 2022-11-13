@@ -1,25 +1,24 @@
-import discord
-
-from discord.ext import commands
-from discord_components import Select, SelectOption
-from discord_components_paginator import Paginator, PaginatorStyle
+from interactions import Extension, Client, extension_command, Option, OptionType, CommandContext, SelectMenu, SelectOption, File, Embed, extension_component, ComponentContext, Message
+from interactions.ext.paginator import Page, Paginator
 from utils.functions import log
+from data.dico_quest_books import dico_quest_books
 
 
-class ShowQuestBooks(commands.Cog):
-    def __init__(self, bot: commands.Bot, dico_quest_books: dict):
-        self.bot = bot
-        self.dico_quest_books = dico_quest_books
+class ShowQuestBooks(Extension):
+    def __init__(self, client):
         log(f"'{__name__}' initialisé")
+        self.client: Client = client
 
-    @commands.command(name="questBooks", aliases=["questBook", "qb"])
-    async def show_quest_books(self, ctx):
-        log(f"{__name__} utilisé par @{ctx.message.author.name}({ctx.message.author.id}) dans #{ctx.message.channel.name}({ctx.message.channel.id}) sur le serveur {ctx.message.guild.name}({ctx.message.guild.id})")
-        await ctx.message.delete()
-        selector = await ctx.send(
+    @extension_command(
+        name="afficher_les_livres_de_quete",
+        description="Affiche une liste des livres de quête, sélectionnez en un, et vous pourrez le lire!",
+    )
+    async def show_quest_books(self, ctx: CommandContext):
+        log(f"{__name__} utilisé par @{ctx.author.name}({ctx.author.id}) dans #{ctx.channel.name}({ctx.channel.id}) sur le serveur {ctx.guild.name}({ctx.guild.id})")
+        await ctx.send(
             "Veuillez selectionner un livre:",
             components=[
-                Select(
+                SelectMenu(
                     placeholder="Liste des livres de quêtes disponibles",
                     options=[
                         SelectOption(label="Avec les dieux - Prologue", value="Avec les dieux Prologue"),
@@ -36,25 +35,31 @@ class ShowQuestBooks(commands.Cog):
                         SelectOption(label="Perle précieuse", value="Perle precieuse"),
                         SelectOption(label="Premier disciple du clan Guhua", value="Premier disciple du clan Guhua"),
                         SelectOption(label="Versets d'equilibrium", value="Versets d equilibrium"),
-
-                    ]
+                    ],
+                    custom_id="sel_quest_books"
                 )
-            ]
+            ],
+            ephemeral=True
         )
 
-        def check(res):
-            return ctx.author == res.user and res.channel == ctx.channel and res.message.id == selector.id
+    @extension_component("sel_quest_books")
+    async def handler(self, ctx: ComponentContext, interaction):
+        the_book = interaction[0].lower().replace(' ', '_')
+        embeds = [Embed(title=f"{interaction[0]} - page {page}", description=dico_quest_books[the_book][page]) for page in range(1, len(dico_quest_books[the_book]) + 1)]
+        if len(embeds) > 1:
+            les_pages = []
+            for embed in embeds:
+                les_pages.append(Page(embeds=embed))
+            await Paginator(
+                client=self.client,
+                ctx=ctx,
+                pages=les_pages,
+                disable_after_timeout=False,
+                use_select=False
+            ).run()
+        else:
+            await ctx.send(embeds=embeds)
 
-        interaction = await self.bot.wait_for("select_option", check=check)
 
-        await selector.delete()
-
-        the_book = interaction.values[0].lower().replace(' ', '_')
-
-        embeds = [
-            discord.Embed(title=f"{interaction.values[0]} - page {page}", description=self.dico_quest_books[the_book][page]) for page in range(1, len(self.dico_quest_books[the_book]) + 1)
-        ]
-
-        paginator = Paginator(self.bot, ctx, PaginatorStyle.FIVE_BUTTONS_WITH_COUNT, embeds)
-
-        await paginator.start()
+def setup(client):
+    ShowQuestBooks(client)
