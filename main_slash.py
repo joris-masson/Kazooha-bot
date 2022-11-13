@@ -53,5 +53,6 @@ async def test(ctx: interactions.CommandContext):
 async def rick(ctx: interactions.CommandContext):
     log("UN RICKROLL A ETE UTILISE!!!!!!!!!")
     await ctx.target.send("<https://urlz.fr/4nf>")
+    await ctx.send("C'est fait!", ephemeral=True)
 
 kazooha.start()
