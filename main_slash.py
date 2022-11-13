@@ -6,6 +6,7 @@ from discord_components import DiscordComponents
 from utils.func import detect_message
 from utils.classes.recherche import Recherche
 from utils.classes.ledrgb import LedRgb
+from utils.functions import log
 
 
 load_dotenv()  # prépare le chargement du token
@@ -43,5 +44,14 @@ async def test(ctx: interactions.CommandContext):
         await ctx.send(f"Bonjour admin!\nC'est {ctx.target.user.username}#{ctx.target.discriminator}!\nID: `{ctx.target.id}`", ephemeral=True)
     else:
         await ctx.send(f"C'est {ctx.target.user.username}!", ephemeral=True)
+
+
+@kazooha.command(
+    type=interactions.ApplicationCommandType.USER,
+    name="Appuyez, c'est rigolo!"
+)
+async def rick(ctx: interactions.CommandContext):
+    log("UN RICKROLL A ETE UTILISE!!!!!!!!!")
+    await ctx.target.send("<https://urlz.fr/4nf>")
 
 kazooha.start()
