@@ -30,7 +30,7 @@ kazooha.load("commands.slash.help")
 @kazooha.event
 async def on_message_create(msg: interactions.Message):
     ma_led.set_color("cyan")
-    await detect_message(msg)
+    await detect_message(msg, kazooha)
     # await Recherche(msg, kazooha, ma_led).reply_with_sauce()
     ma_led.stop()
 

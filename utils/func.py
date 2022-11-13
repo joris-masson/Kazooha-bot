@@ -8,7 +8,7 @@ import os
 from utils.functions import log
 
 
-async def detect_message(msg: interactions.Message) -> None:
+async def detect_message(msg: interactions.Message, client: interactions.Client) -> None:
     date = datetime.datetime.now().strftime("%d-%m-%Y")
     if not msg.author.bot and not len(msg.content) == 0:
         guild = await msg.get_guild()
@@ -21,7 +21,7 @@ async def detect_message(msg: interactions.Message) -> None:
             path = f"message_logs/{date}/{guild.name}/{channel.name}.txt"
         except AttributeError:
             path = f"message_logs/{date}/{msg.author.username}.txt"
-        await image_log(msg, date)
+        await image_log(msg, date, client)
         try:
             try:
                 with open(path, 'a') as log_file:
@@ -39,17 +39,22 @@ async def detect_message(msg: interactions.Message) -> None:
                 with open(path, 'a', encoding='utf-8') as log_file:
                     log_file.write(ze_log)
     elif not msg.author.bot:
-        await image_log(msg, date)
+        await image_log(msg, date, client)
 
 
-async def image_log(msg: discord.Message, date: str) -> None:
+async def image_log(msg: interactions.Message, date: str, client: interactions.Client) -> None:
+    guild = await msg.get_guild()
+    channel = await msg.get_channel()
     if len(msg.attachments) != 0:
         try:
-            os.makedirs(rf"image_logs/{date}/{msg.guild.name}/{msg.channel.name}/{msg.author.name}")
+            os.makedirs(rf"image_logs/{date}/{guild.name}/{channel.name}/{msg.author.username}")
         except FileExistsError:
             pass
         for att in msg.attachments:
-            await att.save(f"image_logs/{date}/{msg.guild.name}/{msg.channel.name}/{msg.author.name}/{att.filename}")
+            att._client = client._http
+            att_data = await att.download()
+            with open(f"image_logs/{date}/{guild.name}/{channel.name}/{msg.author.username}/{att.filename}", 'wb') as outfile:
+                outfile.write(att_data.getbuffer())
 
 
 def contain_image(msg: discord.Message) -> bool:
