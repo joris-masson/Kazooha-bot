@@ -55,7 +55,8 @@ class ShowQuestBooks(Extension):
                 ctx=ctx,
                 pages=les_pages,
                 disable_after_timeout=False,
-                use_select=False
+                use_select=False,
+                index=True
             ).run()
         else:
             await ctx.send(embeds=embeds)

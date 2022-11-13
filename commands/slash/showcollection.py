@@ -1,27 +1,31 @@
-import discord
-
-from discord.ext import commands
-from discord_components import Select, SelectOption
-from discord_components_paginator import Paginator, PaginatorStyle
+from interactions import Extension, Client, extension_command, Option, OptionType, CommandContext, SelectMenu, SelectOption, File, Embed, extension_component, ComponentContext, Message
+from interactions.ext.paginator import Page, Paginator
 from utils.functions import log
+from data.dico_books import dico_books
 
 
-class ShowCollection(commands.Cog):
-    def __init__(self, bot: commands.Bot, dico_books: dict):
-        self.bot = bot
-        self.dico_books = dico_books
+class ShowCollections(Extension):
+    def __init__(self, client):
         log(f"'{__name__}' initialisé")
+        self.client: Client = client
 
-    @commands.command(name="collections", aliases=["collection", "archives", "archive"])
-    async def show_collection(self, ctx, num: int):
-        log(f"{__name__} utilisé par @{ctx.message.author.name}({ctx.message.author.id}) dans #{ctx.message.channel.name}({ctx.message.channel.id}) sur le serveur {ctx.message.guild.name}({ctx.message.guild.id})")
-        await ctx.message.delete()
-
-        if num == 1:
-            selector = await ctx.send(
+    @extension_command(
+        name="afficher_les_livres_des_archives",
+        description="Affiche une liste des livres des archives, sélectionnez en un, et vous pourrez le lire!",
+        options=[Option(
+            name="page",
+            description="La page du sélecteur à afficher(il y en a 2)",
+            type=OptionType.INTEGER,
+            required=True
+        )]
+    )
+    async def show_collection(self, ctx: CommandContext, page: int):
+        log(f"{__name__} utilisé par @{ctx.author.name}({ctx.author.id}) dans #{ctx.channel.name}({ctx.channel.id}) sur le serveur {ctx.guild.name}({ctx.guild.id})")
+        if page == 1:
+            await ctx.send(
                 "Veuillez selectionner un livre:",
                 components=[
-                    Select(
+                    SelectMenu(
                         placeholder="Liste des collections disponibles",
                         options=[
                             SelectOption(label="Anthologie de la poésie Brutocollinus", value="Anthologie de la poesie Brutocollinus"),
@@ -49,15 +53,17 @@ class ShowCollection(commands.Cog):
                             SelectOption(label="La Renarde qui nageait dans la mer de pissenlits", value="La Renarde qui nageait dans la mer de pissenlits"),
                             SelectOption(label="La Tour de Mondstadt", value="La Tour de Mondstadt"),
                             SelectOption(label="Le Bris de l’arme divine", value="Le Bris de l arme divine"),
-                        ]
+                        ],
+                        custom_id="sel_collection"
                     )
-                ]
+                ],
+                ephemeral=True
             )
-        elif num == 2:
-            selector = await ctx.send(
+        elif page == 2:
+            await ctx.send(
                 "Veuillez selectionner un livre:",
                 components=[
-                    Select(
+                    SelectMenu(
                         placeholder="Liste des collections disponibles",
                         options=[
                             SelectOption(label="Le cœur de la source", value="Le coeur de la source"),
@@ -69,27 +75,35 @@ class ShowCollection(commands.Cog):
                             SelectOption(label="Rêves brisés", value="Reves brises"),
                             SelectOption(label="Théories étranges du Kiyoshiken Shinkageuchi", value="Theories etranges du Kiyoshiken Shinkageuchi"),
                             SelectOption(label="Une légende d’épée", value="Une legende d epee"),
-                        ]
+                        ],
+                        custom_id="sel_collection"
                     )
-                ]
+                ],
+                ephemeral=True
             )
         else:
             await ctx.send("Cette page n'existe pas(il y en a 2)")
             return
 
-        def check(res):
-            return ctx.author == res.user and res.channel == ctx.channel and res.message.id == selector.id
+    @extension_component("sel_collection")
+    async def handler(self, ctx: ComponentContext, interaction):
+        the_book = interaction[0].lower().replace(' ', '_')
+        embeds = [Embed(title=f"{interaction[0]} - page {page}", description=dico_books[the_book][page]) for page in range(1, len(dico_books[the_book]) + 1)]
+        if len(embeds) > 1:
+            les_pages = []
+            for embed in embeds:
+                les_pages.append(Page(embeds=embed))
+            await Paginator(
+                client=self.client,
+                ctx=ctx,
+                pages=les_pages,
+                disable_after_timeout=False,
+                use_select=False,
+                index=True
+            ).run()
+        else:
+            await ctx.send(embeds=embeds)
 
-        interaction = await self.bot.wait_for("select_option", check=check)
 
-        await selector.delete()
-
-        the_book = interaction.values[0].lower().replace(' ', '_')
-
-        embeds = [
-            discord.Embed(title=f"{interaction.values[0]} - page {page}", description=self.dico_books[the_book][page]) for page in range(1, len(self.dico_books[the_book]) + 1)
-        ]
-
-        paginator = Paginator(self.bot, ctx, PaginatorStyle.FIVE_BUTTONS_WITH_COUNT, embeds)
-
-        await paginator.start()
+def setup(client):
+    ShowCollections(client)

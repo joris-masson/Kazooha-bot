@@ -20,14 +20,14 @@ artifact = {
 	Le timing est essentiel à la triche du parieur.
 	C'est pour cette raison qu'elle glissait toujours cette montre dorée dans la poche de sa poitrine.
 	Nombres de parties furent sauvées grâce à sa perception du temps.""",
-	4: """--**Coupe à dés du Parieur**__
+	4: """__**Coupe à dés du Parieur**__
 	*Cette coupe a été spécialement conçue pour une seule utilisation. On vous assure qu'il n'y a pas de compartiment caché...*
 
 	Les parieurs sont tous plus ou moins superstitieux ; beaucoup aiment posséder un gobelet à dés personnalisé, par exemple.
 	Cette coupe appartenait à une femme ; étonnamment, aucun mécanisme secret n'y est caché.
 	Le destin décide du sort de la moitié des dés ; le sort de la moitié restante est décidé par l'homme.
 	Et pourtant, jamais elle ne lança les dés en dehors de la table de jeu.""",
-	5: """__**Boucles d'oreilles du Parieur**_
+	5: """__**Boucles d'oreilles du Parieur**__
 	*Des boucles d'oreilles turquoise qui calment l'esprit et permettent d'évaluer la situation de façon rationnelle et d'éviter de prendre des risques inconsidérés.*
 	
 	Ces boucles d'oreilles extragavantes représentent parfaitement la richesse fluctuante de la parieuse.

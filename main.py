@@ -71,8 +71,6 @@ async def on_message(msg: discord.Message):
     ma_led.stop()
 
 # ----- commandes -----
-kazooha.add_cog(ShowArtifacts(kazooha, dico_artifacts))
-kazooha.add_cog(ShowCollection(kazooha, dico_books))
 kazooha.add_cog(Help(kazooha))
 kazooha.add_cog(ServerStat(kazooha))
 
