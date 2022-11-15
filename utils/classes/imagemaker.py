@@ -1,4 +1,4 @@
-from PIL import Image, ImageDraw
+from PIL import Image
 
 
 class ImageMaker:
@@ -18,13 +18,13 @@ class ImageMaker:
         return res
 
     def __calculate_height(self) -> int:
-        return (int(len(self.liste_persos) / self.MAX_COLUMNS) + 1) * self.card_img_list[0].size[1]
+        return (int(len(self.liste_persos) / self.MAX_COLUMNS + 1)) * self.card_img_list[0].size[1]
 
     def __calculate_width(self) -> int:
         res = 0
         pic_counter = 0
         for pic in self.card_img_list:
-            if pic_counter > self.MAX_COLUMNS:
+            if pic_counter > self.MAX_COLUMNS - 1:
                 break
             res += pic.size[0]
             pic_counter += 1
@@ -43,7 +43,7 @@ class ImageMaker:
             if pic_counter >= self.MAX_COLUMNS:
                 pos_y += self.card_img_list[0].size[1]
                 pos_x = 0
-                pic_counter = 0
+                pic_counter = -1
             pic_counter += 1
 
         self.image.save(self.IMAGE_NAME, quality=100)
