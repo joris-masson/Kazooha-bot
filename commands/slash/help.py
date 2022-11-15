@@ -12,7 +12,10 @@ class Help(interactions.Extension):
         description="C'est la commande d'aide :D",
     )
     async def help(self, ctx: interactions.CommandContext):
-        log(f"{__name__} utilisé par @{ctx.author.name}({ctx.author.id}) dans #{ctx.channel.name}({ctx.channel.id}) sur le serveur {ctx.guild.name}({ctx.guild.id})")
+        try:
+            log(f"{__name__} utilisé par @{ctx.author.name}({ctx.author.id}) dans #{ctx.channel.name}({ctx.channel.id}) sur le serveur {ctx.guild.name}({ctx.guild.id})")
+        except AttributeError:
+            log(f"{__name__} utilisé")
         help_embed = interactions.Embed(title="__Aide pour Kazooha__", description="Voici un petit recap des commandes du bot")
 
         help_embed.add_field(name="__**Préfix**__", value="Le bot utilise maintenant les commandes slashs!\ncommencez votre commande par `/` et vous devriez être guidés!")

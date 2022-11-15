@@ -18,7 +18,10 @@ class IdToTime(interactions.Extension):
         )]
     )
     async def id_to_time(self, ctx: interactions.CommandContext, discord_id: str):
-        log(f"{__name__} utilisé par @{ctx.author.name}({ctx.author.id}) dans #{ctx.channel.name}({ctx.channel.id}) sur le serveur {ctx.guild.name}({ctx.guild.id})")
+        try:
+            log(f"{__name__} utilisé par @{ctx.author.name}({ctx.author.id}) dans #{ctx.channel.name}({ctx.channel.id}) sur le serveur {ctx.guild.name}({ctx.guild.id})")
+        except AttributeError:
+            log(f"{__name__} utilisé")
         converted_id = convert_discord_id_to_time(int(discord_id))
         await ctx.send(f"L'objet a été créé le: <t:{converted_id}>\nTimestamp discord: `<t:{converted_id}>`", ephemeral=True)
 

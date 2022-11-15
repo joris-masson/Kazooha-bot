@@ -20,7 +20,10 @@ class ShowCollections(Extension):
         )]
     )
     async def show_collection(self, ctx: CommandContext, page: int):
-        log(f"{__name__} utilisé par @{ctx.author.name}({ctx.author.id}) dans #{ctx.channel.name}({ctx.channel.id}) sur le serveur {ctx.guild.name}({ctx.guild.id})")
+        try:
+            log(f"{__name__} utilisé par @{ctx.author.name}({ctx.author.id}) dans #{ctx.channel.name}({ctx.channel.id}) sur le serveur {ctx.guild.name}({ctx.guild.id})")
+        except AttributeError:
+            log(f"{__name__} utilisé")
         if page == 1:
             await ctx.send(
                 "Veuillez selectionner un livre:",

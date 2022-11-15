@@ -12,7 +12,10 @@ class DossiersConfidentiels(Extension):
         description="Affiche une image contenant des informations sur un personnage du lore de Genshin Impact",
     )
     async def dossiers_confidentiels(self, ctx: CommandContext):
-        log(f"{__name__} utilisé par @{ctx.author.name}({ctx.author.id}) dans #{ctx.channel.name}({ctx.channel.id}) sur le serveur {ctx.guild.name}({ctx.guild.id})")
+        try:
+            log(f"{__name__} utilisé par @{ctx.author.name}({ctx.author.id}) dans #{ctx.channel.name}({ctx.channel.id}) sur le serveur {ctx.guild.name}({ctx.guild.id})")
+        except AttributeError:
+            log(f"{__name__} utilisé")
         await ctx.send(
             "Veuillez selectionner un dossier:",
             components=[

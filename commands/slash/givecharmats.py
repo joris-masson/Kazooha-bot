@@ -15,7 +15,10 @@ class GiveCharMats(interactions.Extension):
         description="Affiche les personnages pouvant être farmés aujourd'hui!"
     )
     async def give_char_mats(self, ctx: interactions.CommandContext):
-        log(f"{__name__} utilisé par @{ctx.author.name}({ctx.author.id}) dans #{ctx.channel.name}({ctx.channel.id}) sur le serveur {ctx.guild.name}({ctx.guild.id})")
+        try:
+            log(f"{__name__} utilisé par @{ctx.author.name}({ctx.author.id}) dans #{ctx.channel.name}({ctx.channel.id}) sur le serveur {ctx.guild.name}({ctx.guild.id})")
+        except AttributeError:
+            log(f"{__name__} utilisé")
         ImageMaker(aptitudes_time[datetime.today().weekday()])  # créé l'image
         await ctx.send(files=interactions.File("data/out/final.png"), content="Les personnages dont vous pouvez farmer les aptitudes aujourd'hui sont:", ephemeral=True)
 

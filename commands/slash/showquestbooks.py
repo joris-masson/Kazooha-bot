@@ -14,7 +14,10 @@ class ShowQuestBooks(Extension):
         description="Affiche une liste des livres de quête, sélectionnez en un, et vous pourrez le lire!",
     )
     async def show_quest_books(self, ctx: CommandContext):
-        log(f"{__name__} utilisé par @{ctx.author.name}({ctx.author.id}) dans #{ctx.channel.name}({ctx.channel.id}) sur le serveur {ctx.guild.name}({ctx.guild.id})")
+        try:
+            log(f"{__name__} utilisé par @{ctx.author.name}({ctx.author.id}) dans #{ctx.channel.name}({ctx.channel.id}) sur le serveur {ctx.guild.name}({ctx.guild.id})")
+        except AttributeError:
+            log(f"{__name__} utilisé")
         await ctx.send(
             "Veuillez selectionner un livre:",
             components=[
