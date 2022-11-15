@@ -48,7 +48,12 @@ class Help(interactions.Extension):
                 Exemple: `/dossiers_confidentiels`
                 """, inline=False)
 
-        print(self.client.me.icon_url)
+        help_embed.add_field(name="__**Afficher les matériaux d'amélioration d'aptitudes disponibles aujourd'hui**__", value="""
+                        Nom de la commande: `/afficher_persos_farmables`
+
+                        Exemple: `/afficher_persos_farmables`
+                        """, inline=False)
+
         help_embed.set_thumbnail(url=self.client.me.icon_url)
 
         await ctx.send(embeds=help_embed, ephemeral=True)
