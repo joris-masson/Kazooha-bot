@@ -2,29 +2,37 @@ from PIL import Image
 
 
 class ImageMaker:
-    def __init__(self, liste_persos: list[str]):
-        self.MAX_COLUMNS = 8
-        self.IMAGE_NAME = "data/out/final.png"
+    def __init__(self, liste_noms: list[str], mode: int):
+        self.MAX_COLUMNS = 9
+        if mode == 0:
+            self.IMAGE_NAME = "data/out/final.png"
+        else:
+            self.IMAGE_NAME = "data/out/final_w.png"
+        self.mode = mode
 
-        self.liste_persos = liste_persos
+        self.liste_noms = liste_noms
         self.card_img_list = self.__make_card_img_list()
         self.image = Image.new("RGBA", self.__calculate_pic_size(), color=(0, 0, 0, 0))
         self.__create_final_image()
 
     def __make_card_img_list(self) -> list[Image]:
         res = []
-        for name in self.liste_persos:
-            res.append(Image.open(f"data/img/persos/{name.lower()}.png"))
+        if self.mode == 0:
+            for name in self.liste_noms:
+                res.append(Image.open(f"data/img/persos/{name.lower()}.png"))
+        else:
+            for name in self.liste_noms:
+                res.append(Image.open(f"data/img/weapons/{name.lower()}.png"))
         return res
 
     def __calculate_height(self) -> int:
-        return (int(len(self.liste_persos) / self.MAX_COLUMNS + 1)) * self.card_img_list[0].size[1]
+        return (int(len(self.liste_noms) / self.MAX_COLUMNS + 1)) * self.card_img_list[0].size[1]
 
     def __calculate_width(self) -> int:
         res = 0
         pic_counter = 0
         for pic in self.card_img_list:
-            if pic_counter > self.MAX_COLUMNS - 1:
+            if pic_counter > self.MAX_COLUMNS:
                 break
             res += pic.size[0]
             pic_counter += 1
