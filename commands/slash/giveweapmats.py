@@ -20,7 +20,10 @@ class GiveWeapMats(interactions.Extension):
         except AttributeError:
             log(f"{__name__} utilisé")
         ImageMaker(weapons_time[datetime.today().weekday()], mode=1)  # créé l'image
-        await ctx.send(files=interactions.File("data/out/final_w.png"), content="Les armes dont vous pouvez farmer les matériaux aujourd'hui sont:", ephemeral=True)
+        file = interactions.File("data/out/final_w.png")
+        embed = interactions.Embed(title="Les armes dont vous pouvez farmer les matériaux aujourd'hui")
+        embed.set_image(url="attachment://final_w.png")
+        await ctx.send(embeds=embed, files=file, ephemeral=True)
 
 
 def setup(client):

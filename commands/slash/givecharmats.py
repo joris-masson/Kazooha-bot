@@ -20,8 +20,11 @@ class GiveCharMats(interactions.Extension):
         except AttributeError:
             log(f"{__name__} utilisé")
         ImageMaker(aptitudes_time[datetime.today().weekday()], mode=0)  # créé l'image
-        await ctx.send(files=interactions.File("data/out/final.png"), content="Les personnages dont vous pouvez farmer les aptitudes aujourd'hui sont:", ephemeral=True)
 
+        file = interactions.File("data/out/final.png")
+        embed = interactions.Embed(title="Les personnages dont vous pouvez farmer les aptitudes aujourd'hui")
+        embed.set_image(url="attachment://final.png")
+        await ctx.send(embeds=embed, files=file, ephemeral=True)
 
 def setup(client):
     GiveCharMats(client)
