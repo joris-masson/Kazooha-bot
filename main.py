@@ -36,7 +36,7 @@ async def on_ready():
     for guild in kazooha.guilds:
         log(f"{kazooha.user.name} est prêt dans {guild.name}({guild.id})!")
 
-    await kazooha.change_presence(status=discord.Status.online, activity=discord.Game(f"vous donner des infos sur le jeu"))  # Définit le jeu du bot
+    # await kazooha.change_presence(status=discord.Status.online, activity=discord.Game(f"vous donner des infos sur le jeu"))  # Définit le jeu du bot
 
 
 @kazooha.event
