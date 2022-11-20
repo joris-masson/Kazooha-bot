@@ -4,23 +4,28 @@ import interactions
 from dotenv import load_dotenv
 from discord_components import DiscordComponents
 from utils.func import detect_message
-from utils.classes.recherche import Recherche
 from utils.classes.ledrgb import LedRgb
-from utils.functions import log
-
 
 load_dotenv()  # prépare le chargement du token
 TOKEN = os.getenv("TOKEN")  # charge le token
 
-kazooha = interactions.Client(token=TOKEN, intents=interactions.Intents.ALL, presence=interactions.ClientPresence(
+kazooha = interactions.Client(
+    token=TOKEN,
+    intents=interactions.Intents.ALL,
+    presence=interactions.ClientPresence(
         status=interactions.StatusType.ONLINE,
         activities=[
-            interactions.PresenceActivity(name="vous donner des infos sur le jeu", type=interactions.PresenceActivityType.GAME)
+            interactions.PresenceActivity(
+                name="vous donner des infos sur le jeu",
+                type=interactions.PresenceActivityType.GAME
+            )
         ]
-    ))
+    )
+)
 DiscordComponents(kazooha)
 
 ma_led = LedRgb(16, 20, 26)  # définition de la led
+
 
 kazooha.load('interactions.ext.files')
 
@@ -41,7 +46,6 @@ kazooha.load("commands.slash.help")
 async def on_message_create(msg: interactions.Message):
     ma_led.set_color("cyan")
     await detect_message(msg, kazooha)
-    # await Recherche(msg, kazooha, ma_led).reply_with_sauce()
     ma_led.stop()
 
 
