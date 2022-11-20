@@ -5,6 +5,8 @@ from data.artifacts import ancien_rituel_royal, rideau_du_gladiateur, amour_cher
     coquille_des_reves_opulents, chanceux, bande_vagabonde, coeur_du_voyageur, marcheur_du_feu, ombre_de_la_verte_chasseuse, reve_dore, sorciere_des_flammes_ardentes, souvenir_de_foret, \
     au_dela_cinabrin, embleme_du_destin_brise, flamme_bleme, meteore_inverse, reminiscence_nostalgique
 
+from data.artifacts.beta import neige_et_glace
+
 dico_artifacts = {
     "aventurier": aventurier.artifact,
     "amour_cheri": amour_cheri.artifact,
@@ -43,4 +45,6 @@ dico_artifacts = {
     "sorciere_des_flammes_ardentes": sorciere_des_flammes_ardentes.artifact,
     "souvenir_de_foret": souvenir_de_foret.artifact,
     "tenacite_du_millelithe": tenacite_du_millelithe.artifact,
+
+    "neige_et_glace": neige_et_glace.artifact
 }
