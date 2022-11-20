@@ -24,7 +24,7 @@ kazooha = interactions.Client(
 )
 DiscordComponents(kazooha)
 
-ma_led = LedRgb(16, 20, 26)  # définition de la led
+# ma_led = LedRgb(16, 20, 26)  # définition de la led
 
 
 kazooha.load('interactions.ext.files')
@@ -46,9 +46,9 @@ kazooha.load("commands.slash.help")
 
 @kazooha.event
 async def on_message_create(msg: interactions.Message):
-    ma_led.set_color("cyan")
+    # ma_led.set_color("cyan")
     await detect_message(msg, kazooha)
-    ma_led.stop()
+    # ma_led.stop()
 
 
 kazooha.start()
