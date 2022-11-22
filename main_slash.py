@@ -34,13 +34,10 @@ kazooha.load("commands.context.rickroll")
 
 kazooha.load("commands.slash.idtotime")
 kazooha.load("commands.slash.dossiers_confidentiels")
-kazooha.load("commands.slash.showquestbooks")
 kazooha.load("commands.slash.showartifacts")
 kazooha.load("commands.slash.showbetaartifacts")
-kazooha.load("commands.slash.showcollection")
-kazooha.load("commands.slash.givecharmats")
-kazooha.load("commands.slash.giveweapmats")
-kazooha.load("commands.slash.archive")
+kazooha.load("commands.slash.showbooks")
+kazooha.load("commands.slash.givemats")
 kazooha.load("commands.slash.help")
 
 
