@@ -1,9 +1,10 @@
 from PIL import Image
+from math import ceil
 
 
 class ImageMaker:
     def __init__(self, liste_noms: list[str], mode: int):
-        self.MAX_COLUMNS = 9
+        self.MAX_COLUMNS = 10
         if mode == 0:
             self.IMAGE_NAME = "data/out/final.png"
         else:
@@ -26,13 +27,13 @@ class ImageMaker:
         return res
 
     def __calculate_height(self) -> int:
-        return (int(len(self.liste_noms) / self.MAX_COLUMNS + 1)) * self.card_img_list[0].size[1]
+        return (ceil(len(self.liste_noms) / self.MAX_COLUMNS)) * self.card_img_list[0].size[1]
 
     def __calculate_width(self) -> int:
         res = 0
         pic_counter = 0
         for pic in self.card_img_list:
-            if pic_counter > self.MAX_COLUMNS:
+            if pic_counter == self.MAX_COLUMNS:
                 break
             res += pic.size[0]
             pic_counter += 1
