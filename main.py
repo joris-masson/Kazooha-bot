@@ -35,7 +35,7 @@ kazooha.load("commands.context.rickroll")
 kazooha.load("commands.slash.idtotime")
 kazooha.load("commands.slash.dossiers_confidentiels")
 kazooha.load("commands.slash.showartifacts")
-kazooha.load("commands.slash.showbetaartifacts")
+# kazooha.load("commands.slash.showbetaartifacts")
 kazooha.load("commands.slash.showbooks")
 kazooha.load("commands.slash.givemats")
 kazooha.load("commands.slash.help")
@@ -47,5 +47,24 @@ async def on_message_create(msg: interactions.Message):
     await detect_message(msg, kazooha)
     # ma_led.stop()
 
+@kazooha.command(
+    name="test_modal",
+    description="test_desc"
+)
+async def my_cool_modal_command(ctx):
+    modal = interactions.Modal(
+        title="Application Form",
+        custom_id="mod_app_form",
+        components=[interactions.TextInput(
+            style=interactions.TextStyleType.SHORT,
+            label="Let's get straight to it: what's 1 + 1?",
+            custom_id="text_input_response",
+            min_length=1,
+            max_length=3,
+        )
+        ],
+    )
+
+    await ctx.popup(modal)
 
 kazooha.start()

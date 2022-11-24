@@ -17,7 +17,7 @@ class DossiersConfidentiels(Extension):
         except AttributeError:
             log(f"{__name__} utilisé")
         await ctx.send(
-            "Veuillez selectionner un dossier:",
+            "(Tous les dossiers sont réalisés par Amalia)\nVeuillez selectionner un dossier:",
             components=[
                 SelectMenu(
                     placeholder="Liste des dossiers disponibles",
