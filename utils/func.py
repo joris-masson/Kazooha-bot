@@ -51,10 +51,14 @@ async def image_log(msg: interactions.Message, date: str, client: interactions.C
         except FileExistsError:
             pass
         for att in msg.attachments:
-            att._client = client._http
-            att_data = await att.download()
-            with open(f"image_logs/{date}/{guild.name}/{channel.name}/{msg.author.username}/{att.filename}", 'wb') as outfile:
-                outfile.write(att_data.getbuffer())
+            await save_attachment(client, att, f"image_logs/{date}/{guild.name}/{channel.name}/{msg.author.username}/{att.filename}")
+
+
+async def save_attachment(client: interactions.Client, att: interactions.Attachment, filename: str):
+    att._client = client._http
+    att_data = await att.download()
+    with open(filename, 'wb') as outfile:
+        outfile.write(att_data.getbuffer())
 
 
 def contain_image(msg: discord.Message) -> bool:
