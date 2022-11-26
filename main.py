@@ -48,24 +48,4 @@ async def on_message_create(msg: interactions.Message):
     await detect_message(msg, kazooha)
     # ma_led.stop()
 
-@kazooha.command(
-    name="test_modal",
-    description="test_desc"
-)
-async def my_cool_modal_command(ctx):
-    modal = interactions.Modal(
-        title="Application Form",
-        custom_id="mod_app_form",
-        components=[interactions.TextInput(
-            style=interactions.TextStyleType.SHORT,
-            label="Let's get straight to it: what's 1 + 1?",
-            custom_id="text_input_response",
-            min_length=1,
-            max_length=3,
-        )
-        ],
-    )
-
-    await ctx.popup(modal)
-
 kazooha.start()

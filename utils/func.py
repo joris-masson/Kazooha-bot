@@ -44,21 +44,30 @@ async def detect_message(msg: interactions.Message, client: interactions.Client)
 
 async def image_log(msg: interactions.Message, date: str, client: interactions.Client) -> None:
     guild = await msg.get_guild()
-    channel = await msg.get_channel()
     if len(msg.attachments) != 0:
         try:
-            os.makedirs(rf"image_logs/{date}/{guild.name}/{channel.name}/{msg.author.username}")
+            os.makedirs(rf"image_logs/{msg.author.username}/{date}/{guild.name}")
         except FileExistsError:
             pass
         for att in msg.attachments:
-            await save_attachment(client, att, f"image_logs/{date}/{guild.name}/{channel.name}/{msg.author.username}/{att.filename}")
+            await save_attachment(client, att, rf"image_logs/{msg.author.username}/{date}/{guild.name}/{att.filename}")
 
 
 async def save_attachment(client: interactions.Client, att: interactions.Attachment, filename: str):
     att._client = client._http
     att_data = await att.download()
-    with open(filename, 'wb') as outfile:
-        outfile.write(att_data.getbuffer())
+    if not os.path.exists(filename):
+        with open(filename, 'wb') as outfile:
+            outfile.write(att_data.getbuffer())
+    else:
+        ze_filename = list(filename)
+        del ze_filename[-4:]
+        extension = filename[-4:]
+        for i in range(1, 101):
+            if not os.path.exists(f"{''.join(ze_filename)}_{i}{extension}"):
+                with open(f"{''.join(ze_filename)}_{i}{extension}", 'wb') as outfile:
+                    outfile.write(att_data.getbuffer())
+                break
 
 
 def contain_image(msg: discord.Message) -> bool:

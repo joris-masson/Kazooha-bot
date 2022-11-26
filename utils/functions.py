@@ -110,3 +110,11 @@ def detect_from_link(link: str) -> saucenao_api.BasicSauce:
         results = SauceNao(SAUCENAO_TOKEN2, numres=1).from_url(link)
     log(f"Recherche effectuée, il en reste {results.long_remaining}")
     return results[0]
+
+
+def index_of(thing, liste: list) -> int:
+    for i in range(len(liste) - 1):
+        if liste[i] == thing:
+            return i
+    else:
+        return -1

@@ -1,16 +1,13 @@
 # prog par Dr.Emma(retire ça et jte pete les genoux)
 import interactions
-import os
 
-from utils.func import save_attachment
+from utils.classes.demandchannel import DemandChannel
 
 
 class GenshinGeoguessr(interactions.Extension):
     def __init__(self, client):
         self.client: interactions.Client = client
-        self.VERIF_CHANNEL = interactions.Channel
-        self.base_message = interactions.Message
-        self.demand_message = interactions.Message
+        self.demand_channels = []
 
     @interactions.extension_command(name="genshin_geoguessr", options=[interactions.Option(name="submit", description="Soumettre une photo d un lieu", type=interactions.OptionType.SUB_COMMAND), interactions.Option(name="guess", description="Soumettre votre idee de lieu present dans la photo", type=interactions.OptionType.SUB_COMMAND)])
     async def genshin_geoguessr(self, ctx: interactions.CommandContext, sub_command: str):
@@ -19,10 +16,6 @@ class GenshinGeoguessr(interactions.Extension):
         elif sub_command == "guess":
             pass
 
-    @interactions.extension_command(
-        type=interactions.ApplicationCommandType.MESSAGE,
-        name="Soumettre une image"
-    )
     async def soumettre(self, ctx: interactions.CommandContext):
         """
         si image, envoie dans salon/fil dédie un message
@@ -30,27 +23,10 @@ class GenshinGeoguessr(interactions.Extension):
         bouton oui: enregistre dans un rep commun l image et des infos autour(auteur)
         //     non: envoie un dm à l auteur(ou ailleurs) pour annoncer refus
         """
-        self.VERIF_CHANNEL = await interactions.get(self.client, interactions.Channel, object_id=1019989051496992839)
-        if ctx.target.attachments[0].content_type.startswith("image"):
-            self.base_message = ctx.target
-            embed = interactions.Embed(
-                title="Nouvelle image soumise!",
-                description=f"Image soumise par: <@{ctx.target.author.id}>"
-            )
-            embed.set_image(url=ctx.target.attachments[0].url)
-
-            button_accept = interactions.Button(
-                label="Accepter",
-                custom_id="but_accept",
-                style=3
-            )
-            button_refuse = interactions.Button(
-                label="Refuser",
-                custom_id="but_refuse",
-                style=4
-            )
-            self.demand_message = await self.VERIF_CHANNEL.send(embeds=embed, components=interactions.spread_to_rows(button_accept, button_refuse))
-            await ctx.send("Cette image a bien été envoyée aux modérateurs", ephemeral=True)
+        verif_channel = await ctx.channel.create_thread(f"{ctx.author.id}", type=interactions.ChannelType.PRIVATE_THREAD)
+        le_salon_de_demande = DemandChannel(self.client, ctx, verif_channel)
+        await le_salon_de_demande.send_demand_msg()
+        self.demand_channels.append(le_salon_de_demande)
 
     async def guess(self, ctx: interactions.CommandContext):
         """
@@ -63,20 +39,18 @@ class GenshinGeoguessr(interactions.Extension):
     @interactions.extension_component("but_accept")
     async def accept_handler(self, ctx: interactions.ComponentContext):
         await ctx.send("Image acceptée", ephemeral=True)
-        if not os.path.exists(f"data/games/geoguessr/submissions/{self.base_message.author.id}.png"):
-            await save_attachment(self.client, self.base_message.attachments[0], f"data/games/geoguessr/submissions/{self.base_message.author.id}.png")
-        else:
-            for i in range(1, 101):
-                if not os.path.exists(f"data/games/geoguessr/submissions/{self.base_message.author.id}_{i}.png"):
-                    await save_attachment(self.client, self.base_message.attachments[0], f"data/games/geoguessr/submissions/{self.base_message.author.id}_{i}.png")
-                    break
-        await self.demand_message.delete()
+        await self.delete_demand_channel(int(ctx.channel.name))
 
     @interactions.extension_component("but_refuse")
     async def refuse_handler(self, ctx: interactions.ComponentContext):
         await ctx.send("Image refusée", ephemeral=True)
-        await self.base_message.reply(content="Votre image n'a pas été retenue, voici les critères:\n*insérer critères...*")
-        await self.demand_message.delete()
+        await self.delete_demand_channel(int(ctx.channel.name))
+
+    async def delete_demand_channel(self, author_id: int):
+        for demand_channel in self.demand_channels:
+            if demand_channel.ID == author_id:
+                await demand_channel.delete()
+                self.demand_channels.remove(demand_channel)
 
 
 def setup(client):
