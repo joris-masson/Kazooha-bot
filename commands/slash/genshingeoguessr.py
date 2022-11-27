@@ -28,6 +28,11 @@ class GenshinGeoguessr(interactions.Extension):
                 name="soumettre_nouvelle_image",
                 description="Soumettre une photo d'un lieu",
                 type=interactions.OptionType.SUB_COMMAND
+            ),
+            interactions.Option(
+                name="aide",
+                description="Comment qu'il marche ce jeu?",
+                type=interactions.OptionType.SUB_COMMAND
             )
         ],
         scope=952557533514592286
@@ -35,6 +40,8 @@ class GenshinGeoguessr(interactions.Extension):
     async def genshin_geoguessr(self, ctx: interactions.CommandContext, sub_command: str):
         if sub_command == "soumettre_nouvelle_image":
             await self.soumettre(ctx)
+        elif sub_command == "aide":
+            await self.help(ctx)
 
     async def soumettre(self, ctx: interactions.CommandContext):
         """
@@ -47,6 +54,41 @@ class GenshinGeoguessr(interactions.Extension):
         le_salon_de_demande = DemandChannel(self.client, ctx, verif_channel)
         await le_salon_de_demande.send_demand_msg()
         self.demand_channels.append(le_salon_de_demande)
+
+    async def help(self, ctx: interactions.CommandContext):
+        help_embed = interactions.Embed(
+            title="Alors, vous vous demandez comment qu'on joue hein",
+            description="Voici la commande d'aide, qui va vous expliquer les règles et le comment que tout ça ça marche!"
+        )
+
+        help_embed.add_field(
+            name="Tous les jours, une nouvelle image d'un lieu",
+            value="Et oui, tous les jours, vous aurez une nouvelle photo(belle ou non, c'est à vous de juger <:NE_yaeSmug:955592857765421166>)."
+                  "Et vous devrez identifier le lieu présent sur la photo!"
+        )
+
+        help_embed.add_field(
+            name="...Et après?!",
+            value="Et après, vous prenez votre map dans le jeu, et vous marquez avec un marqueur l'endroit présent dans la photo."
+                  "Le marqueur doit être à l'endroit d'**où est prise la photo**"
+                  "Une fois votre marqueur posé, prenez un screen et chargez le avec le petit **+**, sans l'envoyer, marquez !guess, et envovez le tout!"
+                  ""
+                  "Après tout ceci, nos modérateurs s'occuperont de vous départager!"
+        )
+
+        help_embed.add_field(
+            name="Vous pouvez envoyer vos propres photo!",
+            value="ET OUI ~~JAMIE~~!!"
+                  "Vous avez accès à une commande: </genshin_geoguessr soumettre_nouvelle_image:1046515635812827277>"
+                  "Qui vous permettra tout simplement d'envoyer vos propres images!"
+                  ""
+                  "Pour ce faire, commencez déjà par lancer cette commande, puis ensuite, un fil pour vous sera créé, envoyez votre image dedans, et les modérateurs se chargeront de déciser si, oui ou non, cette image sera enregistrée."
+                  ""
+                  "Condition:"
+                  "    -l'image ne doit pas contenir de minimap"
+        )
+
+        await ctx.send(embeds=help_embed)
 
     @interactions.extension_component("but_accept")
     async def accept_handler(self, ctx: interactions.ComponentContext):
