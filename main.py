@@ -56,7 +56,7 @@ async def on_message_create(msg: interactions.Message):
 
 
 async def guess(msg: interactions.Message):
-    send_channel = await interactions.get(kazooha, interactions.Channel, object_id=1046076775442174033)
+    send_channel = await interactions.get(kazooha, interactions.Channel, object_id=1046514872826986517)
     embed = interactions.Embed(
         title="Nouveau guess soumis!",
         description=f"Soumis par: <@{msg.author.id}>"
