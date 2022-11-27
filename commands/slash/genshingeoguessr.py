@@ -57,7 +57,7 @@ class GenshinGeoguessr(interactions.Extension):
                 self.demand_channels.remove(demand_channel)
 
     async def method(self):
-        channel = await interactions.get(self.client, interactions.Channel, object_id=755427004110864465)
+        channel = await interactions.get(self.client, interactions.Channel, object_id=1046409306729353336)
         await channel.send("Je spam toutes les secondes")
 
 
