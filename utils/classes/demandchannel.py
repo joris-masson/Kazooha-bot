@@ -18,7 +18,7 @@ class DemandChannel:
     async def send_demand_msg(self):
         embed = interactions.Embed(
             title="Nouvelle demande d'image soumise!",
-            description=f"Image soumise par: <@{self.ctx.author.id}>\n*Veuillez ne pas envoyer d'autres images que votre soumission SVP*"
+            description=f"Image soumise par: <@{self.ctx.author.id}>\nEnvoyez ici votre image!\n*Veuillez ne pas envoyer d'autres images que votre soumission SVP*"
         )
 
         button_accept = interactions.Button(

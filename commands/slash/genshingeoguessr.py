@@ -5,7 +5,7 @@ import interactions
 
 from utils.classes.demandchannel import DemandChannel
 from utils.func import save_attachment
-from utils.functions import log
+from utils.functions import log, has_role
 from interactions.ext.tasks import IntervalTrigger, create_task
 from random import randint
 from datetime import datetime
@@ -96,22 +96,28 @@ class GenshinGeoguessr(interactions.Extension):
 
     @interactions.extension_component("but_accept")
     async def accept_handler(self, ctx: interactions.ComponentContext):
-        demand_channel = self.get_demand_channel(int(ctx.channel.name))
-        image_message = await self.get_image_message(demand_channel, )
-        await ctx.send("Image acceptée", ephemeral=True)
-        if not os.path.exists(f"data/games/geoguessr/submissions/{demand_channel.ctx.author.id}.png"):
-            await save_attachment(self.client, image_message.attachments[0], f"data/games/geoguessr/submissions/{demand_channel.ctx.author.id}.png")
+        if has_role(ctx.author, 952595865846046750) or has_role(ctx.author, 956165233536294942):
+            demand_channel = self.get_demand_channel(int(ctx.channel.name))
+            image_message = await self.get_image_message(demand_channel, )
+            await ctx.send("Image acceptée", ephemeral=True)
+            if not os.path.exists(f"data/games/geoguessr/submissions/{demand_channel.ctx.author.id}.png"):
+                await save_attachment(self.client, image_message.attachments[0], f"data/games/geoguessr/submissions/{demand_channel.ctx.author.id}.png")
+            else:
+                for i in range(1, 101):
+                    if not os.path.exists(f"data/games/geoguessr/submissions/{demand_channel.ctx.author.id}_{i}.png"):
+                        await save_attachment(self.client, image_message.attachments[0], f"data/games/geoguessr/submissions/{demand_channel.ctx.author.id}_{i}.png")
+                        break
+            await self.delete_demand_channel(int(ctx.channel.name))
         else:
-            for i in range(1, 101):
-                if not os.path.exists(f"data/games/geoguessr/submissions/{demand_channel.ctx.author.id}_{i}.png"):
-                    await save_attachment(self.client, image_message.attachments[0], f"data/games/geoguessr/submissions/{demand_channel.ctx.author.id}_{i}.png")
-                    break
-        await self.delete_demand_channel(int(ctx.channel.name))
+            await ctx.send("Désolé, vous n'êtes pas autorisé à faire cela.", ephemeral=True)
 
     @interactions.extension_component("but_refuse")
     async def refuse_handler(self, ctx: interactions.ComponentContext):
-        await ctx.send("Image refusée", ephemeral=True)
-        await self.delete_demand_channel(int(ctx.channel.name))
+        if has_role(ctx.author, 952595865846046750) or has_role(ctx.author, 956165233536294942):
+            await ctx.send("Image refusée", ephemeral=True)
+            await self.delete_demand_channel(int(ctx.channel.name))
+        else:
+            await ctx.send("Désolé, vous n'êtes pas autorisé à faire cela.", ephemeral=True)
 
     async def delete_demand_channel(self, author_id: int):
         demand_channel = self.get_demand_channel(author_id)

@@ -6,6 +6,7 @@ import saucenao_api
 import imagehash
 import re
 import os
+import interactions
 
 from saucenao_api import SauceNao
 from saucenao_api.errors import LongLimitReachedError, ShortLimitReachedError
@@ -118,3 +119,10 @@ def index_of(thing, liste: list) -> int:
             return i
     else:
         return -1
+
+
+def has_role(user: interactions.Member, role_id: int) -> bool:
+    for user_role in user.roles:
+        if user_role == role_id:
+            return True
+    return False
