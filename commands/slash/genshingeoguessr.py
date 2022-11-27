@@ -1,8 +1,13 @@
 # prog par Dr.Emma(retire ça et jte pete les genoux)
+import os
+
 import interactions
 
 from utils.classes.demandchannel import DemandChannel
+from utils.func import save_attachment
 from interactions.ext.tasks import IntervalTrigger, create_task
+from random import randint
+from datetime import datetime
 
 
 class GenshinGeoguessr(interactions.Extension):
@@ -11,8 +16,8 @@ class GenshinGeoguessr(interactions.Extension):
         self.demand_channels = []
         self.guess_channel = interactions.Channel
 
-        #self.method = create_task(IntervalTrigger(1))(self.method)
-        #self.method.start()
+        self.method = create_task(IntervalTrigger(10))(self.method)
+        self.method.start()
 
     @interactions.extension_command(
         name="genshin_geoguessr",
@@ -22,7 +27,8 @@ class GenshinGeoguessr(interactions.Extension):
                 description="Soumettre une photo d'un lieu",
                 type=interactions.OptionType.SUB_COMMAND
             )
-        ]
+        ],
+        scope=952557533514592286
     )
     async def genshin_geoguessr(self, ctx: interactions.CommandContext, sub_command: str):
         if sub_command == "soumettre_nouvelle_image":
@@ -42,7 +48,16 @@ class GenshinGeoguessr(interactions.Extension):
 
     @interactions.extension_component("but_accept")
     async def accept_handler(self, ctx: interactions.ComponentContext):
+        demand_channel = self.get_demand_channel(int(ctx.channel.name))
+        image_message = await self.get_image_message(demand_channel, )
         await ctx.send("Image acceptée", ephemeral=True)
+        if not os.path.exists(f"data/games/geoguessr/submissions/{demand_channel.ctx.author.id}.png"):
+            await save_attachment(self.client, image_message.attachments[0], f"data/games/geoguessr/submissions/{demand_channel.ctx.author.id}.png")
+        else:
+            for i in range(1, 101):
+                if not os.path.exists(f"data/games/geoguessr/submissions/{demand_channel.ctx.author.id}_{i}.png"):
+                    await save_attachment(self.client, image_message.attachments[0], f"data/games/geoguessr/submissions/{demand_channel.ctx.author.id}_{i}.png")
+                    break
         await self.delete_demand_channel(int(ctx.channel.name))
 
     @interactions.extension_component("but_refuse")
@@ -51,14 +66,34 @@ class GenshinGeoguessr(interactions.Extension):
         await self.delete_demand_channel(int(ctx.channel.name))
 
     async def delete_demand_channel(self, author_id: int):
+        demand_channel = self.get_demand_channel(author_id)
+        await demand_channel.delete()
+        self.demand_channels.remove(demand_channel)
+
+    def get_demand_channel(self, author_id: int) -> DemandChannel or None:
         for demand_channel in self.demand_channels:
             if demand_channel.ID == author_id:
-                await demand_channel.delete()
-                self.demand_channels.remove(demand_channel)
+                return demand_channel
+        return None
+
+    async def get_image_message(self, demand_channel: DemandChannel) -> interactions.Message:
+        for message in await demand_channel.channel.history(start_at=demand_channel.demand_message.id, reverse=True).flatten():
+            if len(message.attachments) == 1 and message.attachments[0].content_type.startswith("image"):
+                return message
 
     async def method(self):
-        channel = await interactions.get(self.client, interactions.Channel, object_id=1046409306729353336)
-        await channel.send("<@783075596280004659> c'est cadeau")
+        if 8 <= datetime.now().hour < 9:
+            channel = await interactions.get(self.client, interactions.Channel, object_id=1046514872826986517)
+            images = os.listdir(r"data/games/geoguessr/submissions")
+            if len(images) != 0:
+                image_name = images[randint(0, len(images) - 1)]
+                ze_file = interactions.File(rf"data/games/geoguessr/submissions/{image_name}")
+                embed = interactions.Embed(
+                    title="Nouvelle image!",
+                    description="C'est maintenant à vous de jouer :eyes:"
+                )
+                embed.set_image(url=f"attachment://{image_name}")
+                await channel.send(embeds=embed, files=ze_file)
 
 
 def setup(client):
