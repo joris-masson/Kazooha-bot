@@ -19,6 +19,8 @@ class GenshinGeoguessr(interactions.Extension):
         self.method = create_task(IntervalTrigger(10))(self.method)
         self.method.start()
 
+        self.start_hour = 21
+
     @interactions.extension_command(
         name="genshin_geoguessr",
         options=[
@@ -82,7 +84,7 @@ class GenshinGeoguessr(interactions.Extension):
                 return message
 
     async def method(self):
-        if 8 <= datetime.now().hour < 9:
+        if self.start_hour <= datetime.now().hour < self.start_hour + 1:
             channel = await interactions.get(self.client, interactions.Channel, object_id=1046514872826986517)
             images = os.listdir(r"data/games/geoguessr/submissions")
             if len(images) != 0:
