@@ -88,7 +88,7 @@ class GenshinGeoguessr(interactions.Extension):
                   "    -l'image ne doit pas contenir de minimap"
         )
 
-        await ctx.send(embeds=help_embed)
+        await ctx.send(embeds=help_embed, ephemeral=True)
 
     @interactions.extension_component("but_accept")
     async def accept_handler(self, ctx: interactions.ComponentContext):
