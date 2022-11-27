@@ -71,13 +71,13 @@ class GenshinGeoguessr(interactions.Extension):
             name="...Et après?!",
             value="Et après, vous prenez votre map dans le jeu, et vous marquez avec un marqueur l'endroit présent dans la photo.\n"
                   "Le marqueur doit être à l'endroit d'**où est prise la photo**\n"
-                  "Une fois votre marqueur posé, prenez un screen et chargez le avec le petit **+**, sans l'envoyer, marquez !guess, et envovez le tout!\n"
+                  "Une fois votre marqueur posé, prenez un screen et chargez le avec le petit **+**, sans l'envoyer, marquez `!guess`, et envovez le tout!\n"
                   "\n"
                   "Après tout ceci, nos modérateurs s'occuperont de vous départager!\n"
         )
 
         help_embed.add_field(
-            name="Vous pouvez envoyer vos propres photo!",
+            name="Vous pouvez envoyer vos propres photos!",
             value="ET OUI ~~JAMIE~~!!\n"
                   "Vous avez accès à une commande: </genshin_geoguessr soumettre_nouvelle_image:1046515635812827277>\n"
                   "Qui vous permettra tout simplement d'envoyer vos propres images!\n"

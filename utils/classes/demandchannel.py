@@ -31,7 +31,7 @@ class DemandChannel:
             custom_id="but_refuse",
             style=4
         )
-        self.demand_message = await self.channel.send(f"<@{self.ctx.author.id}>", embeds=embed, components=interactions.spread_to_rows(button_accept, button_refuse))
+        self.demand_message = await self.channel.send(f"<@&952595865846046750>\n<@&956165233536294942>\n<@{self.ctx.author.id}>", embeds=embed, components=interactions.spread_to_rows(button_accept, button_refuse))
         await self.ctx.send(f"Un fil a été créé: <#{self.channel.id}>", ephemeral=True)
 
     async def save_image(self):
