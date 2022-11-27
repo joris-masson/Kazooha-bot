@@ -24,10 +24,18 @@ class DossiersConfidentiels(Extension):
                     options=[
                         SelectOption(label="Alice", value="Alice"),
                         SelectOption(label="Asmoday", value="Asmoday"),
+                        SelectOption(label="Colombina", value="Colombina"),
                         SelectOption(label="Dainsleif", value="Dainsleif"),
+                        SelectOption(label="Istaroth", value="Istaroth"),
+                        SelectOption(label="La Mère de la Nuit", value="Night_mother"),
+                        SelectOption(label="Le Sibling", value="Traveler_sibling"),
+                        SelectOption(label="Le Traveler", value="Travelep"),
                         SelectOption(label="Paimon", value="Paimon"),
                         SelectOption(label="Phanes", value="Phanes"),
+                        SelectOption(label="Pierro", value="Pierro"),
+                        SelectOption(label="Pushpavatika", value="Pushpavatika"),
                         SelectOption(label="Rhinedottir", value="Rhinedottir"),
+
                     ],
                     custom_id="sel_dossiers",
                 )
