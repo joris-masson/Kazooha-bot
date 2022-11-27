@@ -41,10 +41,10 @@ class GenshinGeoguessr(interactions.Extension):
     )
     async def genshin_geoguessr(self, ctx: interactions.CommandContext, sub_command: str):
         if sub_command == "soumettre_nouvelle_image":
-            log(f"{__name__} -> soumettre_nouvelle_image utilisé")
+            log(f"{__name__} -> soumettre_nouvelle_image utilisé par @{ctx.author.name}({ctx.author.id}) dans #{ctx.channel.name}({ctx.channel.id}) sur le serveur {ctx.guild.name}({ctx.guild.id})")
             await self.soumettre(ctx)
         elif sub_command == "aide":
-            log(f"{__name__} -> aide utilisé")
+            log(f"{__name__} -> aide utilisé par @{ctx.author.name}({ctx.author.id}) dans #{ctx.channel.name}({ctx.channel.id}) sur le serveur {ctx.guild.name}({ctx.guild.id})")
             await self.help(ctx)
 
     async def soumettre(self, ctx: interactions.CommandContext):
@@ -54,13 +54,13 @@ class GenshinGeoguessr(interactions.Extension):
         bouton oui: enregistre dans un rep commun l image et des infos autour(auteur)
         //     non: envoie un dm à l auteur(ou ailleurs) pour annoncer refus
         """
-        if not (ctx.channel.type == interactions.ChannelType.PRIVATE_THREAD and ctx.channel.type == interactions.ChannelType.PUBLIC_THREAD):
+        try:
             verif_channel = await ctx.channel.create_thread(f"{ctx.author.id}", type=interactions.ChannelType.PRIVATE_THREAD)
             le_salon_de_demande = DemandChannel(self.client, ctx, verif_channel)
             await le_salon_de_demande.send_demand_msg()
             self.demand_channels.append(le_salon_de_demande)
-        else:
-            await ctx.send("Désolé, vous ne pouvez pas faire ça dans un fil", ephemeral=True)
+        except AttributeError:
+            await ctx.send("Désolé, vous ne pouvez pas faire ça dans un fil")
 
     async def help(self, ctx: interactions.CommandContext):
         help_embed = interactions.Embed(
