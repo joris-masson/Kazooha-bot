@@ -11,8 +11,8 @@ class GenshinGeoguessr(interactions.Extension):
         self.demand_channels = []
         self.guess_channel = interactions.Channel
 
-        self.method = create_task(IntervalTrigger(1))(self.method)
-        self.method.start()
+        #self.method = create_task(IntervalTrigger(1))(self.method)
+        #self.method.start()
 
     @interactions.extension_command(
         name="genshin_geoguessr",
