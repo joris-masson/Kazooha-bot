@@ -16,7 +16,7 @@ class GenshinGeoguessr(interactions.Extension):
         self.demand_channels = []
         self.guess_channel = interactions.Channel
 
-        self.method = create_task(IntervalTrigger(10))(self.method)
+        self.method = create_task(IntervalTrigger(1800))(self.method)
         self.method.start()
 
         self.start_hour = 21
