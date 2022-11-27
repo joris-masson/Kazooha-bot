@@ -41,10 +41,10 @@ class GenshinGeoguessr(interactions.Extension):
     )
     async def genshin_geoguessr(self, ctx: interactions.CommandContext, sub_command: str):
         if sub_command == "soumettre_nouvelle_image":
-            log(f"{__name__} -> soumettre_nouvelle_image utilisé par @{ctx.author.name}({ctx.author.id}) dans #{ctx.channel.name}({ctx.channel.id}) sur le serveur {ctx.guild.name}({ctx.guild.id})")
+            log(f"{__name__} -> soumettre_nouvelle_image utilisé")
             await self.soumettre(ctx)
         elif sub_command == "aide":
-            log(f"{__name__} -> aide utilisé par @{ctx.author.name}({ctx.author.id}) dans #{ctx.channel.name}({ctx.channel.id}) sur le serveur {ctx.guild.name}({ctx.guild.id})")
+            log(f"{__name__} -> aide utilisé")
             await self.help(ctx)
 
     async def soumettre(self, ctx: interactions.CommandContext):
