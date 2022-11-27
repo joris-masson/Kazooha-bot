@@ -5,6 +5,7 @@ import interactions
 
 from utils.classes.demandchannel import DemandChannel
 from utils.func import save_attachment
+from utils.functions import log
 from interactions.ext.tasks import IntervalTrigger, create_task
 from random import randint
 from datetime import datetime
@@ -12,6 +13,7 @@ from datetime import datetime
 
 class GenshinGeoguessr(interactions.Extension):
     def __init__(self, client):
+        log(f"'{__name__}' initialisé")
         self.client: interactions.Client = client
         self.demand_channels = []
         self.guess_channel = interactions.Channel
@@ -39,8 +41,10 @@ class GenshinGeoguessr(interactions.Extension):
     )
     async def genshin_geoguessr(self, ctx: interactions.CommandContext, sub_command: str):
         if sub_command == "soumettre_nouvelle_image":
+            log(f"{__name__} -> soumettre_nouvelle_image utilisé par @{ctx.author.name}({ctx.author.id}) dans #{ctx.channel.name}({ctx.channel.id}) sur le serveur {ctx.guild.name}({ctx.guild.id})")
             await self.soumettre(ctx)
         elif sub_command == "aide":
+            log(f"{__name__} -> aide utilisé par @{ctx.author.name}({ctx.author.id}) dans #{ctx.channel.name}({ctx.channel.id}) sur le serveur {ctx.guild.name}({ctx.guild.id})")
             await self.help(ctx)
 
     async def soumettre(self, ctx: interactions.CommandContext):
