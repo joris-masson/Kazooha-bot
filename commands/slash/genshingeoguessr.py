@@ -2,19 +2,31 @@
 import interactions
 
 from utils.classes.demandchannel import DemandChannel
+from interactions.ext.tasks import IntervalTrigger, create_task
 
 
 class GenshinGeoguessr(interactions.Extension):
     def __init__(self, client):
         self.client: interactions.Client = client
         self.demand_channels = []
+        self.guess_channel = interactions.Channel
 
-    @interactions.extension_command(name="genshin_geoguessr", options=[interactions.Option(name="submit", description="Soumettre une photo d un lieu", type=interactions.OptionType.SUB_COMMAND), interactions.Option(name="guess", description="Soumettre votre idee de lieu present dans la photo", type=interactions.OptionType.SUB_COMMAND)])
+        self.method = create_task(IntervalTrigger(1))(self.method)
+        self.method.start()
+
+    @interactions.extension_command(
+        name="genshin_geoguessr",
+        options=[
+            interactions.Option(
+                name="soumettre_nouvelle_image",
+                description="Soumettre une photo d'un lieu",
+                type=interactions.OptionType.SUB_COMMAND
+            )
+        ]
+    )
     async def genshin_geoguessr(self, ctx: interactions.CommandContext, sub_command: str):
-        if sub_command == "submit":
+        if sub_command == "soumettre_nouvelle_image":
             await self.soumettre(ctx)
-        elif sub_command == "guess":
-            pass
 
     async def soumettre(self, ctx: interactions.CommandContext):
         """
@@ -27,14 +39,6 @@ class GenshinGeoguessr(interactions.Extension):
         le_salon_de_demande = DemandChannel(self.client, ctx, verif_channel)
         await le_salon_de_demande.send_demand_msg()
         self.demand_channels.append(le_salon_de_demande)
-
-    async def guess(self, ctx: interactions.CommandContext):
-        """
-        ctx doit contenir image de carte
-        envoie dans salon/fil dedie l image et ping la personne l ayant proposee
-        demerdez vous pour comparer les res de tout le monde
-        """
-        pass
 
     @interactions.extension_component("but_accept")
     async def accept_handler(self, ctx: interactions.ComponentContext):
@@ -51,6 +55,10 @@ class GenshinGeoguessr(interactions.Extension):
             if demand_channel.ID == author_id:
                 await demand_channel.delete()
                 self.demand_channels.remove(demand_channel)
+
+    async def method(self):
+        channel = await interactions.get(self.client, interactions.Channel, object_id=755427004110864465)
+        await channel.send("Je spam toutes les secondes")
 
 
 def setup(client):
