@@ -58,7 +58,7 @@ class GenshinGeoguessr(interactions.Extension):
 
     async def method(self):
         channel = await interactions.get(self.client, interactions.Channel, object_id=1046409306729353336)
-        await channel.send("Je spam toutes les secondes")
+        await channel.send("<@783075596280004659> c'est cadeau")
 
 
 def setup(client):
