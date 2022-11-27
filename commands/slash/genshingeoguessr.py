@@ -63,28 +63,28 @@ class GenshinGeoguessr(interactions.Extension):
 
         help_embed.add_field(
             name="Tous les jours, une nouvelle image d'un lieu",
-            value="Et oui, tous les jours, vous aurez une nouvelle photo(belle ou non, c'est à vous de juger <:NE_yaeSmug:955592857765421166>)."
+            value="Et oui, tous les jours, vous aurez une nouvelle photo(belle ou non, c'est à vous de juger <:NE_yaeSmug:955592857765421166>).\n"
                   "Et vous devrez identifier le lieu présent sur la photo!"
         )
 
         help_embed.add_field(
             name="...Et après?!",
-            value="Et après, vous prenez votre map dans le jeu, et vous marquez avec un marqueur l'endroit présent dans la photo."
-                  "Le marqueur doit être à l'endroit d'**où est prise la photo**"
-                  "Une fois votre marqueur posé, prenez un screen et chargez le avec le petit **+**, sans l'envoyer, marquez !guess, et envovez le tout!"
-                  ""
-                  "Après tout ceci, nos modérateurs s'occuperont de vous départager!"
+            value="Et après, vous prenez votre map dans le jeu, et vous marquez avec un marqueur l'endroit présent dans la photo.\n"
+                  "Le marqueur doit être à l'endroit d'**où est prise la photo**\n"
+                  "Une fois votre marqueur posé, prenez un screen et chargez le avec le petit **+**, sans l'envoyer, marquez !guess, et envovez le tout!\n"
+                  "\n"
+                  "Après tout ceci, nos modérateurs s'occuperont de vous départager!\n"
         )
 
         help_embed.add_field(
             name="Vous pouvez envoyer vos propres photo!",
-            value="ET OUI ~~JAMIE~~!!"
-                  "Vous avez accès à une commande: </genshin_geoguessr soumettre_nouvelle_image:1046515635812827277>"
-                  "Qui vous permettra tout simplement d'envoyer vos propres images!"
-                  ""
-                  "Pour ce faire, commencez déjà par lancer cette commande, puis ensuite, un fil pour vous sera créé, envoyez votre image dedans, et les modérateurs se chargeront de déciser si, oui ou non, cette image sera enregistrée."
-                  ""
-                  "Condition:"
+            value="ET OUI ~~JAMIE~~!!\n"
+                  "Vous avez accès à une commande: </genshin_geoguessr soumettre_nouvelle_image:1046515635812827277>\n"
+                  "Qui vous permettra tout simplement d'envoyer vos propres images!\n"
+                  "\n"
+                  "Pour ce faire, commencez déjà par lancer cette commande, puis ensuite, un fil pour vous sera créé, envoyez votre image dedans, et les modérateurs se chargeront de déciser si, oui ou non, cette image sera enregistrée.\n"
+                  "\n"
+                  "Condition:\n"
                   "    -l'image ne doit pas contenir de minimap"
         )
 
