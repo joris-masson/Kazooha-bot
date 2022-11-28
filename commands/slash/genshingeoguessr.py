@@ -153,7 +153,7 @@ class GenshinGeoguessr(interactions.Extension):
                 ze_file = interactions.File(rf"data/games/geoguessr/submissions/{image_name}")
                 embed = interactions.Embed(
                     title="Nouvelle image!",
-                    description="C'est maintenant à vous de jouer :eyes:"
+                    description=f"Image soumise par <@{image_name[:18]}>\nC'est maintenant à vous de jouer :eyes:"
                 )
                 embed.set_image(url=f"attachment://{image_name}")
                 await channel.send(embeds=embed, files=ze_file)
