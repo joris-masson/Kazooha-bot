@@ -161,7 +161,6 @@ class GenshinGeoguessr(interactions.Extension):
                 self.last_day = datetime.now()
 
     def is_same_day(self):
-        print(datetime.now().day, self.last_day.day)
         return datetime.now().day == self.last_day.day
 
 
