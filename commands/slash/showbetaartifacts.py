@@ -1,18 +1,23 @@
+import os
+
 from interactions import Extension, Client, extension_command, CommandContext, SelectMenu, SelectOption, Embed, extension_component, ComponentContext
 from interactions.ext.paginator import Page, Paginator
 from utils.functions import log
 from data.dico_artifacts import dico_artifacts
+from dotenv import load_dotenv
 
 
 class ShowBetaArtifacts(Extension):
     def __init__(self, client):
         log(f"'{__name__}' initialisé")
+        load_dotenv()
+
         self.client: Client = client
 
     @extension_command(
         name="afficher_les_artefacts_beta",
         description="Affiche une liste des sets d'artéfacts, sélectionnez en un, et vous pourrez lire le lore autour!",
-        scope=[950118071425724466]
+        scope=os.getenv("BETA_GUILD")
     )
     async def show_quest_books(self, ctx: CommandContext):
         try:

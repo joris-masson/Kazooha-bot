@@ -126,3 +126,10 @@ def has_role(user: interactions.Member, role_id: int) -> bool:
         if user_role == role_id:
             return True
     return False
+
+
+def has_at_least_one_role(user: interactions.Member, role_id_list: list[int]) -> bool:
+    for role in role_id_list:
+        if has_role(user, role):
+            return True
+    return False

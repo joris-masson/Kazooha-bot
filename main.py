@@ -4,7 +4,6 @@ import interactions
 from dotenv import load_dotenv
 from discord_components import DiscordComponents
 from utils.func import detect_message
-from datetime import datetime
 from utils.classes.ledrgb import LedRgb
 
 load_dotenv()  # prépare le chargement du token
@@ -56,7 +55,7 @@ async def on_message_create(msg: interactions.Message):
 
 
 async def guess(msg: interactions.Message):
-    send_channel = await interactions.get(kazooha, interactions.Channel, object_id=1046514872826986517)
+    send_channel = await interactions.get(kazooha, interactions.Channel, object_id=int(os.getenv("SEND_CHANNEL")))
     embed = interactions.Embed(
         title="Nouveau guess soumis!",
         description=f"Soumis par: <@{msg.author.id}>"

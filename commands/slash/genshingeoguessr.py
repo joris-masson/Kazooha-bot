@@ -5,15 +5,18 @@ import interactions
 
 from utils.classes.demandchannel import DemandChannel
 from utils.func import save_attachment
-from utils.functions import log, has_role
+from utils.functions import log, has_at_least_one_role
 from interactions.ext.tasks import IntervalTrigger, create_task
 from random import randint
 from datetime import datetime
+from dotenv import load_dotenv
 
 
 class GenshinGeoguessr(interactions.Extension):
     def __init__(self, client):
         log(f"'{__name__}' initialisé")
+        load_dotenv()
+
         self.client: interactions.Client = client
         self.demand_channels = []
         self.guess_channel = interactions.Channel
@@ -37,15 +40,19 @@ class GenshinGeoguessr(interactions.Extension):
                 type=interactions.OptionType.SUB_COMMAND
             )
         ],
-        scope=952557533514592286
+        scope=int(os.getenv("GENSHIN_GEOGUESSR_GUILD"))
     )
     async def genshin_geoguessr(self, ctx: interactions.CommandContext, sub_command: str):
-        if sub_command == "soumettre_nouvelle_image":
-            log(f"{__name__} -> soumettre_nouvelle_image utilisé par @{ctx.author.name}({ctx.author.id}) dans #{ctx.channel.name}({ctx.channel.id}) sur le serveur {ctx.guild.name}({ctx.guild.id})")
-            await self.soumettre(ctx)
-        elif sub_command == "aide":
-            log(f"{__name__} -> aide utilisé par @{ctx.author.name}({ctx.author.id}) dans #{ctx.channel.name}({ctx.channel.id}) sur le serveur {ctx.guild.name}({ctx.guild.id})")
-            await self.help(ctx)
+        channel = await interactions.get(self.client, interactions.Channel, object_id=int(ctx.channel_id))
+        if channel.type != interactions.ChannelType.PRIVATE_THREAD and channel.type != interactions.ChannelType.PUBLIC_THREAD:
+            if sub_command == "soumettre_nouvelle_image":
+                log(f"{__name__} -> soumettre_nouvelle_image utilisé par @{ctx.author.name}({ctx.author.id}) dans #{ctx.channel.name}({ctx.channel.id}) sur le serveur {ctx.guild.name}({ctx.guild.id})")
+                await self.soumettre(ctx)
+            elif sub_command == "aide":
+                log(f"{__name__} -> aide utilisé par @{ctx.author.name}({ctx.author.id}) dans #{ctx.channel.name}({ctx.channel.id}) sur le serveur {ctx.guild.name}({ctx.guild.id})")
+                await self.help(ctx)
+        else:
+            await ctx.send("Cette commande n'est pas utilisable dans un fil", ephemeral=True)
 
     async def soumettre(self, ctx: interactions.CommandContext):
         """
@@ -54,6 +61,7 @@ class GenshinGeoguessr(interactions.Extension):
         bouton oui: enregistre dans un rep commun l image et des infos autour(auteur)
         //     non: envoie un dm à l auteur(ou ailleurs) pour annoncer refus
         """
+
         verif_channel = await ctx.channel.create_thread(f"{ctx.author.id}", type=interactions.ChannelType.PRIVATE_THREAD)
         le_salon_de_demande = DemandChannel(self.client, ctx, verif_channel)
         await le_salon_de_demande.send_demand_msg()
@@ -96,7 +104,7 @@ class GenshinGeoguessr(interactions.Extension):
 
     @interactions.extension_component("but_accept")
     async def accept_handler(self, ctx: interactions.ComponentContext):
-        if has_role(ctx.author, 952595865846046750) or has_role(ctx.author, 956165233536294942):
+        if has_at_least_one_role(ctx.author, [952595865846046750, 956165233536294942, 967155907937042462]):
             demand_channel = self.get_demand_channel(int(ctx.channel.name))
             image_message = await self.get_image_message(demand_channel, )
             await ctx.send("Image acceptée", ephemeral=True)
@@ -113,7 +121,7 @@ class GenshinGeoguessr(interactions.Extension):
 
     @interactions.extension_component("but_refuse")
     async def refuse_handler(self, ctx: interactions.ComponentContext):
-        if has_role(ctx.author, 952595865846046750) or has_role(ctx.author, 956165233536294942):
+        if has_at_least_one_role(ctx.author, [952595865846046750, 956165233536294942, 967155907937042462]):
             await ctx.send("Image refusée", ephemeral=True)
             await self.delete_demand_channel(int(ctx.channel.name))
         else:
