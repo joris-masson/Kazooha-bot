@@ -145,7 +145,6 @@ class GenshinGeoguessr(interactions.Extension):
                 return message
 
     async def method(self):
-        print("hey")
         if (self.start_hour <= datetime.now().hour < self.start_hour + 1) and not self.is_same_day():
             channel = await interactions.get(self.client, interactions.Channel, object_id=int(os.getenv("IMAGE_CHANNEL_ID")))
             images = os.listdir(r"data/games/geoguessr/submissions")
