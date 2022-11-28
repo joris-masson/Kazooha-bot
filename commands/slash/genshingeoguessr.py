@@ -21,10 +21,11 @@ class GenshinGeoguessr(interactions.Extension):
         self.demand_channels = []
         self.guess_channel = interactions.Channel
 
-        self.method = create_task(IntervalTrigger(1800))(self.method)
+        self.method = create_task(IntervalTrigger(10))(self.method)
         self.method.start()
 
-        self.start_hour = 21
+        self.start_hour = 22
+        self.last_day = datetime(year=2022, month=11, day=datetime.now().day - 1)
 
     @interactions.extension_command(
         name="genshin_geoguessr",
@@ -144,8 +145,9 @@ class GenshinGeoguessr(interactions.Extension):
                 return message
 
     async def method(self):
-        if self.start_hour <= datetime.now().hour < self.start_hour + 1:
-            channel = await interactions.get(self.client, interactions.Channel, object_id=1046514872826986517)
+        print("hey")
+        if (self.start_hour <= datetime.now().hour < self.start_hour + 1) and not self.is_same_day():
+            channel = await interactions.get(self.client, interactions.Channel, object_id=int(os.getenv("IMAGE_CHANNEL_ID")))
             images = os.listdir(r"data/games/geoguessr/submissions")
             if len(images) != 0:
                 image_name = images[randint(0, len(images) - 1)]
@@ -156,6 +158,11 @@ class GenshinGeoguessr(interactions.Extension):
                 )
                 embed.set_image(url=f"attachment://{image_name}")
                 await channel.send(embeds=embed, files=ze_file)
+                self.last_day = datetime.now()
+
+    def is_same_day(self):
+        print(datetime.now().day, self.last_day.day)
+        return datetime.now().day == self.last_day.day
 
 
 def setup(client):
