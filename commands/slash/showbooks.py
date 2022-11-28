@@ -162,16 +162,18 @@ class ShowBooks(interactions.Extension):
             les_pages = []
             for embed in embeds:
                 les_pages.append(Page(embeds=embed))
-            await Paginator(
-                client=self.client,
-                ctx=ctx,
-                pages=les_pages,
-                disable_after_timeout=False,
-                use_select=False,
-                index=True
-            ).run()
+            try:
+                await Paginator(
+                    client=self.client,
+                    ctx=ctx,
+                    pages=les_pages,
+                    disable_after_timeout=False,
+                    use_select=False
+                ).run()
+            except interactions.api.LibraryException:
+                pass
         else:
-            await ctx.send(embeds=embeds)
+            await ctx.send(embeds=embeds, ephemeral=True)
 
 
 def setup(client):

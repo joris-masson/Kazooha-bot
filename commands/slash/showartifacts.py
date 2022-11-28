@@ -1,3 +1,5 @@
+import interactions
+
 from interactions import Extension, Client, extension_command, Option, OptionType, CommandContext, SelectMenu, SelectOption, Embed, extension_component, ComponentContext
 from interactions.ext.paginator import Page, Paginator
 from utils.functions import log
@@ -101,13 +103,16 @@ class ShowArtifacts(Extension):
         les_pages = []
         for embed in embeds:
             les_pages.append(Page(embeds=embed))
-        await Paginator(
-            client=self.client,
-            ctx=ctx,
-            pages=les_pages,
-            disable_after_timeout=False,
-            use_select=False
-        ).run()
+        try:
+            await Paginator(
+                client=self.client,
+                ctx=ctx,
+                pages=les_pages,
+                disable_after_timeout=False,
+                use_select=False
+            ).run()
+        except interactions.api.LibraryException:
+            pass
 
 
 def setup(client):

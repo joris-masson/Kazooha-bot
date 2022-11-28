@@ -4,7 +4,6 @@ import interactions
 from dotenv import load_dotenv
 from discord_components import DiscordComponents
 from utils.func import detect_message
-from utils.classes.ledrgb import LedRgb
 
 load_dotenv()  # prépare le chargement du token
 TOKEN = os.getenv("TOKEN")  # charge le token
@@ -23,8 +22,6 @@ kazooha = interactions.Client(
     )
 )
 DiscordComponents(kazooha)
-
-# ma_led = LedRgb(16, 20, 26)  # définition de la led
 
 
 kazooha.load('interactions.ext.files')
