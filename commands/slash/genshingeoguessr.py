@@ -24,8 +24,8 @@ class GenshinGeoguessr(interactions.Extension):
         self.method = create_task(IntervalTrigger(10))(self.method)
         self.method.start()
 
-        self.start_hour = 22
-        self.last_day = datetime(year=2022, month=11, day=datetime.now().day - 1)
+        self.start_hour = 8
+        self.last_day = datetime.now()
 
     @interactions.extension_command(
         name="genshin_geoguessr",
@@ -151,10 +151,16 @@ class GenshinGeoguessr(interactions.Extension):
             if len(images) != 0:
                 image_name = images[randint(0, len(images) - 1)]
                 ze_file = interactions.File(rf"data/games/geoguessr/submissions/{image_name}")
-                embed = interactions.Embed(
-                    title="Nouvelle image!",
-                    description=f"Image soumise par <@{image_name[:18]}>\nC'est maintenant à vous de jouer :eyes:"
-                )
+                if int(image_name[:18]) != 783075596280004659:
+                    embed = interactions.Embed(
+                        title="Nouvelle image!",
+                        description=f"Image soumise par <@{image_name[:18]}>\nC'est maintenant à vous de jouer :eyes:"
+                    )
+                else:
+                    embed = interactions.Embed(
+                        title="Nouvelle image!",
+                        description=f"Image soumise par <@{image_name[:18]}>(aka Claude <:NE_yaeSmug:955592857765421166>)\nC'est maintenant à vous de jouer :eyes:"
+                    )
                 embed.set_image(url=f"attachment://{image_name}")
                 await channel.send(embeds=embed, files=ze_file)
                 self.last_day = datetime.now()
