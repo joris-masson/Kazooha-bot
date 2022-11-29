@@ -151,7 +151,7 @@ class GenshinGeoguessr(interactions.Extension):
             if len(images) != 0:
                 image_name = images[randint(0, len(images) - 1)]
                 ze_file = interactions.File(rf"data/games/geoguessr/submissions/{image_name}")
-                if int(image_name[:18]) != 783075596280004659:
+                if True:  # int(image_name[:18]) != 783075596280004659:
                     embed = interactions.Embed(
                         title="Nouvelle image!",
                         description=f"Image soumise par <@{image_name[:18]}>\nC'est maintenant à vous de jouer :eyes:"
