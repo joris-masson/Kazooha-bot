@@ -24,8 +24,7 @@ class GenshinGeoguessr(interactions.Extension):
         self.method = create_task(IntervalTrigger(10))(self.method)
         self.method.start()
 
-        self.start_hour = 10
-        self.last_day = datetime.now()
+        self.start_hour = 19
 
     @interactions.extension_command(
         name="genshin_geoguessr",
@@ -153,22 +152,19 @@ class GenshinGeoguessr(interactions.Extension):
             if len(images) != 0:
                 image_name = images[randint(0, len(images) - 1)]
                 ze_file = interactions.File(rf"data/games/geoguessr/submissions/{image_name}")
-                if True:  # int(image_name[:18]) != 783075596280004659:
-                    embed = interactions.Embed(
-                        title="Nouvelle image!",
-                        description=f"Image soumise par <@{image_name[:18]}>\nC'est maintenant à vous de jouer :eyes:"
-                    )
-                else:
-                    embed = interactions.Embed(
-                        title="Nouvelle image!",
-                        description=f"Image soumise par <@{image_name[:18]}>(aka Claude <:NE_yaeSmug:955592857765421166>)\nC'est maintenant à vous de jouer :eyes:"
-                    )
+                embed = interactions.Embed(
+                    title="Nouvelle image!",
+                    description=f"Image soumise par <@{image_name[:18]}>\nC'est maintenant à vous de jouer :eyes:"
+                )
                 embed.set_image(url=f"attachment://{image_name}")
                 await channel.send(embeds=embed, files=ze_file)
-                self.last_day = datetime.now()
+                with open(rf"data/games/geoguessr/last_day.txt", 'w') as last_day_file:
+                    last_day_file.write(str(datetime.now().day))
+                os.rename(rf"data/games/geoguessr/submissions/{image_name}", rf"data/games/geoguessr/used/{image_name}")
 
     def is_same_day(self):
-        return datetime.now().day == self.last_day.day
+        with open(rf"data/games/geoguessr/last_day.txt", 'r') as last_day_file:
+            return datetime.now().day == int(last_day_file.readlines()[0])
 
 
 def setup(client):
