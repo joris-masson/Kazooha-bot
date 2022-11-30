@@ -24,7 +24,7 @@ class GenshinGeoguessr(interactions.Extension):
         self.method = create_task(IntervalTrigger(10))(self.method)
         self.method.start()
 
-        self.start_hour = 13
+        self.start_hour = 10
         self.last_day = datetime.now()
 
     @interactions.extension_command(
@@ -62,11 +62,13 @@ class GenshinGeoguessr(interactions.Extension):
         bouton oui: enregistre dans un rep commun l image et des infos autour(auteur)
         //     non: envoie un dm à l auteur(ou ailleurs) pour annoncer refus
         """
-
-        verif_channel = await ctx.channel.create_thread(f"{ctx.author.id}", type=interactions.ChannelType.PRIVATE_THREAD)
-        le_salon_de_demande = DemandChannel(self.client, ctx, verif_channel)
-        await le_salon_de_demande.send_demand_msg()
-        self.demand_channels.append(le_salon_de_demande)
+        if self.get_demand_channel(int(ctx.author.id)) is None:
+            verif_channel = await ctx.channel.create_thread(f"{ctx.author.id}", type=interactions.ChannelType.PRIVATE_THREAD)
+            le_salon_de_demande = DemandChannel(self.client, ctx, verif_channel)
+            await le_salon_de_demande.send_demand_msg()
+            self.demand_channels.append(le_salon_de_demande)
+        else:
+            await ctx.send("Vous avez déjà une soumission en cours", ephemeral=True)
 
     async def help(self, ctx: interactions.CommandContext):
         help_embed = interactions.Embed(
