@@ -188,7 +188,7 @@ class GenshinGeoguessr(interactions.Extension):
                     description=f"Image soumise par <@{image_name[:18]}>\nC'est maintenant à vous de jouer :eyes:"
                 )
                 embed.set_image(url=f"attachment://{image_name}")
-                await channel.send(embeds=embed, files=ze_file)
+                await channel.send("<@&1048002214255403088>", embeds=embed, files=ze_file)
                 with open(rf"data/games/geoguessr/last_day.txt", 'w') as last_day_file:
                     last_day_file.write(str(datetime.now().day))
                 os.rename(rf"data/games/geoguessr/submissions/{image_name}", rf"data/games/geoguessr/used/{image_name}")
