@@ -38,7 +38,12 @@ class GenshinGeoguessr(interactions.Extension):
                 name="aide",
                 description="Comment qu'il marche ce jeu?",
                 type=interactions.OptionType.SUB_COMMAND
-            )
+            ),
+            interactions.Option(
+                name="leaderboard",
+                description="Qui est en tête?",
+                type=interactions.OptionType.SUB_COMMAND
+            ),
         ],
         scope=int(os.getenv("GENSHIN_GEOGUESSR_GUILD"))
     )
@@ -51,6 +56,9 @@ class GenshinGeoguessr(interactions.Extension):
             elif sub_command == "aide":
                 log(f"{__name__} -> aide utilisé par @{ctx.author.name}({ctx.author.id}) dans #{ctx.channel.name}({ctx.channel.id}) sur le serveur {ctx.guild.name}({ctx.guild.id})")
                 await self.help(ctx)
+            elif sub_command == 'leaderboard':
+                log(f"{__name__} -> leaderboard utilisé par @{ctx.author.name}({ctx.author.id}) dans #{ctx.channel.name}({ctx.channel.id}) sur le serveur {ctx.guild.name}({ctx.guild.id})")
+                await self.leaderboard(ctx)
         else:
             await ctx.send("Cette commande n'est pas utilisable dans un fil", ephemeral=True)
 
@@ -103,6 +111,22 @@ class GenshinGeoguessr(interactions.Extension):
         )
 
         await ctx.send(embeds=help_embed, ephemeral=True)
+
+    async def leaderboard(self, ctx: interactions.CommandContext):
+        embed = interactions.Embed(
+            title="Leaderboard",
+            description="""
+            <@511484678960840705> -> 3
+            <@825808732926902282> -> 3
+            <@327923326146183168> -> 3
+            """
+        )
+        embed.add_field(
+            name="Comment sont calculés les points?",
+            value="Tout simplement:\n-au bon endroit: 3 points\n-dans la zone: 2 points\n-à l'Ouest: 1 point(la participation est importante <:NE_kleeTeri:952560478561927168>"
+        )
+
+        await ctx.send(embeds=embed, ephemeral=True)
 
     @interactions.extension_component("but_accept")
     async def accept_handler(self, ctx: interactions.ComponentContext):
