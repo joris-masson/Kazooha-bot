@@ -110,20 +110,27 @@ class GenshinGeoguessr(interactions.Extension):
                   "    -l'image ne doit pas contenir de minimap"
         )
 
+        help_embed.add_field(
+            name="Pour voir vos points",
+            value="La commande </genshin_geoguessr leaderboard:1046515635812827277> est là pour vous :eyes:"
+        )
+
         await ctx.send(embeds=help_embed, ephemeral=True)
 
     async def leaderboard(self, ctx: interactions.CommandContext):
         embed = interactions.Embed(
-            title="Leaderboard",
-            description="""
-            <@511484678960840705> -> 3
-            <@825808732926902282> -> 3
-            <@327923326146183168> -> 3
+            title="__Leaderboard__",
+            description=f"""
+            <@511484678960840705> -> {(3 + 5)}
+            <@825808732926902282> -> {(3 + 4)}
+            <@327923326146183168> -> {(3 + 3)}
             """
         )
         embed.add_field(
             name="Comment sont calculés les points?",
-            value="Tout simplement:\n-au bon endroit: 3 points\n-dans la zone: 2 points\n-à l'Ouest: 1 point(la participation est importante <:NE_kleeTeri:952560478561927168>"
+            value="Tout simplement:\n-au bon endroit: 3 points\n-dans la zone: 2 points\n-à l'Ouest: 1 point(la participation est importante <:NE_kleeTeri:952560478561927168>)"
+                  "\n\n"
+                  "Et petit bonus aussi!\nLes 5 premières personnes à envoyer leur guess auront des points bonus, 5 points pour la première, 4 points pour la deuxième, etc..."
         )
 
         await ctx.send(embeds=embed, ephemeral=True)
