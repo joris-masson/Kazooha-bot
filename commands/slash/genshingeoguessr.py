@@ -1,4 +1,3 @@
-# prog par Dr.Emma(retire ça et jte pete les genoux)
 import os
 
 import interactions
@@ -63,12 +62,6 @@ class GenshinGeoguessr(interactions.Extension):
             await ctx.send("Cette commande n'est pas utilisable dans un fil", ephemeral=True)
 
     async def soumettre(self, ctx: interactions.CommandContext):
-        """
-        si image, envoie dans salon/fil dédie un message
-        message: contient image et deux boutons(yes, no)
-        bouton oui: enregistre dans un rep commun l image et des infos autour(auteur)
-        //     non: envoie un dm à l auteur(ou ailleurs) pour annoncer refus
-        """
         if self.get_demand_channel(int(ctx.author.id)) is None:
             verif_channel = await ctx.channel.create_thread(f"{ctx.author.id}", type=interactions.ChannelType.PRIVATE_THREAD)
             le_salon_de_demande = DemandChannel(self.client, ctx, verif_channel)
