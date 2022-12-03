@@ -114,8 +114,8 @@ class GenshinGeoguessr(interactions.Extension):
         embed = interactions.Embed(
             title="__Leaderboard__",
             description=f"""
-            <@511484678960840705> -> {(3 + 5)}
-            <@825808732926902282> -> {(3 + 4)}
+            <@825808732926902282> -> {(3 + 4) + (3 + 5) + (3 + 5)}
+            <@511484678960840705> -> {(3 + 5) + (3 + 4)}
             <@327923326146183168> -> {(3 + 3)}
             """
         )
