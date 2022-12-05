@@ -124,7 +124,7 @@ class GenshinGeoguessr(interactions.Extension):
             name="Comment sont calculés les points?",
             value="Tout simplement:\n-au bon endroit: 3 points\n-dans la zone: 2 points\n-à l'Ouest: 1 point(la participation est importante <:NE_kleeTeri:952560478561927168>)"
                   "\n\n"
-                  "Et petit bonus aussi!\nLes 5 premières personnes à envoyer leur guess auront des points bonus, 5 points pour la première, 4 points pour la deuxième, etc..."
+                  "Et petit bonus aussi!\nLes 5 premières personnes à envoyer leur guess auront des points bonus, 5 points pour la première, 4 points pour la deuxième, etc...\n*Ce bonus n'est valable que si l'emplacement est le bon*"
         )
 
         await ctx.send(embeds=embed, ephemeral=True)
