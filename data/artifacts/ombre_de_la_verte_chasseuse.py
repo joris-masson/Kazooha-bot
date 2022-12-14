@@ -1,5 +1,5 @@
 artifact = {
-	1: """__**Souvenir de fleur des champs**__
+    1: """__**Souvenir de fleur des champs**__
 	*Une fleur sauvage répandue dans une certaine partie du monde. Elle a été cueillie par une chasseresse et portée comme une broche.*
 	
 	Une fleur blanche sauvage qui recouvrait autrefois la terre.
@@ -13,7 +13,7 @@ Car seul celui se déplaçant aussi silencieusement que la chasseresse aurait pu
 
 On raconte également que celui qui parvint à la débusquer était un jeune garçon.
 À cette époque, la calamité s'était abattue sur l'ancien royaume et la misère s'étendait sur les terres.""",
-	2: """__**Plume de flèche de la Verte Chasseuse**__
+    2: """__**Plume de flèche de la Verte Chasseuse**__
 	*La plume d'une flèche qui transperça sa proie. Elle est encore lisse et propre.*
 	
 	La plume soyeuse et brillante d'un faucon. Elle fut jadis utilisée par la chasseresse comme empennage d'une flèche.
@@ -29,7 +29,7 @@ Mais après qu'elle eut percé de sa flèche le monstre qui poursuivait le jeune
 et qu'elle eut répondu à sa requête et mis fin à la vie de la bête,
 non pas pour survivre, mais parce qu'il cherchait vengeance,
 elle crut alors que les terres infinies qu'elle espérait ne l'attendait plus.""",
-	3: """__**Détermination de la Verte Chasseuse**__
+    3: """__**Détermination de la Verte Chasseuse**__
 	*Un objet formidable autrefois porté par une chasseuse. Il lui indiquait la direction de sa proie.*
 	
 	Un objet délicat utilisé pour trouver son chemin.
@@ -44,7 +44,7 @@ car le dieu des forêt y perdit la vie.
 La chasseresse se mit alors à utiliser cet appareil pour se repérer.
 Et à la requête du garçon qu'elle rencontra, elle cessa de chasser les oiseaux et les bêtes,
 prenant d'ésormais pour cible les monstres ayant apporté souffrance et destruction.""",
-	4: """__**Récipient de la Verte Chasseuse**__
+    4: """__**Récipient de la Verte Chasseuse**__
 	*Un objet ayant été utilisé comme une gourde à eau par la Verte Chasseuse. Sa contenance est bien supérieure à ce qu'on pourrait imaginer.*
 	
 	Un récipient solide et résistant.
@@ -60,7 +60,7 @@ Tout comme personne n'aurait pu déceler sa trace à la chasse.
 
 Un soir, elle emplit l'objet des rires qu'elle entendit cette nuit-là.
 Pendant de nombreuses années, elle écouta les voix à chaque fois qu'elle se sentait seule.""",
-	5: """__**Diadème de la Verte Chasseuse**__
+    5: """__**Diadème de la Verte Chasseuse**__
 	*Un diadème porté autrefois fièrement par la Verte Chasseuse, aussi vert que la nature sauvage.*
 	
 	Un chapeau de chasseur propre.

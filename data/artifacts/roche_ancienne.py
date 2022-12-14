@@ -1,5 +1,5 @@
 artifact = {
-	1: """__**Fleur des crevasses**__
+    1: """__**Fleur des crevasses**__
 	*Une fleur qui pousse à travers les fissures d'une falaise. La façon dont le vent souffle sur ses pétales lui donne un semblant de vie.*
 
 	Une fleur qui naquit au cœur d'une crevasse inaccessible d'une falaise.
@@ -12,7 +12,7 @@ artifact = {
 	Cependant, le port prospère qui fait face à la mer de nuages,
 	né au milieu des montagnes sans vie,
 	est comparable à cette fleur.""",
-	2: """__**Plume des sommets escarpés**__
+    2: """__**Plume des sommets escarpés**__
 	*Une plume dure appartenant à un grand faucon des falaises côtières. Des gouttes de rosée se forment parfois à son extrémité noire.*
 
 	Une plume appartenant à un oiseau géant dont les ailes pouvaient raser des montagnes.
@@ -24,7 +24,7 @@ artifact = {
 	pour y tomber comme des météorites
 	sur les monstres des fonds marins...
 	De nos jours, nombreux sont les oiseaux qui viennent se poser sur les piliers de pierre qui dépassent de la mer.""",
-	3: """__**Cadran du jade immuable**__
+    3: """__**Cadran du jade immuable**__
 	*Un cadran solaire gravé d'un bloc dans le jade. Les veines qu'on voit dans le minerai sont autant de témoins silencieux du temps qui passe.*
 
 	Un cadran solaire sculpté dans du jade ancien.
@@ -35,7 +35,7 @@ artifact = {
 	« Dans ma jeunesse, je rêvais d'étudier les classiques littéraires et de me rendre à Sumeru afin d'atteindre l'ultime sagesse. »
 	« Cependant, après avoir obtenu ce cadran solaire par hasard, je l'examinai pendant des jours sans jamais lui trouver un seul défaut. »
 	« Par la suite, je devins artisan afin de surpasser le maître qui fut capable de confectionner un tel objet. »""",
-	4: """__**Coupe en roche escarpée**__
+    4: """__**Coupe en roche escarpée**__
 	*Une magnifique coupe de vin qui fut remplie à ras bord à une époque lointaine.*
 
 	Un récipient à vin sculpté à partir d'un rocher immobile.
@@ -46,7 +46,7 @@ artifact = {
 	le Souverain de la Roche créa une formation rocheuse,
 	dans laquelle il préleva de la pierre et du jade pour confectionner cette coupe.
 	Certaines prétendent même l'existence de six autres coupes identiques.""",
-	5: """__**Masque en basalte inerte**__
+    5: """__**Masque en basalte inerte**__
 	*Un masque majestueux taillé dans de la roche noire. Ses yeux vides regardent toujours devant eux.*
 	
 	La légende dit que le Souverain de la Roche fut un meurtrier sans merci lors de la Guerre des Archons.

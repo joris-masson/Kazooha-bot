@@ -152,7 +152,7 @@ Zhang San : Aïe, ouille !
 Lisi : Arrêtez, par pitié ! Tant pis pour les moras !
 Wang Er’ma : Venez, trouvons celui qui a récupéré ces perles, et faisons le payer!""",
 
-    4:"""__**Partie 2**__
+    4: """__**Partie 2**__
     
     Scène 3
 (Entre Zhang San, accompagné de Fanjie)

@@ -1,5 +1,5 @@
 artifact = {
-	1: """__**Fleur du Noble**__
+    1: """__**Fleur du Noble**__
     *Une fleur en soie bleue, souvent portée lors d'événements officiels. Son aspect est resté le même que le jour où elle a été cueillie.*
 
     Un lys bleu fait de soie,
@@ -12,7 +12,7 @@ artifact = {
     mais aussi dans leur adhésion aux vertus et principes.
     Mais leur longévité subit l'assaut de leur propre indulgence.
     Et ainsi leur visage changea.""",
-	2: """__**Plume du Noble**__
+    2: """__**Plume du Noble**__
     *Une plume décorant autrefois le chapeau des aristocrates de Mondstadt lorsqu'ils partaient à la chasse. Elle se dresse encore fièrement après tout ce temps.*
 
     Une plume de faucon qui ornait autrefois le couvre-chef d'un noble.
@@ -24,7 +24,7 @@ artifact = {
     Mais la chasse perdit sa signification première.
     Oublieux du peuple, les nobles s'arrogèrent tout ce qui passait entre leurs mains.
     La plume se dressait toujours, fière ; mais ses couleurs disparurent aux yeux du peuple.""",
-	3: """__**Montre de poche du Noble**__
+    3: """__**Montre de poche du Noble**__
     *Une montre de poche ayant appartenu aux nobles de Mondstadt. Transmise de génération en génération, elle a été témoin de nombreuses années d'histoire.*
 
     Une élégante montre de poche en saphir.
@@ -36,7 +36,7 @@ artifact = {
     et à la nuit tombée se doit d'être plus circonspect.
     Mais avec les années passant, les règles qu'ils s'étaient imposées furent dédaignées par leurs descendants indolents.
     Leurs horloges devinrent plus sophistiquées, mais perdirent toute signification vertueuse.""",
-	4: """__**Urne d'argent du Noble**__
+    4: """__**Urne d'argent du Noble**__
     *Une urne ornementale qui appartenait autrefois à une famille noble de Mondstadt. L'intérieur semble résonner du chant lugubre des vents éplorés.*
 
     Une urne en saphir, décorée des armoiries d'une famille noble.
@@ -48,7 +48,7 @@ artifact = {
     Mais les nobles par le pouvoir enivrés,
     prirent et dépensèrent sans considération aucune pour le peuple.
     Et leurs trésors devinrent l'image de leur vanité.""",
-	5: """__**Masque du Noble**__
+    5: """__**Masque du Noble**__
     *Un masque porté autrefois par les nobles de Mondstadt lors des bals. Ses yeux aujourd'hui vides semblent fixés sur la gloire d'un passé oublié.*
 	
     Un masque en argent gravé de motifs délicats et incrusté d'or et de gemmes.

@@ -1,5 +1,5 @@
 artifact = {
-	1: """__**Cœur lointain de la Demoiselle**__
+    1: """__**Cœur lointain de la Demoiselle**__
 	*Une fleur délicate qui ne s'est jamais fanée et qui continue à émettre un parfum irrésistible.*
 
 	La fleur de la jeune fille. Fraîche et élégante, à l'image de celle qui l'a cueillie.
@@ -11,7 +11,7 @@ artifact = {
 	mais cette fleur resta constante.
 	Car son cœur s'était arrêté ce jour-là,
 	lorsqu'elle fit la rencontre du chevalier.""",
-	2: """__**Pensée de la Demoiselle**__
+    2: """__**Pensée de la Demoiselle**__
 	*Cet accessoire transporte les pensées d'une certaine personne, semblable à l'oiseau migrateur qui chevauche les vents.*
 
 	Un délicat accessoire fait de plumes exquises.
@@ -23,7 +23,7 @@ artifact = {
 	puisse toucher le chevalier qui dédia sa vie à son métier.
 	Elle espérait qu'il pouvait voir tous les paysages
 	qu'elle avait imaginé pour lui.""",
-	3: """__**Petit matin de la Demoiselle**__
+    3: """__**Petit matin de la Demoiselle**__
 	*Le mouvement du temps ne s'arrête pas, contrairement à la jeunesse qui n'est qu'éphémère.*
 
 	Un objet délicat. Indifférent aux sentiments de sa propriétaire,
@@ -34,7 +34,7 @@ artifact = {
 	à l'image de l'attente sans fin emplissant son cœur.
 	Bien des années plus tard, elle se rappelait encore de lui,
 	le beau chevalier blanc qui vint pour elle, et qu'elle attendait.""",
-	4: """__**Loisir de la Demoiselle**__
+    4: """__**Loisir de la Demoiselle**__
 	*Une tasse pour le thé sucré plutôt que pour l'alcool amer.*
 
 	La tasse préférée de la jeune fille.
@@ -46,7 +46,7 @@ artifact = {
 	« Mais mon cœur vous... »
 	Ne pas terminer cette phrase était son choix,
 	mais c'était aussi les chaînes qui l'écrasaient.""",
-	5: """__**Beauté fugace de la Demoiselle**__
+    5: """__**Beauté fugace de la Demoiselle**__
 	*Un chapeau de femme bien entretenu. Il peut cacher le visage de la personne qui le porte – y compris les pattes d'oie.*
 	
 	Bien que de nombreux prétendants la couvrivrent de roses,

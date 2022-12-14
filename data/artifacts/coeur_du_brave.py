@@ -1,5 +1,5 @@
 artifact = {
-	1: """__**Emblème du Brave**__
+    1: """__**Emblème du Brave**__
 	*Une simple broche qui symbolise le souvenir d'une aventure passée.*
 
 	Le petit héros s'éclipsait de chez lui à la tombée de la nuit en compagnie de son ami pour s'aventurer dans la forêt des loups.
@@ -9,7 +9,7 @@ artifact = {
 	Un jour, le héros revint dans la chambre de son enfance et retrouvera les souvenirs qu'il avait gardés des aventures de son enfance.
 	À sa grande surprise, la fleur n'avait toujours pas fané.
 	Hélas, c'était la seule chose qui demeura intacte au cours de sa vie mouvementée.""",
-	2: """__**Espoir du Brave**__
+    2: """__**Espoir du Brave**__
 	*Une plume d'oiseau brillante qui donne un peu de courage.*
 	
 	Afin de consoler son ami, le héros lui offrit une plume d'oiseau.
@@ -21,7 +21,7 @@ artifact = {
 	En des temps tourmentés, ils furent l'épée et le poignard qui protégèrent leur cité.
 	Cependant, cette histoire appartient désormais au passé.
 	Comme de nombreux récits perdus dans la bataille.""",
-	3: """__**Persévérance du Brave**__
+    3: """__**Persévérance du Brave**__
 	*Un sablier ancien qui n'a pas grande utilité. Peut-être symbolise-t-il le caractère insaisissable du temps ?*
 	
 	Les ténèbres pleuvaient du ciel et les graines de la calamité s'enracinaient dans la terre.
@@ -29,7 +29,7 @@ artifact = {
 	L'acier de leurs espadons brillait, alors que le sang noir s'abattait comme une pluie empoisonnée.
 	Le héros retourna chez lui, mais sans son fidèle ami.
 	Rien n'était plus pareil, sauf le sablier qu'il lui avait offert.""",
-	4: """__**Dignité du Brave**__
+    4: """__**Dignité du Brave**__
 	*Une coupe rudimentaire en bois. Elle est remplie de souvenirs.*
 
 	Le brave héros savoura le goût de la victoire après son premier combat.
@@ -38,7 +38,7 @@ artifact = {
 	La veille de la bataille, il demanda à son ami d'enfance de boire un verre en sa compagnie.
 	« Je ne te pleurerai guère si tu ne reviens pas... »
 	« Au contraire, je boirais en ton honneur comme aujourd'hui. »""",
-	5: """__**Couronne du Brave**__
+    5: """__**Couronne du Brave**__
 	*Couronne rudimentaire en paille fragile. Pour certaines personnes, elle vaut autant qu'une couronne en or digne des plus grands souverains.*
 
 	Le héros, encore enfant, s'enfonçait dans la forêt mystérieuse dans la peau d'un rebelle.

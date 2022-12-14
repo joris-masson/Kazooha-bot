@@ -1,5 +1,5 @@
 book = {
-	1: """Bien des années plus tard, lorsque son pied se retrouva coincé dans un piège de chasse qu'il avait lui-même posé, Gothson se souvint de l'après-midi où son père l'avait emmené en ville pour le Ludi Harpastum.
+    1: """Bien des années plus tard, lorsque son pied se retrouva coincé dans un piège de chasse qu'il avait lui-même posé, Gothson se souvint de l'après-midi où son père l'avait emmené en ville pour le Ludi Harpastum.
 	La vie de Gothson fut marquée par le malheur. Hélas, le jeune homme ne pouvait nullement se remémorer un instant de sa vie. Il passa son enfance à Deauclaire, sous la protection de la fée de la source. La vie des chasseurs était paisible et insouciante alors.
 	Lorsque Gothson fut âgé de sept étés, son père l'emmena voir une représentation du cirque lors du Ludi Harpastum. Lui qui marchait pour la première fois dans les rues de Mondstadt, fut enivré par le délicieux parfum des friandises et de la viande grillée, puis fasciné aussi bien par les lumières et les images colorées, que par les clowns dompteurs de sangliers et les tours des magiciens.
 	Dans ses souvenirs d'enfance, Gothson se rappelle que son père se mêla à la foule du festival, puis passa sous une arche en bois « Empil'tout », s'éloignant petit à petit de lui, mais il était trop captivé par la fée de la source pour lui en tenir rigueur.

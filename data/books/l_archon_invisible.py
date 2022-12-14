@@ -80,7 +80,7 @@ Là encore, l’artisan répondait ainsi aux questions :
 
 C’est ainsi que l’homme gagna progressivement une réputation d’excentricité dans le village. Mais les riches marchands du prospère port de Liyue trouvaient la chose amusante, et tous se l’arrachaient, curieux de voir comment l’artisan répondrait à leurs commandes.""",
 
-    3: """__**Tome 2 - partie 2**__
+    4: """__**Tome 2 - partie 2**__
     
     Une nuit, une femme vint voir l’artisan dans son atelier.
 Elle portait une longue robe noire, et ses yeux brillaient d’un éclat d’ambre sous la pâle lueur du croissant de lune.
@@ -118,7 +118,7 @@ Tournant et retournant l’objet dans ses mains, la femme finit par répondre, c
 
 Et, plongeant ses yeux d’ambre dans les siens, elle entreprit de lui conter son récit…""",
 
-    4: """Liyue est un lieu qui regorge de trésors aussi rares qu’exotiques. Et là où se trouvent des trésors, on peut être sûr de trouver des gens qui ont l’œil pour ce genre de choses. À l’apogée de sa prospérité, Liyue voyait des myriades de biens et de richesses transiter par ses terres.
+    5: """Liyue est un lieu qui regorge de trésors aussi rares qu’exotiques. Et là où se trouvent des trésors, on peut être sûr de trouver des gens qui ont l’œil pour ce genre de choses. À l’apogée de sa prospérité, Liyue voyait des myriades de biens et de richesses transiter par ses terres.
 Tout comme aujourd’hui, c’était une ère appartenant aux riches marchands et capitaines, un âge où régnaient en maîtres ceux qui osaient affronter les vagues tumultueuses du marché et les monstres marins de l’océan.
 
 Et tout comme aujourd’hui, le port animé était toujours rempli de marins et de dockers occupés.
@@ -157,7 +157,7 @@ Un sourire rusé se peignit sur le visage du garçon. « Dans ce cas laissez-moi
 
 Et ainsi, le garçon entreprit de raconter son histoire. Pris par le récit, le patron ne prêta aucune attention à la paire de mains qui entreprit pendant ce temps de fouiller ses poches pour en retirer l’argent que l’homme avait retenu sur la paie de ses travailleurs – argent qui leur fut rendu ensuite.""",
 
-    5: """En ces temps-là, d’innombrables merveilles et marchandises arrivaient chaque jour sur le port de Liyue.
+    6: """En ces temps-là, d’innombrables merveilles et marchandises arrivaient chaque jour sur le port de Liyue.
 Cette nuit-là, Mingui, gérante de la boutique d’antiquités Xigu, examinait différents objets tout en discutant avec le fils d’une famille noble.
 Le sujet central de leur débat était une plaque de jade.
 

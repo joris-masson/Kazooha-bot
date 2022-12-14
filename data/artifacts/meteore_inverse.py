@@ -1,5 +1,5 @@
 artifact = {
-	1: """__**Fleur de la nuit d'été**__
+    1: """__**Fleur de la nuit d'été**__
 	*Une fleur artificielle qui est dans un état de floraison éternel. Serait-elle vivante ?*
 	
 	Une fleur d'été qui ne se fanera jamais.
@@ -17,7 +17,7 @@ Cette fleur immortelle qu'elle me laissa était l'unique souvenir qui me restait
 En fin de compte, nos vies étaient différentes,
 elle pouvait être éternelle comme une fleur d'été pour certains,
 et pour d'autres, aussi passagère qu'un feu d'artifice.""",
-	2: """__**Fin de la nuit d'été**__
+    2: """__**Fin de la nuit d'été**__
 	*Une délicate fléchette en bois. Elle ne s'arrête seulement lorsqu'elle atteint sa cible.*
 	
 	Une fléchette en bois qu'on voit fréquemment dans les festivals d'été.
@@ -40,7 +40,7 @@ Cependant, en m'approchant, je ne vis qu'un renard qui profitait du soleil.
 Il sursauta et s'enfuit dans la forêt.
 Il disparut tout comme la lumière que laissait passer le feuillage des arbres quand le vent soufflait.
 À la place, se trouvait une fléchette en bois ancienne. """,
-	3: """__**Temps de la nuit d'été**__
+    3: """__**Temps de la nuit d'été**__
 	*Une délicate montre cassée qui n'avance plus.*
 	
 	Une petite montre de poche qui présente des décorations.
@@ -65,7 +65,7 @@ mais elle n'avait pas pris une seule ride...
 
 « Tu as grandi. Je crois qu'on ne jouera pas à la pêche aux petits bateaux cette fois... »
 « J'ai amené du vin avec moi. Regardons les feux d'artifice ensemble en le savourant. Qu'en dis-tu ? »""",
-	4: """__**Ballon d'eau de la nuit d'été**__
+    4: """__**Ballon d'eau de la nuit d'été**__
 	*Pendant les festivals d'été, les ballons d'eau ne sont pas rares. Mais celui-là l'est.*
 	
 	Un ballon rempli d'eau.
@@ -84,7 +84,7 @@ mais une belle femme aux yeux semblables à ceux d'un renard me prit la main.
 
 « Qui ose donc négliger un enfant aussi adorable ? »
 « Que voudrais-tu faire ? Regarder les feux d'artifice, jouer aux fléchettes ou à la pêche aux petits bateaux ? »""",
-	5: """__**Masque de la nuit d'été**__
+    5: """__**Masque de la nuit d'été**__
 	*Un masque à la mode qui a été fabriqué à l'effigie d'une divinité légendaire.*
 	
 	Un masque appartenant à un être habité par une divinité.

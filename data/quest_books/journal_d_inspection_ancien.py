@@ -1,5 +1,5 @@
 book = {
-	1: """...
+    1: """...
 	Le climat est aujourd'hui encore très rude.
 	Bien que le blizzard se soit calmé, il n'est guère évident de garder les yeux ouverts bien longtemps sous l'assaut des vents occasionnels.
 	De telles conditions ne sont pas sans rappeler quelque poème ancien, où vent et neige, sous la plume du poète, sont assimilés au pâle tranchant de l'épée.
@@ -17,7 +17,7 @@ book = {
 
 	Nous quittons bientôt le camp côté versant ensoleillé pour nous enfoncer plus profondément dans les ruines.
 	Cette fois, il faudra vérifier l'intégrité structurelle des ruines avant d'y entrer.""",
-	2: """Je crains que mes entrées précédentes à ce journal ne soient perdues à jamais suite à la tragédie qui s'est abattue sur nous.
+    2: """Je crains que mes entrées précédentes à ce journal ne soient perdues à jamais suite à la tragédie qui s'est abattue sur nous.
 	Il est regrettable que ces rapports d'expédition aient été perdus, mais l'endroit est vraiment trop dangereux.
 
 	Il s'est avéré impossible d'ouvrir les portes.
@@ -43,7 +43,7 @@ book = {
 	... Et plus important encore, nous devons nous montrer à la hauteur des attentes de maître Landrich.
 	Je risque fort de me retrouver à nouveau nez à nez avec les monstres de l'arène sinon...
 	Et quand bien même je triompherais d'eux, je finirais sûrement comme l'esclave de maître Ebelhart, ma mort servie par le fil de l'épée de ce démon roux du Clan Lawrence...""",
-	3: """Est-ce l'histoire du lieu qui rend cet endroit aussi sordide ? Où est-ce cette sinistre atmosphère qui est à l'origine de sa triste histoire ?
+    3: """Est-ce l'histoire du lieu qui rend cet endroit aussi sordide ? Où est-ce cette sinistre atmosphère qui est à l'origine de sa triste histoire ?
 	Peut-être dois-je le fait que ces pensées m'habitent à tout ce qui est arrivé pendant cette expédition...
 	À moins que la perte de sang, combinée au froid incessant, ne commence à affecter mon esprit...
 	Quelle que soit la réponse à cette question, je crains bien qu'il ne s'agisse là de mon ultime entrée de journal.

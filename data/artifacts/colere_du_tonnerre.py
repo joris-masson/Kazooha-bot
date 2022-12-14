@@ -1,5 +1,5 @@
 artifact = {
-	1: """__**Compassion de l'Oiselle du tonnerre**__
+    1: """__**Compassion de l'Oiselle du tonnerre**__
 	*Une fleur imprégnée de foudre, qui réussit à survivre aux piétinements et à la furie du feu violet, en faisant la seule survivante d'une certaine catastrophe.*
 
 	Une fleur sauvage violette qui a survécu dans les cendres volcaniques.
@@ -9,7 +9,7 @@ artifact = {
 	Mais c'est la destruction que l'Oiselle du tonnerre apporta en descendant des cieux.
 	Le prix à payer pour avoir osé sacrifier son ami fut la mort.
 	Montrant son vrai visage, il éradiqua la tribu.""",
-	2: """__**Survivant de la catastrophe**__
+    2: """__**Survivant de la catastrophe**__
 	*Une plume électrique qui scelle le jugement cruel de l'Oiselle du tonnerre. On peut encore sentir sa colère en émaner.*
 
 	Une plume enchantée par la foudre violette ayant autrefois appartenu à l'Oiselle du tonnerre.
@@ -25,7 +25,7 @@ artifact = {
 	Les années passèrent ; les terres autrefois brûlées reprirent vie.
 	La plume de l'Oiselle du tonnerre fut enfouie dans la végétation.
 	Et l'histoire disparut avec la tribu.""",
-	3: """__**Sablier de tonnerre**__
+    3: """__**Sablier de tonnerre**__
 	*Un sablier utilisé autrefois pour compter le temps séparant de l'arrivée de l'Oiselle du tonnerre. Il est désormais silencieux, le clan auquel il appartenait ayant disparu.*
 
 	Un somptueux sablier ayant appartenu à la tribu qui vénérait l'Oiselle du tonnerre.
@@ -37,7 +37,7 @@ artifact = {
 	Et pour venger la mort de celui qui jadis lui avait chanté, il ne laissa aucun survivant.
 	Mais l'Oiselle du tonnerre ignorait que le garçon s'était porté volontaire,
 	considérant son sacrifice comme un honneur.""",
-	4: """__**Présage de tombée du tonnerre**__
+    4: """__**Présage de tombée du tonnerre**__
 	*Un calice de cérémonie servant à contenir le sang des innocents. Le rugissement d'innombrables prières s'en dégage.*
 
 	Une coupe rituelle utilisée par le shaman de quelque tribu ancienne.
@@ -51,7 +51,7 @@ artifact = {
 	car la suite de l'enchanteresse chanson il voulait écouter.
 	Ce fut la première et dernière rencontre entre l'Oiselle du tonnerre et le garçon.
 	Car à leur rencontre suivante, le sang du garçon emplissait la coupe sur l'autel sacrificiel.""",
-	5: """Diadème de l'Invocateur de tonnerre**__
+    5: """Diadème de l'Invocateur de tonnerre**__
 	*Un diadème porté autrefois par un shaman adorateur de l'Oiselle du tonnerre. L'oiseau maléfique demeura insensible à la dévotion du shaman.*
 
 	Au sein de l'ancienne tribu vénérant l'Oiselle du tonnerre,

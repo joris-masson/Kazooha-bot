@@ -1,5 +1,5 @@
 book = {
-	1: """—— Passages choisis —— Partie 1
+    1: """—— Passages choisis —— Partie 1
 
 	« La Brise de la Forêt » et « La Brise du Lac » forment les deux parties d'une anthologie de poèmes narratifs chantés par les bardes mondstadtois, et compilés grâce au travail de nombreux chercheurs.
 	Les bardes chantent pour gagner leur vie, aussi est-il difficile d'apporter crédibilité à leurs histoires, souvent arrangées pour attirer plus de badauds, et ainsi gagner quelques moras de plus. Mais c'est justement grâce à l'imagination et l'ingénieuse rhétorique dont ils firent montre qu'ont pu perduré à travers les âges toutes sortes de légendes.
@@ -18,7 +18,7 @@ book = {
 	Qui saura dire quelle étrange magie se cache derrière les mélodies et les poèmes capables de séduire aussi bien hommes que dragons ? Le dragon décida de rester aux côtés du barde, car en son cœur brûlait le désir d'être compris de tous les êtres. Il apprit le langage des hommes, ainsi que les techniques de chant du poète.
 	(il manque ici un passage)
 	Les générations à suivre virent en lui l'un des Quatre Vents, protecteur et vigile de Mondstadt.""",
-	2: """Partie 2
+    2: """Partie 2
 	« Du royaume le soleil a disparu ; son éclat la perle a perdu. »
 	« Son doré l'or n'a plus ; l'apparat de la soie n'est plus. »
 	Ainsi débute cette histoire du royaume perdu de Khaenri'a.
@@ -31,7 +31,7 @@ book = {
 	Ainsi fut son chant : « Qu'à ton réveil puisse tes ailes se déployer, puisses-tu vivre libre ! Car voler libre dans les cieux est ton destin ; et les mortels enfin verront ta vraie nature... »
 
 	(Gaotian* : Lorsque la vie naît des éléments, elle descend et devient un blob, ou bien s'élève pour former un papillon. En de très rares occasions seulement le processus résulte-t-il en dangereuse créature élémentaire. Les dragons élémentaires sont une vision extrêmement rare, et leur pouvoir peut rivaliser avec celui des démons antiques.)""",
-	3: """—— Le livre du dragon ——
+    3: """—— Le livre du dragon ——
 	Extrait du livre « Étude culturelle du Royaume du Vent », plus connu sous le nom de « Guide des us et coutumes locales », par Jacob Musk.
 
 	...

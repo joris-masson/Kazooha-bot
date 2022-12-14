@@ -1,5 +1,5 @@
 artifact = {
-	1: """__**Fleur de teinte marine**__
+    1: """__**Fleur de teinte marine**__
 	*Une fleur douce qui a pris les multiples teintes de l'océan capricieux. Elle brille de couleurs merveilleuses sous la lumière argentée de la lune.*
 
 	Une délicate fleur marine, dont le cœur est orné d'une perle pure.
@@ -11,7 +11,7 @@ artifact = {
 	Même si Touzan doit tomber cette nuit, les éclairs et le tonnerre ne pourront jamais cacher la beauté exquise de cette lune perlée... »
 	La prêtresse chanta et dansa sur les vagues éclairées par la lumière argentée de la lune.
 	Les filles de la mer oublièrent la douleur des pertes qu'elles avaient subies, et les fleurs exquises retrouvèrent tout leur éclat.""",
-	2: """__**Plume du palais des profondeurs**__
+    2: """__**Plume du palais des profondeurs**__
 	*Une plume duveteuse de la même teinte que le corail, qui proviendrait du vêtement cérémonial d'une prêtresse.*
 
 	À l'époque lointaine où les premiers clans virent le jour, la Divinité des tréfonds désigna des prêtresses parmi le peuple de la mer.
@@ -24,7 +24,7 @@ artifact = {
 	Elle aurait été arrachée fortuitement par la main tendre d'un enfant, puis conservée par une personne précautionneuse.
 	Plus tard, le brave guerrier et les prêtresses se précipitèrent vers leur inévitable sacrifice.
 	La tenue de cérémonie de la Prêtresse divine survécut cependant au drame, et fut transmise de génération en génération jusqu'à nos jours.""",
-	3: """__**Pétoncle de séparation**__
+    3: """__**Pétoncle de séparation**__
 	*Un coquillage propre et impeccable qui vient de l'océan sans fond.*
 
 	Le temps donne l'impression de s'écouler très lentement dans les profondeurs silencieuses et fluorescentes de l'océan.
@@ -36,7 +36,7 @@ artifact = {
 	Dans leur langue ancienne, ces coquilles immaculées se nommaient « adieu ».
 	Deux personnes qui s'enlacent ne peuvent être séparées par quelque force extérieure, bien qu'une telle union ne soit jamais éternelle.
 	Ces coquillages représentaient donc un adieu à la vie sous les vagues et le début d'une nouvelle vie sous le soleil.""",
-	4: """__**Écrin de perle**__
+    4: """__**Écrin de perle**__
 	*La brillance des perles qu'offrent les prêtresses du sanctuaire de l'Île de Watatsumi est éternelle et ne s'estompe jamais.*
 
 	Pour le peuple de la mer, ces perles brillantes sont des trésors à la valeur inestimable, dont on dit que la beauté est louée par les divinités de Watatsumi.
@@ -49,7 +49,7 @@ artifact = {
 	Ou peut-être cela est-il encore une autre légende dont la véracité ne peut plus être vérifiée...
 	Il est dit que la Prêtresse divine échangea ses vêtements avec ses sœurs jumelles, puis qu'elles se cachèrent parmi les vagues infinies.
 	Seule cette perle brillante fut perdue dans le tumulte des vagues pour retourner dans le silence des profondeurs.""",
-	5: """__**Couronne de Watatsumi**__
+    5: """__**Couronne de Watatsumi**__
 	*Une ancienne couronne délicate qui était autrefois utilisée par un membre du clergé oublié. Aujourd'hui, cette relique a été enchâssée cérémonieusement par les Watatsumiens.*
 	
 	Ces diadèmes étaient décernés en personne par la Divinité des tréfonds pour désigner des membres du clergé parmi les nombreux clans de Watatsumi.

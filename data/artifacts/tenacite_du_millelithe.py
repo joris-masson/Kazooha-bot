@@ -1,5 +1,5 @@
 artifact = {
-	1: """__**Fleur honorifique**__
+    1: """__**Fleur honorifique**__
 	*Une fleur faite à partir de feuille d'or. Elle symbolise les mérites et les honneurs de son porteur.*
 
 	En des temps reculés où les chansons s'écrivaient depuis les plus hauts des précipices, une pluie d'étoile tomba sur le Gouffre.
@@ -12,7 +12,7 @@ artifact = {
 	Mais leur contribution brillera à jamais dans l'histoire, à la façon de cette feuille d'or dont l'éclat jamais ne ternit.
 	Un demi-siècle s'est écoulé depuis la catastrophe, et la cité portuaire est aujourd'hui une ville fortifiée, sûre, où règne la paix.
 	Et si les soldats d'aujourd'hui arborent avec fierté cet insigne, c'est qu'il représente le sacrifice de ceux qui ont existé avant eux.""",
-	2: """__**Plume de guerre du Commandant**__
+    2: """__**Plume de guerre du Commandant**__
 	*Une plume de faucon portée lors des cérémonies officielles. Elle montre la dignité et la détermination du Port de Liyue aux yeux du monde entier.*
 	
 	Une plume perdue par l'oiseau de proie s'élevant dans les cieux, insigne militaire porté par les Millelithes.
@@ -25,7 +25,7 @@ artifact = {
 	mais de lui-même, pour expier une faute passée et payer le prix de sa lâcheté d'autrefois.
 	Que cela soit vrai ou non, le Yaksha qui tournait autrefois dans les airs a depuis rejoint les nuages de la liberté.
 	Et les hommes qui dorment pour toujours dans l'Abîme vivront à jamais avec lui dans les légendes.""",
-	3: """__**Cadran solaire doré**__
+    3: """__**Cadran solaire doré**__
 	*Un appareil simple permettant de connaître l'heure. Il faisait autrefois partie du paquetage du Millelithe en temps de guerre.*
 
 	Appareil servant à déterminer le temps en fonction de la lumière du jour, capable de capter les rayons du soleil même par jour couvert.
@@ -38,7 +38,7 @@ artifact = {
 	On raconte qu'un collectionneur vêtu d'une robe noire a été vu parcourant les rues de la cité pour acquérir l'objet à un prix élevé.
 	Interrogé par les marchands sur ses motivations, cette personne arrive toujours à ne pas répondre.
 	Seul le temps sera peut-être capable de dire quel est son objectif, semble-t-il.""",
-	4: """__**Coupe du serment**__
+    4: """__**Coupe du serment**__
 	*Une coupe en or utilisée par les Millelithes pour prêter serment. Elle porte encore le doux parfum du vin.*
 
 	À la création des Millelithes, en un temps où les terres de Liyue étaient sauvages et appartenaient encore à Dame Nature,
@@ -52,7 +52,7 @@ artifact = {
 	Et des siècles plus tard, lorsque les gens de Liyue se souviennent du terrible passé et parlent de ce Yaksha sans nom,
 	de tous ces héros venus des quatre coins de Liyue pour faire face à l'Abîme...
 	le sujet de la coupe revient inévitablement, et il est toujours quelqu'un pour dire que le sang versé par les héros du passé est aussi pur qu'au premier jour.""",
-	5: """__**Ancien heaume de Général**__
+    5: """__**Ancien heaume de Général**__
 	*Un casque splendide qui a traversé les âges. Il suffit de nettoyer un peu la poussière et il sera de nouveau rutilant.*
 
 	Le général qui combattait aux côtés du Yaksha dont le nom a été oublié,

@@ -1,5 +1,5 @@
 artifact = {
-	1: """__**Fleur ardente de la Sorcière**__
+    1: """__**Fleur ardente de la Sorcière**__
 	*Une fleur touchée par la sorcière qui rêvait de brûler tous les démons du monde. Des flammes anonymes caressent doucement la main de ceux qui la touchent.*
 	
 	Une fleur d'une espèce commune.
@@ -11,7 +11,7 @@ Ses proches, son passé heureux et son futur prometteur ; rien le lui fut laiss�
 Elle renaquit de ses cendres et devint la sorcière des flammes. Tout devait brûler pour apaiser la peine qui la rongeait.
 Cependant, cette fleur résista, et resta douce et fraîche.
 Peut-être les souvenirs, beaux et douloureux, sont-ils les deux faces d'une même pièce. """,
-	2: """__**Plume enflammée éternelle de la Sorcière**__
+    2: """__**Plume enflammée éternelle de la Sorcière**__
 	*Une plume d'oiseau touchée par la sorcière qui rêvait de brûler tous les démons du monde. Elle brûle toujours et dégage une douce chaleur.*
 	
 	 
@@ -25,7 +25,7 @@ les gens s'enfermaient à double tour à son approche. Mais elle n'en avait cure
 De nouveaux espoirs étaient nés du feu des blessures anciennes.
 Elle n'avait besoin ni de la pitié ni de la gentillesse des hommes ;
 le chant des oiseaux lui suffisait.""",
-	3: """__**Temps évanoui de la Sorcière**__
+    3: """__**Temps évanoui de la Sorcière**__
 	*Un sablier porté par la sorcière qui rêvait de brûler tous les démons du monde. Les sables qui s'écoulent à l'intérieur représentent les années que dédia la sorcière à la puissance du feu.*
 	
 	Un récipient contenant du liquide d'une température élevée.
@@ -37,7 +37,7 @@ Mais à la fin du cycle et à son retour au pays natal, la personne qui lui avai
 
 La jeune fille mourut à cet instant, laissant la place à la sorcière des flammes, et à la destruction.
 Elle ne connaîtrait point le répit tant qu'elle n'aurait pas dans les flammes obtenu vengeance.""",
-	4: """__**Feu du cœur de la Sorcière**__
+    4: """__**Feu du cœur de la Sorcière**__
 	*Une urne emplie de feu, laissée par la Sorcière des flammes, dont le rêve était autrefois de brûler tous les démons dans le monde. Ce feu ne s'éteint jamais, à la manière du feu habitant son ancienne propriétaire.*
 	
 	Une fiole en verre contenant du feu liquide.
@@ -49,7 +49,7 @@ On racontait qu'elle devait au sacrifice de son corps de mortelle d'être la per
 Et pourtant, autrefois l'amour et le désir l'avaient habitée,
 jusqu'à ce que le feu consume son beau cœur fragile.
 Alors seulement devint-elle la sorcière dont les annales font mention.""",
-	5: """__**Chapeau brûlé de la Sorcière**__
+    5: """__**Chapeau brûlé de la Sorcière**__
 	*Un chapeau porté par la sorcière qui rêvait de brûler tous les démons du monde. La large visière lui cachait la vue.*
 	
 	Un chapeau de sorcière ordinaire, pointu et avec un bord large.

@@ -1,5 +1,5 @@
 artifact = {
-	1: """__**Voyageur du labyrinthe**__
+    1: """__**Voyageur du labyrinthe**__
 	*Cette belle fleur plaquée or a été cueillie dans la couronne du roi de la forêt.*
 	
 À sa naissance, le roi de la forêt reçut une couronne du seigneur des plantes.
@@ -32,7 +32,7 @@ L'histoire la plus racontée (et la plus fascinante) n'a plus aucun rapport avec
 Le nom qui se figurait dans ses histoires était en fait celui de la couronne.
 Les dernières choses d'elle qui ont été conservées sont son vrai nom, une poignée d'eau reflétant le clair de lune,
 et une fleur en or provenant de la couronne donnée par le roi qu'elle vénérait.""",
-	2: """__**Érudit des lianes**__
+    2: """__**Érudit des lianes**__
 	*Une feuille d'émeraude aussi duveteuse qu'une plume, extraite des vêtements d'un érudit de la forêt.*
 	
 	À l'époque du roi du labyrinthe...
@@ -53,7 +53,7 @@ Il avait déjà perdu le pouvoir de formuler des vœux, et la silhouette blanche
 
 À l'époque où la nuit régnait et où l'aube était loin d'arriver.
 Dans le cauchemar, le jeune homme a entrevit une longue épée sombre et une couleur cramoisie qui s'étendait dans l'eau.""",
-	3: """__**Période de perspicacité**__
+    3: """__**Période de perspicacité**__
 	*Ces garde-temps sont utilisés par ceux qui se consacrent à la voie de la sagesse, ne contenant pas de sable sans vie, mais abritant plutôt de minuscules graines de moutarde.*
 	
 	Dans les légendes anciennes, le roi de la forêt est un immortel.
@@ -85,7 +85,7 @@ C'est tout aussi bien comme cela. À l'intérieur des rêves, tout le monde a la
 La première étape est de capturer ces esprits à l'intérieur des rêves.
 Ces mercenaires m'ont beaucoup aidé dans le passé.
 Je pense qu'ils ne me décevront pas cette fois non plus.""",
-	4: """__**Lampe des perdus**__
+    4: """__**Lampe des perdus**__
 	*Il s'agissait à l'origine d'une lampe à huile dans le style du royaume du désert, mais elle a depuis fait germer des feuilles vertes fluorescentes.*
 	
 	On dit qu'après que le seigneur ignorant fût détruit par son ambition, une multitude de rois firent leur apparition, mais ceux-ci furent éphémères et s'autodétruisirent telles des étoiles filantes s'éteignant dans le ciel.
@@ -108,7 +108,7 @@ Le prince apatride comprit peu à peu la signification des murmures de la forêt
 
 « Haha... Ça, c'est une bonne histoire ! Une histoire qui parle d'un noble exilé qui a réussi à retrouver la gloire... »
 « Un rêve d'or, qui invoque le sable errant... »""",
-	5: """__**Couronne de lauriers**__
+    5: """__**Couronne de lauriers**__
 	*Cette couronne, à l'origine accordée par la divinité contrôlant les plantes et les arbres, a été transmise de génération en génération par la famille royale du labyrinthe. Elle s'est finalement retrouvée entre les mains du vassal de l'un de ces rois.*
 	
 	Le destin de toutes les choses est prédéterminé dans un cycle qui ne se termine jamais.

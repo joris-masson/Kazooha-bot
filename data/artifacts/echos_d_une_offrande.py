@@ -1,5 +1,5 @@
 artifact = {
-	1: """__**Fleur d'aromesprit**__
+    1: """__**Fleur d'aromesprit**__
 	*Un jade sculpté en forme de fleur. Un parfum fantôme, ici un instant et disparu le suivant, tourbillonne autour de lui.*
 
 	C'est lors de la floraison des aromesprits chaque année que commencent les préparatifs des cérémonies du thé au Village de Qiaoying.
@@ -16,7 +16,7 @@ artifact = {
 	« *tousse* Tu es fière de savoir nager ? Tu sais quoi, j'espère que tu te noieras un jour ! »
 	Malgré sa colère, la jeune fille ne disait pas cela sérieusement.
 	Cependant, cette bête scintillante disparut au fond de l'eau, pour ne jamais revenir à la surface.""",
-	2: """__**Feuille de jade**__
+    2: """__**Feuille de jade**__
 	*Un ornement de jade en forme de feuille. Il semble avoir eu autrefois une signification profonde aux yeux de certains amis...*
 
 	Il y a très longtemps de cela, il n'y avait pas de gué sur la rivière, seulement une colline brumeuse.
@@ -33,7 +33,7 @@ artifact = {
 	Il existe de nombreuses légendes concernant les théiers du Vallon Chenyu. L'une d'entre elles dit la chose suivante :
 	Peu importe la qualité de l'eau, du sol, ou de l'ensoleillement, ce type d'arbre peut pousser en grande quantité uniquement dans le Vallon Chenyu.
 	Cela serait dû au fait que ceux-ci se souviendraient de la promesse que se sont faite de vieux amis dans un passé lointain à côté des jeunes pousses d'un théier.""",
-	3: """__**Symbole de félicitation**__
+    3: """__**Symbole de félicitation**__
 	*Un ornement circulaire en jade. La légende raconte qu'il était autrefois utilisé quelque part comme symbole pour le début des rituels.*
 
 	La légende veut que cet ornement en jade brut était issu d'une montagne sacrée qui aurait été scellée depuis fort longtemps.
@@ -56,7 +56,7 @@ artifact = {
 	Aujourd'hui, les artisans du Port Yilong continuent de fabriquer ces accessoires aux formes simples.
 	Les marchands en visite placent aussi souvent ces anneaux en jade près de leurs oreilles, comme le veut la légende,
 	Pour vérifier s'ils peuvent vraiment entendre le bruit de la pluie qui tombe sur les rochers de la montagne.""",
-	4: """__**Calice des sources**__
+    4: """__**Calice des sources**__
 	*Cette tasse déborde toujours d'eau fraîche. Peut-être était-ce un cadeau des Adeptes, un de leurs artéfacts, ou juste quelque chose qu'ils ont laissé derrière eux...*
 
 	Cet objet était à l'origine un cadeau offert d'ami à ami, relié à un petit royaume intérieur.
@@ -76,7 +76,7 @@ artifact = {
 	« Au moins, ce voyage devrait être intéressant. Je pourrai la présenter à d'autres vieux amis. »
 	Plus tard, l'usage du brasero et de la bouilloire fut repris par les gens.
 	Et c'est ainsi que tout le monde put avoir la lune sur son bureau et la tenir dans sa paume.""",
-	5: """__**Anneaux de fluidité**__
+    5: """__**Anneaux de fluidité**__
 	*Une paire de boucles d'oreilles faites d'un seul morceau de jade, dont la texture est des plus douces.*
 
 	Le Vallon Chenyu est plein de montagnes, de cours d'eau. C'est aussi le lieu de nombreuses histoires et voici sa légende la plus connue :

@@ -1,5 +1,5 @@
 book = {
-	1: """—— Affaires officielles ——
+    1: """—— Affaires officielles ——
 	« Je suis le Grand et Glorieux Général Weiyang, émissaire de la cour impériale en mission royale. J'exige que vous me laissiez passer sur-le-champ !
 	– Général ? Alors maintenant « Grand et Glorieux » est un titre militaire, hein ? Je croyais que seules les charges officielles civiles portaient ce nom », répondit Mi'er sans une seconde d'hésitation.
 	Le visage de Weiyang s'empourpra. « Ainsi quelque misérable cherche à m'éduquer sur les choses de la cour ?!
@@ -18,7 +18,7 @@ book = {
 	Mi'er se lava les mains, puis sortit enfin, rejoignant les deux combattants à la table.
 	« Il n'est guère habituel de tomber sur quelqu'un si familier des affaires de la cour dans un tel endroit, fit celui qui appartenait à l'Escorte. Puis-je vous demander qui vous êtes ?
 	– Mon père, Mi Tingren, était Ministre des banquets impériaux. Accusé à tort d'avoir détourné des fonds destinés aux cuisines de la cour, il quitta son poste et revint chez lui. » Mi'er fit une pause pour se gratter le menton, avant de continuer : « Il n'est plus lui-même depuis cet événement. Mon intention est de retourner un jour à la cour, et d'y laver son nom. »""",
-	2: """—— Une histoire de possession ——
+    2: """—— Une histoire de possession ——
 	« Hmm, délicieux. »
 	À présent que l'esprit possédait son corps, Weiyang était dans de meilleures dispositions, et avait rétrouvé son calme. Elle prit une bouchée de l'une des tourtes de Mi'er ; mais manquant se brûler la langue, elle se mit à ouvrir la bouche et souffler frénétiquement. Le résultat était à dire vrai plutôt agréable à l'œil.
 	« Je ne m'attendais pas à cela, laisse-moi un peu de temps pour tout absorber. » Mi'er, qui avait abandonné l'un de ses yeux à l'esprit, se servit à son tour, puis demanda : « Peux-tu me répéter tout cela ?
@@ -36,7 +36,7 @@ book = {
 	– Tu n'es pas le seul à vouloir retrouver quelque chose ; je dois moi remettre la main sur les épées, répondit-elle. Ou alors le monde et tout ce qu'il contient brûlera dans les flammes de l'enfer. »
 	Mi'er, sans un mot, continuait de la dévisager.
 	« Je ne requiers pas que tu viennes avec moi. Mais le destin de tous les êtres vivants étant en jeu, permets-moi de garder ton œil pour l'instant. »""",
-	3: """—— Voyage à l'est ——
+    3: """—— Voyage à l'est ——
 	« C'est tout ce que je puis faire pour toi » fit Mi'er en posant plusieurs plats sur la table. Il s'assit en face de Weiyang.
 	Weiyang, qui s'était brisé un os lors du combat à mort qui venait d'avoir lieu, avait toujours le bras couvert de bandages. Elle dévisagea Mi'er pendant un long moment ; celui-ci restait les yeux perdus dans le vide, le menton sur la main. Aucun des deux ne prononçait mot.
 	Weiyang finit par prendre des baguettes et essayer de les utiliser de la main gauche ; sa tentative d'attraper une boule de viande dans le plat échoua misérablement.
@@ -56,7 +56,7 @@ book = {
 	– Oh, allons-nous rendre visite à ton père ? Il faut que j'achète de quoi être présentable demain alors.
 	– Nul besoin de toute cela ; ce n'est qu'un vieil homme.
 	– N'est-ce pas là ton obligation ? » répondit Weiyang, une expression inhabituellement dure sur le visage.""",
-	4: """—— Un plan sans failles ——
+    4: """—— Un plan sans failles ——
 	Nul n'aurait su quoi faire face une telle situation.
 	« Voici le Katakugosha, l'Épée des Flammes, forgée à partir du Dharani, l'éclat du royaume du feu de la hallebarde divine. En termes que sa majesté comprenne, cette arme fut créée avec l'une des neuf runes sacrées du Roi Divin, la rune du royaume du feu. »
 	Comment le combattant lui faisant face était-il capable de maîtriser avec autant d'art le maniement de l'épée ? La plupart des mortels s'étant essayés au maniement de l'Épée Maudite s'étaient vu dépouillés de leur capacités intellectuelles, perdant tout instinct pour le combat.
@@ -71,7 +71,7 @@ book = {
 	L'épée s'était éteinte après que le monde ait brûlé dans les flammes ; mais ayant absorbé la rune du royaume du feu, elle se mit à briller de nouveau.
 
 	« Le monde... détruit à nouveau... » murmura Weiyang, avant de s'écrouler.""",
-	5: """—— L'héritage d'une déesse ——
+    5: """—— L'héritage d'une déesse ——
 	« Tes actions ont sauvé le peuple ; tu es un vrai héros. » Le prince, les mains dans le dos, fit plusieurs fois le tour de Mi'er, prosterné sur les dalles.
 	Mais ces mots furent sans effet sur ce dernier.
 	« Remets-moi la hallebarde divine, et le titre de Ministre des banquets impériaux sera tien ; en dix ans celui de Grand secrétaire t'échouera si tu le souhaites, fit en s'agenouillant le prince. Quelle est ta réponse ?
@@ -91,7 +91,7 @@ book = {
 	Mais après tout, ce n'était pas plus mal ainsi...
 
 	Elle avait disparu, et lui avait récupéré son œil. Mais à ce jour encore persiste encore une sourde impression, comme la douleur d'un membre perdu.""",
-	6: """—— Un plan sans failles ——
+    6: """—— Un plan sans failles ——
 	Nul n'aurait su quoi faire face une telle situation.
 	« Voici le Katakugosha, l'Épée des Flammes, forgée à partir du Dharani, l'éclat du royaume du feu de la hallebarde divine. En termes que sa majesté comprenne, cette arme fut créée avec l'une des neuf runes sacrées du Roi Divin, la rune du royaume du feu. »
 	Comment le combattant lui faisant face était-il capable de maîtriser avec autant d'art le maniement de l'épée ? La plupart des mortels s'étant essayés au maniement de l'Épée Maudite s'étaient vu dépouillés de leur capacités intellectuelles, perdant tout instinct pour le combat.

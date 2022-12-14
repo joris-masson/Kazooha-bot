@@ -1,5 +1,5 @@
 artifact = {
-	1: """__**Broche de l'Instructeur**__
+    1: """__**Broche de l'Instructeur**__
     *Lorsque cette broche est portée par l'instructeur, alors tous savent qu'il n'y aura pas d'entraînement de la journée.*
 
     Tous les élèves de l'école militaire connaissaient la sévérité de l'instructeur.
@@ -8,7 +8,7 @@ artifact = {
     Car lorsqu'il portait la fleur, la journée était leur et ils étaient libres de rentrer chez eux.
     Une fois qu'ils étaient partis, l'instructeur allait au cimetière.
     Après un moment de silence, il rendait hommage aux noms familiers gravés sur la pierre.""",
-	2: """__**Plume de l'Instructeur**__
+    2: """__**Plume de l'Instructeur**__
     *Tout instructeur qui maîtrise l'art de l'esquive ne laisse jamais cet accessoire lui échapper des mains.*
 
     Le talent au combat de l'instructeur a été acquis sur le champ de bataille.
@@ -16,21 +16,21 @@ artifact = {
     Survivre est plus important que tuer ou défendre.
     Tous ses enseignements sont un hommage aux vétérans.
     Car c'est grâce aux sacrifices de ses frères d'armes qu'il vit encore aujourd'hui.""",
-	3: """__**Montre de poche de l'Instructeur**__
+    3: """__**Montre de poche de l'Instructeur**__
     *Cette montre n'affiche pas l'heure. Elle sert seulement à mesurer la durée des séances d'entraînement.*
 
     Une montre de poche âgée que l'instructeur garde toujours sur lui. Il ne s'agit pas d'un modèle militaire.
     Cette montre lui indiquait le moment de la charge contre l'ennemi lorsqu'il était jeune soldat.
     Elle marqua victoires comme défaites, et compta les derniers instants de nombre de soldats.
     Mais pour ses élèves, elle représente les épreuves endurées sur le long chemin de celui qui devient soldat.""",
-	4: """__**Tasse à thé de l'Instructeur**__
+    4: """__**Tasse à thé de l'Instructeur**__
     *Une banale tasse de thé au premier abord. Mais pour certains élèves, elle représente l'autorité de l'instructeur.*
 
     Tout élève d'école militaire connaît le terme « entraînement libre », et sait que la liberté n'a rien à y voir.
     L'instructeur s'assoit, regardant ses élèves s'entraîner durement.
     Une tasse de thé noir beaucoup trop sucrée vient égayer son après-midi.
     Ce moment tranquille du quotidien est le privilège de l'instructeur, et témoigne de son autorité.""",
-	5: """__**Chapeau de l'Instructeur**__
+    5: """__**Chapeau de l'Instructeur**__
 	*Un chapeau standard d'instructeur. Il est offert lorsque le destinataire d'une promotion la refuse.*
 
     « Je ne suis pas qualifié à commander une armée en tant que général,

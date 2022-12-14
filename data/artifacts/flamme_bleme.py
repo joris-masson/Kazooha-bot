@@ -1,5 +1,5 @@
 artifact = {
-	1: """__**Fleur inaltérable**__
+    1: """__**Fleur inaltérable**__
 	*Une fleur artificielle bleue et solide. Ses pétales ne se flétriront jamais, et sa couleur sera toujours aussi flamboyante.*
 	
 	« Tu es incroyable. Tu as un corps humain, et pourtant tu possèdes une telle puissance.
@@ -20,7 +20,7 @@ Mais malgré tout, une flamme d'un blanc pur continua de brûler en son cœur...
 Tous, nous voulons venir à bout des sources de distorsion de ce monde : les dieux ignares et irréfléchis, et les ténèbres et la corruption de l'Abîme.
 Très bien, alors. Je ferai tout ce qu'il faut pour devenir un instrument efficace dans la progression de notre cause commune.
 Car j'aurai beau me vêtir de blanc des pieds à la tête, les cendres des morts ont depuis longtemps laissé leur marque sur chaque pouce de mon être, et ne pourront jamais être nettoyées. »""",
-	2: """__**Plume du sage docteur**__
+    2: """__**Plume du sage docteur**__
 	*Une plume inquiétante aux bords extrêmement tranchants, qui témoigne d'une décomplexion hors du commun.*
 	
 	« L'être qu'on appelle « homme » n'est rien de plus qu'une machine complexe. »
@@ -46,7 +46,7 @@ Mais...
 « C'est entendu, nous serons compagnons. »
 « Quant à quel nom te donner... »
 En entendant le nom, le jeune homme ne put s'empêcher d'éclater de rire. """,
-	3: """__**Figé dans le temps**__
+    3: """__**Figé dans le temps**__
 	*Une montre à gousset dont le couvercle ne s'ouvre plus. Cependant, ses tics et ses tocs suivent toujours la marche inexorable du temps.*
 	
 	L'argent est le sang de ce monde, et les voies qu'il parcourt sont telles ses artères.
@@ -63,7 +63,7 @@ Ou peut-être que c'est justement le fait de ne pas avoir la faveur des dieux, q
 Au nom de l'argent, je respecterai le contrat qui nous unit :
 Devenir le cœur d'où part l'argent à travers le monde, sans reculer devant rien.
 Et, le moment venu, ce cœur arrêtera de battre, sur notre propre volonté. »""",
-	4: """__**Coupe de transcendance**__
+    4: """__**Coupe de transcendance**__
 	*Une coupe à l'allure complexe. Son apparence ne laisse rien paraître de ses années.*
 	
 	Lui, qui dès la naissance avait les traits les plus fins,
@@ -83,7 +83,7 @@ et je suis libre de choisir comment passer les années qui me restent.
 
 Et puisque marcher au milieu des hommes et de leurs masques me plaît,
 alors je deviendrai comme eux. »""",
-	5: """__**Masque ricanant**__
+    5: """__**Masque ricanant**__
 	*Un masque qui couvre le visage, ne laissant rien voir de votre expression.*
 	
 	Puisque le sang corrompu des miens ne peut être lavé, alors je deviendrai celui qui se rit du destin.

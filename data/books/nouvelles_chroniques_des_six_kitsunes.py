@@ -1,5 +1,5 @@
 book = {
-	1: """Préface
+    1: """Préface
 
 	Les histoires liées à la mémoire semblent toujours être en rapport avec ces moments où vous gagnez une chose avant de la perdre aussitôt.
 
@@ -35,7 +35,7 @@ book = {
 	Et ce fut ainsi que je me retrouvais à écrire une fois de plus pour la Chambre Yae. Cela me paraît amusant, maintenant que j'y pense.
 	Mes fidèles lecteurs, ne vous fâchez pas. Je vous demande de ne pas interpréter cela comme une décision d'arrêter l'écriture sauf par plaisir égoïste.
 	Après tout, le prix de certains vins d'excellence va bientôt baisser, alors je dois m'assurer que je suis prêt à les acheter. Par ailleurs, je dois rembourser la responsable éditoriale pour le vin qu'elle m'avait si gentiment offert ce soir-là.""",
-	2: """Pardonnez mes divagations, mais il y a encore des éléments que je dois tirer au clair avant de commencer mon histoire.
+    2: """Pardonnez mes divagations, mais il y a encore des éléments que je dois tirer au clair avant de commencer mon histoire.
 	Que sont les « Nouvelles chroniques des six Kitsunes » ?
 	De « nouvelles chroniques » supposent l'existence d'« anciennes chroniques ». Ce livre est une édition légèrement révisée des « Chroniques des six Kitsunes d'Urakusai », qui ont connu une grande popularité il y a un demi-siècle. Mes compétences en matière d'écriture sont limitées et je ne peux qu'espérer que M. Urakusai et mes autres lecteurs liront ces pages avec un regard indulgent.
 	En parlant de M. Urakusai, il était déjà célèbre quand je n'étais qu'un enfant. À cette époque, la Kitsune Saiguu s'intéressait déjà beaucoup à ses capacités littéraires et à son expertise en matière de thé, faisant de lui un Kitsune cultivé et élégant.
@@ -46,7 +46,7 @@ book = {
 
 	L'aînée des six était Itaru, le Kitsune noir. Contrairement à la plupart des autres femelles, elle était aussi large qu'un ours et aussi forte qu'un tigre, à la personnalité sauvage et indisciplinée. Un jour, elle détruisit un shintai représentant la Shogun dans le hall principal du sanctuaire lorsqu'elle était ivre et désorientée. Furieuse, Hakushin bannit Itaru de la montagne pour une période d'introspection dont elle eut bien besoin.
 	Trop heureuse de quitter la montagne, Itaru oublia complètement les avertissements d'Hakushin et trouva une bouteille d'alcool avant de se diriger vers le village le plus proche pour chercher des ennuis.""",
-	3: """Reprenons là où nous nous étions arrêtés : Itaru, le Kitsune noir, se rendit au village pour semer la pagaille lorsqu'elle vit deux femmes se tenant au bord de la route, habillées comme des bûcherons. Toutes les deux avaient trois sabres accrochés à leur taille : un nodachi de sept pieds de long, un kodachi et un wakizashi. Celles-ci étaient donc armées jusqu'aux dents et ne s'en cachaient pas.
+    3: """Reprenons là où nous nous étions arrêtés : Itaru, le Kitsune noir, se rendit au village pour semer la pagaille lorsqu'elle vit deux femmes se tenant au bord de la route, habillées comme des bûcherons. Toutes les deux avaient trois sabres accrochés à leur taille : un nodachi de sept pieds de long, un kodachi et un wakizashi. Celles-ci étaient donc armées jusqu'aux dents et ne s'en cachaient pas.
 
 	Ces deux femmes se mirent en état d'alerte lorsqu'elles virent une silhouette noire et imposante s'avancer, faisant voler la poussière et vibrer le sol. Elles saisirent le manche de leurs lames, prêtes à les dégainer à tout moment, et demandèrent à l'unisson :
 
@@ -63,7 +63,7 @@ book = {
 	Les deux malfaiteuses paniquèrent et supplièrent Itaru d'épargner leur vie. Cette dernière les jeta au sol avant de leur répondre :
 
 	« D'accord. Je suis sans maître depuis que j'ai été bannie de la montagne par Hakushin, alors pourquoi ne pas vous joindre à moi ? Nous aiderons qui en ont besoin. Ça va être amusant ! »""",
-	4: """Dans le volume précédent, Itaru, le Kitsune noir, avait maîtrisé deux brigandes, les jumelles oni de Tokaku, et les trois se lancèrent dans leur tout nouveau voyage de bienveillance envers autrui.
+    4: """Dans le volume précédent, Itaru, le Kitsune noir, avait maîtrisé deux brigandes, les jumelles oni de Tokaku, et les trois se lancèrent dans leur tout nouveau voyage de bienveillance envers autrui.
 
 	Notre trio rencontra une mère et sa fille en reposant au Village de Konda.
 	Après avoir engagé la conversation, le trio apprit le nom de ces deux personnes : Youzan et Yui. Toutes deux étaient des musiciennes venues de la lointaine Île de Seirai en visite à la Cité d'Inazuma pour participer au festival. Sur leur chemin, elles furent escroquées par un vendeur de melons lavandes du village : il leur avait offert quelques melons pour remédier à leur soif, soi-disant par pure bonté, avant d'insister pour qu'elles achètent d'autres melons à un prix exorbitant. Hélas, les musiciennes itinérantes ne roulaient pas sur les moras et ne pouvaient pas se permettre de dépenser la totalité du budget prévu pour leur trajet retour en melons lavandes hors de prix...
@@ -76,7 +76,7 @@ book = {
 	« Ne vous inquiétez pas. Je vais parler à ce marchand, il se montrera plus censé après, je vous l'assure. »
 
 	Ainsi, Itaru se mit à la recherche du marchand malhonnête.""",
-	5: """Dans le livre précédent, Itaru le Kitsune noir est parti à la recherche du marchand véreux.
+    5: """Dans le livre précédent, Itaru le Kitsune noir est parti à la recherche du marchand véreux.
 
 	Le marchand de melons lavandes, Dozaemon, était autrefois samouraï. Mais la paix régnant à Inazuma depuis bien longtemps, ses talents d'épéiste n'étaient plus guère utiles. Il devint alors marchand au village. Il apprit quelques astuces d'escroc comme l'extorsion, l'intimidation ainsi qu'à utiliser son allure féroce de manière judicieuse. Personne n'osait le confronter, peu importe combien il leur extorquait. Avec le temps, il devint un des hommes les plus riches du village.
 
@@ -135,7 +135,7 @@ book = {
 	Itaru éclata de rire. Le marchand était donc un démon, doublé d'un malpropre de Tanuki en plus de cela !
 
 	Itaru confisqua le wakizashi dérobé par le Tanuki, distribua la plupart de l'argent qu'il avait salement gagné parmi les habitants du village. Elle donna le reste à la mère et la fille qui étaient tombées dans son piège un peu plus tôt. Itaru épargna la vie du Tanuki, non sans avoir longuement hésité, puis continua sa route.""",
-	6: """Arrêtons les anecdotes au sujet d'Itaru le Kitsune noir pour l'instant. Veuillez m'excuser de jacasser, mais j'ai des commentaires à apporter à propos de vieilles affaires.
+    6: """Arrêtons les anecdotes au sujet d'Itaru le Kitsune noir pour l'instant. Veuillez m'excuser de jacasser, mais j'ai des commentaires à apporter à propos de vieilles affaires.
 	On ne connaît plus depuis longtemps la raison pour laquelle Urakusai provoqua la colère de dame Saiguu à cette époque. Cependant, dame Yae proposa de me partager quelques extraits de l'histoire dont elle fit l'expérience, après avoir bu entre deux et huit verres.
 	Nous sommes dans un roman. J'ai donc eu naturellement le désir de transformer ces mots pour confectionner le récit que l'histoire ne raconte pas.
 	Lorsque la Kitsune Saiguu quitta les terres d'Hakushin pour endosser son rôle au Sanctuaire de Narukami, dame Yae n'était pas encore née. De ce fait, son enfance fut bercée par les histoires et les contes à propos de Saiguu, qu'elle aimait et respectait profondément.

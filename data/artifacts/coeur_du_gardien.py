@@ -1,5 +1,5 @@
 artifact = {
-	1: """__**Fleur du Gardien**__
+    1: """__**Fleur du Gardien**__
 	*Un iris chéri par le Protecteur. Il n'a pas eu l'occasion de l'offrir à la personne qu'il aimait.*
 
 	Seule la douce voix d'une certaine demoiselle
@@ -7,7 +7,7 @@ artifact = {
 	Hélas, leur histoire fut brève.
 	Le chevalier se vida de son sang,
 	et la jeune fille, de ses larmes.""",
-	2: """__**Plume du Gardien**__
+    2: """__**Plume du Gardien**__
 	*Une broche en forme de plume qui symbolise l'envie de protéger.*
 
 	L'emblème en forme de bouclier gravé sur cette plume brille sous la lumière pâle de lune.
@@ -16,7 +16,7 @@ artifact = {
 	mais à la tombée de la nuit, il dissimulait son emblème et son visage.
 	Rien ne l'empêchait alors de faire ce qu'il devait faire ;
 	des actions qui ne pouvaient pas être effectuées par un noble chevalier.""",
-	3: """__**Horloge du Gardien**__
+    3: """__**Horloge du Gardien**__
 	*Un petit appareil qui affiche l'heure. C'est la seule façon de voir le temps passer lors des nuits sans lune.*
 
 	Le bruit des aiguilles de l'horloge et la lueur de la chandelle l'accompagnaient sa lecture des rapports d'incidents.
@@ -30,7 +30,7 @@ artifact = {
 	Ce n'était qu'en regardant cette demoiselle sur la place
 	qu'il avait le temps de réfléchir aux choses qu'il s'était interdites.
 	Parmi lesquelles figurait son propre avenir...""",
-	4: """__**Coupe du Gardien**__
+    4: """__**Coupe du Gardien**__
 	*Un récipient en métal qui contient souvent une boisson pour aider le Protecteur à se sentir moins seul pendant qu'il monte la garde.*
 
 	Une coupe en or ordinaire.
@@ -40,7 +40,7 @@ artifact = {
 	Ainsi plaisantait le supérieur hiérarchique du Protecteur.
 	« Arrête de faire la tête ! Buvons et chantons à tue-tête ! »
 	« C'est comme ça qu'on a le courage d'affronter le lendemain ! »""",
-	5: """__**Bandeau du Gardien**__
+    5: """__**Bandeau du Gardien**__
 	*Un objet en tissu de couleur indigo qui peut aussi servir de bandage en cas d'urgence.*
 	
 	Selon lui, il était indispensable d'avoir un plan de secours en toute circonstance.

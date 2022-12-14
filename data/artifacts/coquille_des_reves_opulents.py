@@ -1,5 +1,5 @@
 artifact = {
-	1: """__**Période de floraison**__
+    1: """__**Période de floraison**__
 	*Un petit ornement doré à six pétales qui ne se faneront jamais. Il symbolise la fugacité des gloires mortelles.*
 
 	Ce qu'il vit dans son rêve était un fantôme dansant sur la musique au clair de lune,
@@ -21,7 +21,7 @@ artifact = {
 	Était-ce le « lui » du passé qui disait cela ? Ou bien celui du futur ?
 	Le vagabond s'en fichait, car lorsqu'il s'éveilla,
 	ce n'était pas lui, mais cet avenir éthéré qui allait disparaître.""",
-	2: """__**Plume d'opulence**__
+    2: """__**Plume d'opulence**__
 	*Un objet en forme de plume, trouvé dans un hall isolé. La compassion de son créateur a conduit à le laisser dans ce manoir avec un corps endormi.*
 
 	L'excentrique qui erre depuis longtemps n'y pense plus
@@ -48,7 +48,7 @@ artifact = {
 
 	... Mais la plume dorée finit couverte de poussière,
 	et toutes les histoires furent incinérées dans les flammes karmiques jusqu'à ce qu'il n'en reste plus rien.""",
-	3: """__**Chant de vie**__
+    3: """__**Chant de vie**__
 	*À Inazuma, il s'agit d'un petit objet venu d'outre-mer. Le cœur de ce mécanisme a été retiré, et ses aiguilles ne tournent plus.*
 
 	Il était destiné à l'origine à abriter un « cœur »,
@@ -76,7 +76,7 @@ artifact = {
 	Le bien et le mal ne sont que l'écho du chant des êtres sensibles, inutiles et bruyants.
 	Mais si j'arrachais ce « cœur »,
 	je ne ressentirais plus rien...""",
-	4: """__**Calebasse d'éveil**__
+    4: """__**Calebasse d'éveil**__
 	*Une gourde qui a été ornée de poudre d'or et de peinture noire. Sa couleur d'origine n'est plus discernable, mais son utilisation principale semble être comme accessoire de représentation.*
 
 	Amenoma, Futsu, Isshin, Hyakume, Senju...
@@ -104,7 +104,7 @@ artifact = {
 	Peut-être qu'un jour viendra où les aventures de ce corps et ses expériences
 	deviendront des contes à transmettre par les mortels, des souvenirs lointains qui traversent les lignes énergétiques.
 	Mais pour l'instant, ses trois actes sont toujours en cours...""",
-	5: """__**Chapeau squelettique**__
+    5: """__**Chapeau squelettique**__
 	*Un chapeau qui protégeait autrefois un vagabond du soleil et de la pluie. C'est finalement devenu un outil pratique avec lequel les visages peuvent être cachés et les expressions obscurcies.*
 
 	« Où vas-tu, vagabond ? »

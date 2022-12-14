@@ -1,5 +1,5 @@
 artifact = {
-	1: """__**Fleur d'enchevêtrement**__
+    1: """__**Fleur d'enchevêtrement**__
 	*Une jolie amulette faite de corde de papier torsadée. Il est dit qu'elle contient le pouvoir de réaliser les souhaits en son sein.*
 	
 	Un omamori fabriqué selon un procédé faisant appel à des cordons de papier torsadé.
@@ -24,7 +24,7 @@ Elle m'a gentiment cogné la tête avec sa pipe, et a sournoisement changé de s
 
 Mais les ténèbres ont fini par tout engloutir...
 Et ce « destin », non plus, n'était plus... """,
-	2: """__**Flèche de nostalgie**__
+    2: """__**Flèche de nostalgie**__
 	*Une flèche tueuse de démons d'ancienne facture. Elle semble avoir été conservée avec grand soin par quelqu'un, même jusqu'à notre époque.*
 	
 	Une flèche tueuse de démons utilisée par les sanctuaires pour les prières et pour éloigner les catastrophes.
@@ -50,7 +50,7 @@ Je détruirai le mal avec notre arc et nos flèches, exorcisant la folie et l'ob
 
 Mais qui avait gagné le dernier jet de dés...
 Elle toucha légèrement l'arc en réfléchissant à ces choses si insignifiantes... """,
-	3: """__**Horloge de l'aube**__
+    3: """__**Horloge de l'aube**__
 	*Une montre de poche en bronze, ornée d'un cordon de papier torsadé et d'une cloche. Ses aiguilles sont figées à jamais sur l'aube d'un certain matin d'automne.*
 	
 	Une montre élégante, ornée d'une cloche de sanctuaire.
@@ -72,7 +72,7 @@ Dans ce vague souvenir, elle n'arrêtait pas de dire des choses incompréhensibl
 
 « C'est presque l'aube, Kanade. »
 « Il est temps pour nous de rentrer. » """,
-	4: """__**Cœur plein d'espoir**__
+    4: """__**Cœur plein d'espoir**__
 	*Un cylindre spécial de divination. Le mécanisme au fond permet de retirer facilement tous les bâtonnets de souhait indésirables.*
 	
 	Un cylindre spécial que les sanctuaires utilisent pour la divination.
@@ -97,7 +97,7 @@ La blague de la Kitsune Saiguu était déplacée, comme toujours, et s'accompagn
 C'est pourquoi il faut être fort et vivre très, très longtemps.
 Même si toutes les personnes que l'on chérit sont parties, tant que l'on est encore en vie,
 le temps passé avec elles ne périra jamais... """,
-	5: """__**Visage capricieux**__
+    5: """__**Visage capricieux**__
 	*Un masque cérémonial de Kitsune bien conservé. Un petit sourire énigmatique orne toujours ses lèvres.*
 	
 	Un lumineux et élégant masque de festival qui appartenait autrefois à une certaine miko.

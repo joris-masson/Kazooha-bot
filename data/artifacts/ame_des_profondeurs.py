@@ -1,5 +1,5 @@
 artifact = {
-	1: """__**Broche plaquée**__
+    1: """__**Broche plaquée**__
 	*Une broche de cape qui a perdu son éclat. Son plaquage en or s'est érodé à cause du vent et des vagues il y a fort longtemps.*
 	
 	Une broche dont les couleurs ont flétri sous l'action de la bise et du sel marin.
@@ -13,7 +13,7 @@ artifact = {
 	« Des paroles impossibles à chanter... Ai-je choisi l'illusion, ou la vérité ? »
 	« Ayant tout perdu et tout abandonné, dans les vagues amènes j'ai plongé. »
 	« Mais peut-être s'agit-il là de la fin la plus indiquée. Hahaha ! »""",
-	2: """__**Brise nostalgique**__
+    2: """__**Brise nostalgique**__
 	*Une plume transportée par la brise sifflante et les vagues pourpres de la mer. Le temps a altéré sa forme et sa couleur.*
 
 	La plume rouge volait, menaçante, annonciatrice de la mort à venir.
@@ -27,7 +27,7 @@ artifact = {
 	À ses derniers instants,
 	il se remémora clairement un passé qu'il avait enfoui sous l'alcool.
 	Tel un trésor se révélant sous le sable emporté par les vagues...""",
-	3: """__**Boussole en bronze**__
+    3: """__**Boussole en bronze**__
 	*Une vieille boussole en bronze. Son aiguille pointe vers un rivage inatteignable, vers un port qui n'existe pas.*
 
 	Une boussole en bronze utilisée par un marin.
@@ -43,7 +43,7 @@ artifact = {
 	« Le rhum ne t'a quand même pas fait oublier ça, j'espère ?! Hahaha ! »
 	« Tant mieux. Parce que l'heure est venue d'honorer ton pacte. »
 	« Ainsi donc c'est l'heure ? ... Soit. Plus rien n'a d'importance... »""",
-	4: """__**Calice des profondeurs**__
+    4: """__**Calice des profondeurs**__
 	*Une coupe ternie qui a été récupérée en mer par hasard. On peut déduire qu'elle a passé du temps dans l'eau d'après son apparence.*
 
 	Une coupe raffinée, aux couleurs quelque peu délavées,
@@ -59,7 +59,7 @@ artifact = {
 	« Combien de fois ai-je oublié le passé... »
 	« Ah ! À quoi bon ressasser les jours d'antan ? »
 	« Toute mort est vaine, et aucun salut ne réside dans le passé. »""",
-	5: """__**Calot taché de vin**__
+    5: """__**Calot taché de vin**__
 	*Un vieux couvre-chef taché par du vin. Il empeste encore l'alcool aujourd'hui.*
 
 	Ce tricorne dégage une forte odeur d'alcool.

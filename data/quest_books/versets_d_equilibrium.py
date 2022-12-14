@@ -1,5 +1,5 @@
 book = {
-	1: """De tous les éléments, le seul solide est le Géo.
+    1: """De tous les éléments, le seul solide est le Géo.
 	Construit sur la tradition, il perdure par celle-ci.
 	Juste est la loi du Seigneur de la Roche, et ineffable sa sagesse.
 	Pesant le bien et le mal, il règne sur le monde.

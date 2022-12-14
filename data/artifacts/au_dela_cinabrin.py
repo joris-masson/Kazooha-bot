@@ -1,5 +1,5 @@
 artifact = {
-	1: """__**Vie fleurie**__
+    1: """__**Vie fleurie**__
 	*Un ancien souvenir. Il semble toujours aussi vivant que l'être qui l'a préservé il y a plusieurs siècles.*
 	
 	Il y avait autrefois une magnifique fleur qui s'épanouissait sur les anciennes falaises de cinabre.
@@ -20,7 +20,7 @@ Il ne laissa derrière lui que cette petite fleur à la fille du peuple de la mo
 
 « Ma seule crainte est d'être perdu dans l'oubli. »
 « Si le mauvais sort m'amène à être enterré dans un lieu sans nom, alors, je t'en prie, ne m'oublie pas. » """,
-	2: """__**Plume de lumière latente**__
+    2: """__**Plume de lumière latente**__
 	*Une penne brillant faiblement, imprégnée de souvenirs forts.*
 	
 	La légende veut qu'un héros ait un jour arraché une plume d'aigle du haut de la plus haute falaise du Gouffre.
@@ -37,7 +37,7 @@ Ces sombres murmures secouèrent le cœur de ceux dont le nom ne serait jamais r
 Mais la bataille se termina enfin, et nombreux furent les soldats qui restèrent au fond du Gouffre pour y sommeiller éternellement.
 Les cris stridents poussés par les forces obscures s'évanouirent peu à peu, telles des ondes à la surface de l'eau.
 Et bien que la durée de vie des humains soit courte, la terre, elle s'en souviendrait toujours. """,
-	3: """__**Relique solaire**__
+    3: """__**Relique solaire**__
 	*Une pièce d'horlogerie ancienne d'apparence solide, dont l'éclat est le résultat d'un cristal émaillé.*
 	
 	La légende raconte que lorsque le Souverain de la Roche était jeune, le soleil était un char qui voyageait autour de la terre.
@@ -56,7 +56,7 @@ Il était difficile même pour Yaksha de parcourir cet abîme où luttaient les 
 Les simples mortels avaient d'autant plus besoin de la lumière pour ne pas se faire dévorer par le voile d'obscurité qui enveloppait tout.
 Les soldats des Millelithes ramassèrent du sable qui projetait une lueur s'apparentant à la clarté lunaire pour s'éclairer.
 Le garde-temps, quant à lui, est un témoin du temps qu'ils passèrent dans les profondeurs. Il est la preuve que là où ils tombèrent, d'autres se présentèrent pour prendre la relève. """,
-	4: """__**Instant du contrat**__
+    4: """__**Instant du contrat**__
 	*Une ancienne coupe en cristal émaillé dont l'éclat n'a pas été estompé sous l'effet de l'érosion du temps.*
 	
 	Cet endroit, connu sous le nom de « Gouffre », a une couleur cinabre depuis les temps anciens.
@@ -77,7 +77,7 @@ Sans faire de promesses ni réprimander les mortels pour leur manque de courtois
 Tout le monde connaît la suite de l'histoire...
 
 Malgré tout, cette coupe en cristaux émaillés qu'il utilisa pour boire avec les anciens de la tribu reste à ce jour un témoignage de leur pacte. """,
-	5: """__**Maintien fulgurant**__
+    5: """__**Maintien fulgurant**__
 	*Ce masque aurait été fabriqué par les montagnards pour un Yaksha. Il est de fabrication simple, mais sa surface brille néanmoins de mille feux.*
 	
 	Il y avait dans la Vallée Tianqiu un Yaksha armé de quatre bras puissants.

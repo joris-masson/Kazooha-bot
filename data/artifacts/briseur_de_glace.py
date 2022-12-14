@@ -1,5 +1,5 @@
 artifact = {
-	1: """__**Mémoires du froid**__
+    1: """__**Mémoires du froid**__
 	*Une fleur légèrement givrée qu'on trouvait autrefois sur les glaciers. Même le plus fier et le plus arrogant des guerriers a dû se baisser pour la cueillir.*
 
 	Cette fleur de glace éternellement gelée a été cueillie par des mains délicates.
@@ -10,7 +10,7 @@ artifact = {
 	C'était une personne élégante et tranquille, même face à la mort et au désespoir.
 	Ses actes héroïques furent oubliés et emportés par les blizzards du nord ;
 	mais lorsqu'enfin fondirent les neiges et s'essouflèrent les vents glacés, la fleur était toujours là, aussi éclatante qu'au premier jour.""",
-	2: """__**Résolution du Briseur de glace**__
+    2: """__**Résolution du Briseur de glace**__
 	*Une plume glacée. On peut presque sentir la brise froide venant souffler sur les plaines et les sommets enneigés.*
 
 	La plume d'un rapace qui n'appartient pas à l'hiver mordant. Elle est froide au toucher.
@@ -23,7 +23,7 @@ artifact = {
 	Ceux qui furent chassés par le froid cruel, tous les enfants qui n'ont plus de foyer, reviendront grâce à toi dans le nid. »
 	Le guerrier, sur les épaules duquel reposait un poids si important, s'immobilisa dans la neige virevoltante, cherchant à deviner la couleur de la plume.
 	Prise dans sa gaine de glace, elle allait accompagner le héros dans sa quête, perdant un peu plus ses couleurs à chaque pas.""",
-	3: """__**Fierté du Tisseur de givre**__
+    3: """__**Fierté du Tisseur de givre**__
 	*Un sablier ayant appartenu à un peuple qui attendait le retour de leurs guerriers. Des grains de glace éternelle y remplacent le sable.*
 	
 	L'étranger, qui trouvait de l'espoir pour les autres,
@@ -36,7 +36,7 @@ artifact = {
 	... Alors, je t'en conjure, vis. Ne t'éteins pas à notre suite, languissant pour toujours sous le silence gelé. »
 	Avalant une nouvelle gorgée de vin pour se donner courage face au périple qui l'attendait, l'homme détourna le regard des yeux humides de la jeune fille.
 	Et c'est ainsi qu'il partit pour un voyage sans fin vers les profondeurs enneigées.""",
-	4: """__**Fierté du Tisseur de givre**__
+    4: """__**Fierté du Tisseur de givre**__
 	*Une tasse sculptée dans la glace, aussi rude que l'hiver. On y buvait autrefois du vin qui ne gelait pas.*
 
 	L'étranger, qui trouvait de l'espoir pour les autres,
@@ -49,7 +49,7 @@ artifact = {
 	... Alors, je t'en conjure, vis. Ne t'éteins pas à notre suite, languissant pour toujours sous le silence gelé. »
 	Avalant une nouvelle gorgée de vin pour se donner courage face au périple qui l'attendait, l'homme détourna le regard des yeux humides de la jeune fille.
 	Et c'est ainsi qu'il partit pour un voyage sans fin vers les profondeurs enneigées.""",
-	5: """__**Écho de l'hiver**__
+    5: """__**Écho de l'hiver**__
 	*Le diadème d'un ancien héros qui rêvait de conquérir la neige et la glace. Il représente le courage de son ancien propriétaire face au froid mordant de l'hiver.*
 
 	Emportant avec lui le faible espoir de salut d'un royaume entier, le héros commença son périple.

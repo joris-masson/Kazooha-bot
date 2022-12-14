@@ -1,5 +1,5 @@
 artifact = {
-	1: """__**Fleur d'acier rêveuse**__
+    1: """__**Fleur d'acier rêveuse**__
 	*Un bourgeon de fleur en or foncé martelé, dont le noyau écarlate est enveloppé de pétales qui ne s'ouvriront jamais.*
 	
 	« Dans les rêves d'or, personne n'aura à boire la moindre goutte d'eau amère. »
@@ -17,7 +17,7 @@ Il ne fallait pas que quiconque puisse avoir sur son visage des cicatrices profo
 C'est ainsi que de ce nouveau monde qui brûlait s'échappèrent des pensées tenaces, tel un feu sans fumée.
 C'est ainsi que ceux qui regardent le passé d'un œil et rêvent avec l'autre finiront par se perdre.
 C'est ainsi qu'il fixa son regard profondément à l'intérieur de ce savoir interdit, et qu'il écouta attentivement de doux murmures...""",
-	2: """__**Plume du jugement**__
+    2: """__**Plume du jugement**__
 	*Cette plume spéciale était autrefois utilisée pour peser le cœur des coupables, mais elle a depuis perdu sa fonction d'origine.*
 	
 	« Dans le nouveau monde, seul le bien existe. »
@@ -34,7 +34,7 @@ Ignorer les fondations du palais qui s'enfonçaient lentement dans les sables mo
 « Et le verdict sera l'anéantissement total. »
 À la toute fin, les règles furent corrompues par l'arrogance qui s'était élevée comme un mirage, et ne devinrent que de simples entraves.
 Comme le roi divin l'avait décidé, le malheur se transforma en chaînes qui scellèrent le destin de ses sujets. """,
-	3: """__**Les années dorées**__
+    3: """__**Les années dorées**__
 	*Ce cadran solaire doré semble raconter l'histoire ancienne du désert éternel.*
 	
 	« La vision dorée apparaîtra sous la forme la plus ancienne. »
@@ -52,7 +52,7 @@ En ce temps-là, le roi sage recevait des prophéties venues du ciel, et il n'y 
 
 Il est vrai que l'âge d'or du roi de la mer de sable et du peuple du sable arrivera.
 Le rêve doré invoquera le sable errant, dans lequel il n'y aura ni chagrin ni séparation. """,
-	4: """__**Festin final de miel**__
+    4: """__**Festin final de miel**__
 	*Cette coupe de vin, autrefois utilisée lors de grandes et traditionnelles fêtes, a malheureusement maintenant perdu une grande partie de sa superbe.*
 	
 	« Toute allégresse se termine en amertume. »
@@ -75,7 +75,7 @@ Et c'est à l'intérieur de cette machine cauchemardesque qu'une toute nouvelle 
 « L'homme deviendra le roi des rois et le dieu des dieux. »
 Une élégie fut offerte au solitaire roi des rois.
 Le sable doré savait déjà depuis bien longtemps le dénouement funeste qui l'attendait. """,
-	5: """__**L'ombre du roi des sables**__
+    5: """__**L'ombre du roi des sables**__
 	*Ces bandeaux incrustés d'or, utilisés par les prêtres du désert dans les temps anciens, étaient fabriqués en recopiant celui autrefois porté par un souverain légendaire des peuples du désert.*
 	
 	« Le roi apparaîtra dans une lumière éblouissante. »

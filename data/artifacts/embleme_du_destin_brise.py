@@ -1,5 +1,5 @@
 artifact = {
-	1: """__**Tsuba magnifique**__
+    1: """__**Tsuba magnifique**__
 	*Les légendes prétendent que ce garde-main orné était autrefois monté sur une épée offerte au oni qui a trahi la Shogun.*
 	
 	Mère avait montré ses crocs contre la Shogun, qui avait été bonne avec elle et qui lui avait donné une précieuse épée.
@@ -27,7 +27,7 @@ Après avoir entendu parler de son passé, la demoiselle, qui possédait des ail
 « Enfant des oni, perfectionnez votre escrime et devenez un ennemi avec qui un Tengu de Yougou n'aurait pas honte de croiser le fer. »
 « Ah oui ! Et si vous parvenez à me toucher, vous pourrez appeler votre technique secrète « Victoire tengu » ! »
 « Après tout, si vous arrivez à ce point, vous aurez une épée qui vous permettra de triompher des Tengu. » """,
-	2: """__**Plume brisée**__
+    2: """__**Plume brisée**__
 	*Ceci était autrefois la plume noire d'un certain guerrier tengu, et également le souvenir précieux d'un grand samouraï du passé.*
 	
 	Entouré des plumes noires entraînées par sa lame se tenait l'homme qui était sur le point de devenir un maître épéiste...
@@ -56,7 +56,7 @@ Ces mots étaient sur le bout de la langue de Doukei, alors même qu'il fixait l
 
 « Au revoir, Doukei, et s'il vous plaît, oubliez-moi. »
 « Utilisez votre épée pour la lignée Iwakura... Et ouvrez un chemin qui n'appartiendra qu'aux Iwakura. » """,
-	3: """__**Inro de la tempête**__
+    3: """__**Inro de la tempête**__
 	*Une boîte en laque violet foncé exquise qui peut être utilisée pour ranger des objets, décorée de coquillages incrustés brillants et d'orfèvrerie complexe.*
 	
 	Dans un passé lointain, lorsque l'Île de Seirai n'était pas encore entourée de nuages d'orage, les souvenirs montaient et descendaient comme des souffles.
@@ -92,7 +92,7 @@ Surplombant les récifs moussus et le port où vous aviez autrefois ce rendez-vo
 Pour que le joueur gagne à nouveau son pari, pour le plaisir de prier pour sa sécurité...
 Une fois de plus, vous avez osé vous tenir sur ces hauteurs, brandissant la cage à sceau que vous aviez fabriquée de vos propres mains.
 Avec l'espoir de retrouver ces souvenirs, vous avez rassemblé le pouvoir du tonnerre et de la foudre. """,
-	4: """__**Gourde pourpre**__
+    4: """__**Gourde pourpre**__
 	*Un récipient à vin à la conception complexe dans lequel un artiste martial de renommée mondiale a une fois bu.*
 	
 	Grâce à sa technique d'épée secrète, son balayage tengu, Iwakura Doukei est devenu l'instructeur d'escrime du Clan Kujou.
@@ -110,7 +110,7 @@ Les pétales du cerisier sacré tombèrent alors également, comme si elles éta
 Et même s'il n'y avait plus de divinité à adorer dans ce sanctuaire, il était toujours en bon état.
 Des rires résonnaient à travers les montagnes, aussi clairs que les eaux d'une source.
 Mais plus jamais les deux ne remettraient les pieds dans cette cour désolée. """,
-	5: """__**Kabuto orné**__
+    5: """__**Kabuto orné**__
 	*Un casque robuste et dur porté comme armure par un noble samouraï.*
 	
 	« Je me demandais, monsieur Douin, si votre épée pouvait réellement trancher la foudre ? »

@@ -1,5 +1,5 @@
 book = {
-	1: """La paix dura treize ans avant que l'ère des nations en guerre ne débute.
+    1: """La paix dura treize ans avant que l'ère des nations en guerre ne débute.
 	Les nations au Nord, les plus éloignées de l'épicentre, furent finalement entraînées dans la guerre.
 	Comme lors de toutes les guerres, après un conflit féroce qui semblait sans fin, l'un des camps belligérants fut finalement vaincu et ses terres réduites en cendres. La famille du seigneur vaincu et le reste de ses vassaux finirent par fuir dans les montagnes.
 	Tout était banal jusque-là.
@@ -21,7 +21,7 @@ book = {
 	Le guerrier fit mine d'être déçu, et les trois soldats tombèrent soudainement à terre.
 	« Tu avais tout prévu depuis le début, n'est-ce pas ? Espèce de sale brute. »
 	Ces mots furent prononcés par la femme qui se tenait derrière lui.""",
-	2: """« Ce n'est pas ça. »
+    2: """« Ce n'est pas ça. »
 	Ces mots se firent soudainement entendre.
 	Nos deux compagnons se trouvaient à présent dans un sanctuaire au beau milieu de la montagne. Assise près d'un feu, le visage de la princesse à la chevelure de jais brillait à la lumière des flammes chatoyantes.
 	« Comment ça, ce n'est pas ça ? »
@@ -41,7 +41,7 @@ book = {
 	« De plus... »
 	Le guerrier se tourna, ses yeux vides reflétant la lueur des flammes.
 	« La destruction du monde est un concept absolument idiot, vous vous en rendrez compte assez vite. »""",
-	3: """Bien que les champs de bataille soient souvent assimilés à l'enfer, ce n'est qu'une métaphore pour en illustrer la réalité.
+    3: """Bien que les champs de bataille soient souvent assimilés à l'enfer, ce n'est qu'une métaphore pour en illustrer la réalité.
 	Ce qui se dressa devant leurs yeux pouvait réellement être qualifié d'enfer.
 	Des terres désertées, des arbres flétris et des montagnes de cadavres...
 	Comme si la vie en avait été drainée.
@@ -60,7 +60,7 @@ book = {
 
 	Ignorant la princesse Mina, qui vacillait en raison de ce qu'elle avait devant les yeux, le samouraï continua,
 	« Vous dites être la princesse qui apporte la destruction à ce monde... mais n'est-il pas déjà en train de se détruire sans votre intervention ? »""",
-	4: """La nation de Kogami n'était plus qu'une terre sans vie à perte de vue.
+    4: """La nation de Kogami n'était plus qu'une terre sans vie à perte de vue.
 	Les champs désertiques s'étendaient à l'horizon autour d'une grande dune de sable où deux samouraïs se faisaient face.
 	Le premier était notre protagoniste que l'on nommera le samouraï vert par souci de différenciation.
 	Le second était un nouveau venu dans l'histoire. Nous l'appellerons le samouraï pâle.
@@ -81,7 +81,7 @@ book = {
 	Les héros qui étaient venus à bout du seigneur démoniaque n'ont pas réussi à protéger ces terres en fin de compte.
 	Et au final, seulement d'eux d'entre eux en ont réchappé. »
 	« Hé, ça suffit avec les souvenirs. On a des affaires à régler ! »""",
-	5: """La nation de Kogami n'était plus qu'une terre sans vie à perte de vue.
+    5: """La nation de Kogami n'était plus qu'une terre sans vie à perte de vue.
 	Les champs désertiques s'étendaient à l'horizon autour d'une grande dune de sable où deux samouraïs se faisaient face.
 	Le premier était notre protagoniste que l'on nommera le samouraï vert par souci de différenciation.
 	Le second était un nouveau venu dans l'histoire. Nous l'appellerons le samouraï pâle.
@@ -102,7 +102,7 @@ book = {
 	Les héros qui étaient venus à bout du seigneur démoniaque n'ont pas réussi à protéger ces terres en fin de compte.
 	Et au final, seulement d'eux d'entre eux en ont réchappé. »
 	« Hé, ça suffit avec les souvenirs. On a des affaires à régler ! »""",
-	6: """« Et donc, est-ce que ce monde a été sauvé ? »
+    6: """« Et donc, est-ce que ce monde a été sauvé ? »
 	À la fin de l'histoire, le samouraï marche dans un désert sans limite.
 	Les plans de la Tour du vide ont probablement porté leurs fruits, et les forces vitales du monde ont été totalement englouties.
 	Il est impossible de savoir si un nouveau monde a été créé, mais celui-ci était certainement voué à sa perte.

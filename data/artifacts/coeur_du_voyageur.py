@@ -1,5 +1,5 @@
 artifact = {
-	1: """__**Fleur du Voyageur**__
+    1: """__**Fleur du Voyageur**__
 	*Une petite fleur bleue avec un ruban attaché à sa tige.*
 	
 	Le voyageur venu d'une contrée lointaine portait cette fleur sur sa poitrine.
@@ -15,7 +15,7 @@ Arrivé dans une région entourée par des lacs dont l'eau était aussi limpide 
 Le voyageur, qui avait abandonné sa contrée, tenait cette fleur près de son cœur.
 Il jura de n'aimer personne d'autre que lui-même pour vivre sans attache.
 Toutefois, il garda cette jeune fille dans ses pensées et risqua même sa vie dans l'espoir de la sauver de son funeste destin...""",
-	2: """__**Plume du Voyageur**__
+    2: """__**Plume du Voyageur**__
 	*Une plume de flèche bleue qui symbolise la nostalgie d'un voyageur.*
 	
 	Le moindre espoir fut écrasé par une puissance colossale qui emporta avec elle la promesse de retrouvailles.
@@ -32,7 +32,7 @@ Déterminé, le voyageur pinça la dernière corde de sa lyre et décocha sa der
 
 Il avait l'habitude de contempler le ciel bleu alors qu'il se faisait à sa nouvelle vie en terre inconnue.
 La voûte céleste était partout la même, que ce soit ici ou dans son ancienne patrie...""",
-	3: """__**Montre du Voyageur**__
+    3: """__**Montre du Voyageur**__
 	*Un cadran solaire qui a connu des temps instables, tout en enregistrant silencieusement les cycles dictés par le soleil et de la lune.*
 	
 	Le voyageur était sans cesse à la poursuite du destin et du temps qui ne cessait de s'écouler.
@@ -48,7 +48,7 @@ Les uns comme les autres furent balayés par le temps éternel et disparurent da
 Sous un ciel nocturne dépourvu de lune, le cadran obscur refléta le visage las de l'étranger.
 « La dernière note retentit avant le tomber de rideau. »
 « Vous verrai-je sourire lorsque la tour de la place centrale s'écroulera ? » """,
-	4: """__**Calice du Voyageur**__
+    4: """__**Calice du Voyageur**__
 	*Un verre en porcelaine blanche qui a contenu de nombreuses boissons alcoolisées.*
 	
 	Une lyre possède quatre cordes.
@@ -61,7 +61,7 @@ Sous l'effet du vin, il se mit à jouer de son instrument et entonna une chanson
 
 Il ne voyagerait plus seul avec eux à ses côtés...
 L'idée d'être en leur compagnie jusqu'à la fin lui paraissait étrangement agréable. """,
-	5: """__**Couronne du Voyageur**__
+    5: """__**Couronne du Voyageur**__
 	*Une couronne en bois de saule qui émet une petite brise printanière.*
 	
 	Le voyageur prit cette couronne en bois de saule avec lui avant de partir.
