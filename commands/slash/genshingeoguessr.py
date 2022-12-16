@@ -23,7 +23,7 @@ class GenshinGeoguessr(interactions.Extension):
         self.method = create_task(IntervalTrigger(10))(self.method)
         self.method.start()
 
-        self.start_hour = 10
+        self.start_hour = 1
 
     @interactions.extension_command(
         name="genshin_geoguessr",
@@ -182,9 +182,13 @@ class GenshinGeoguessr(interactions.Extension):
                     description=f"Image soumise par <@{image_name[:18]}>\nC'est maintenant à vous de jouer :eyes:"
                 )
                 embed.set_image(url=f"attachment://{image_name}")
-                await channel.send("<@&1048002214255403088>", embeds=embed, files=ze_file)
+                message = await channel.send("<@&1048002214255403088>", embeds=embed, files=ze_file)
+                await message.pin()
+                with open(rf"data/games/geoguessr/last_day.txt", 'r') as last_day_file:
+                    last_message = await channel.get_message(message_id=int(last_day_file.readlines()[1]))
+                    await last_message.unpin()
                 with open(rf"data/games/geoguessr/last_day.txt", 'w') as last_day_file:
-                    last_day_file.write(str(datetime.now().day))
+                    last_day_file.write(f"{str(datetime.now().day)}\n{str(message.id)}")
                 os.rename(rf"data/games/geoguessr/submissions/{image_name}", rf"data/games/geoguessr/used/{image_name}")
 
     def is_same_day(self):

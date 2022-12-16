@@ -44,7 +44,9 @@ kazooha.load("commands.slash.help")
 async def on_message_create(msg: interactions.Message):
     # ma_led.set_color("cyan")
     await detect_message(msg, kazooha)
-    if msg.content.startswith("!guess") and len(msg.attachments) == 1 and msg.attachments[0].content_type.startswith("image"):
+    if msg.type == interactions.MessageType.CHANNEL_PINNED_MESSAGE:
+        await msg.delete()
+    elif msg.content.startswith("!guess") and len(msg.attachments) == 1 and msg.attachments[0].content_type.startswith("image"):
         await guess(msg)
     elif msg.content.startswith("!guess") and len(msg.attachments) != 1:
         await msg.reply("il faut une image dans votre message")
