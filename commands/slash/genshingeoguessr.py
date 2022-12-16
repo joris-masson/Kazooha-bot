@@ -23,7 +23,7 @@ class GenshinGeoguessr(interactions.Extension):
         self.method = create_task(IntervalTrigger(10))(self.method)
         self.method.start()
 
-        self.start_hour = 1
+        self.start_hour = 10
 
     @interactions.extension_command(
         name="genshin_geoguessr",
