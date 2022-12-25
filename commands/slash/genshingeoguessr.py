@@ -114,7 +114,7 @@ class GenshinGeoguessr(interactions.Extension):
         embed = interactions.Embed(
             title="__Leaderboard__",
             description=f"""
-            <@825808732926902282> -> {(3 + 4) + (3 + 5) + (3 + 5) + (3 + 4) + (3 + 4) + (3 + 5) + (3 + 5) + (3 + 5) + (3 + 5) + 2 + (3 + 5) + (3 + 5) + (3 + 5) + (3 + 5) + (3 + 5)}
+            <@825808732926902282> -> {(3 + 4) + (3 + 5) + (3 + 5) + (3 + 4) + (3 + 4) + (3 + 5) + (3 + 5) + (3 + 5) + (3 + 5) + 2 + (3 + 5) + (3 + 5) + (3 + 5) + (3 + 5) + (3 + 5) + (3 + 5) + (3 + 5)}
             <@511484678960840705> -> {(3 + 5) + (3 + 4) + (3 + 3) + (3 + 4) + (3 + 4) + (3 + 4) + 2}
             <@937433596690575371> -> {(3 + 5) + (3 + 5) + 2}
             <@327923326146183168> -> {(3 + 3)}
@@ -173,23 +173,27 @@ class GenshinGeoguessr(interactions.Extension):
     async def method(self):
         if (self.start_hour <= datetime.now().hour < self.start_hour + 1) and not self.is_same_day():
             channel = await interactions.get(self.client, interactions.Channel, object_id=int(os.getenv("IMAGE_CHANNEL_ID")))
-            images = os.listdir(r"data/games/geoguessr/submissions")
-            if len(images) != 0:
-                image_name = images[randint(0, len(images) - 1)]
-                ze_file = interactions.File(rf"data/games/geoguessr/submissions/{image_name}")
-                embed = interactions.Embed(
-                    title="Nouvelle image!",
-                    description=f"Image soumise par <@{image_name[:18]}>\nC'est maintenant à vous de jouer :eyes:"
-                )
-                embed.set_image(url=f"attachment://{image_name}")
-                message = await channel.send("<@&1048002214255403088>", embeds=embed, files=ze_file)
-                await message.pin()
-                with open(rf"data/games/geoguessr/last_day.txt", 'r') as last_day_file:
-                    last_message = await channel.get_message(message_id=int(last_day_file.readlines()[1]))
-                    await last_message.unpin()
-                with open(rf"data/games/geoguessr/last_day.txt", 'w') as last_day_file:
-                    last_day_file.write(f"{str(datetime.now().day)}\n{str(message.id)}")
-                os.rename(rf"data/games/geoguessr/submissions/{image_name}", rf"data/games/geoguessr/used/{image_name}")
+            embed = interactions.Embed(
+                title="__Leaderboard__",
+                description=f"""
+                                    <@825808732926902282> -> {(3 + 4) + (3 + 5) + (3 + 5) + (3 + 4) + (3 + 4) + (3 + 5) + (3 + 5) + (3 + 5) + (3 + 5) + 2 + (3 + 5) + (3 + 5) + (3 + 5) + (3 + 5) + (3 + 5) + (3 + 5) + (3 + 5)}
+                                    <@511484678960840705> -> {(3 + 5) + (3 + 4) + (3 + 3) + (3 + 4) + (3 + 4) + (3 + 4) + 2}
+                                    <@937433596690575371> -> {(3 + 5) + (3 + 5) + 2}
+                                    <@327923326146183168> -> {(3 + 3)}
+                                    """
+            )
+            embed.add_field(
+                name="Comment sont calculés les points?",
+                value="Tout simplement:\n-au bon endroit: 3 points\n-dans la zone: 2 points\n-à l'Ouest: 1 point(la participation est importante <:NE_kleeTeri:952560478561927168>)"
+                      "\n\n"
+                      "Et petit bonus aussi!\nLes 5 premières personnes à envoyer leur guess auront des points bonus, 5 points pour la première, 4 points pour la deuxième, etc...\n*Ce bonus n'est valable que si l'emplacement est le bon*"
+            )
+            await channel.send("<@&1048002214255403088>\nEt voilà, c'est la fin!\nVoici les scores de chacun!", embeds=embed)
+            with open(rf"data/games/geoguessr/last_day.txt", 'r') as last_day_file:
+                last_message = await channel.get_message(message_id=int(last_day_file.readlines()[1]))
+                await last_message.unpin()
+            with open(rf"data/games/geoguessr/last_day.txt", 'w') as last_day_file:
+                last_day_file.write(f"{str(datetime.now().day)}")
 
     def is_same_day(self):
         with open(rf"data/games/geoguessr/last_day.txt", 'r') as last_day_file:

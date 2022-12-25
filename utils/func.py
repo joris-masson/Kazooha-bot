@@ -53,7 +53,7 @@ async def image_log(msg: interactions.Message, date: str, client: interactions.C
             await save_attachment(client, att, rf"image_logs/{msg.author.username}/{date}/{guild.name}/{att.filename}")
 
 
-async def save_attachment(client: interactions.Client, att: interactions.Attachment, filename: str):
+async def save_attachment(client: interactions.Client, att: interactions.Attachment, filename: str) -> str:
     att._client = client._http
     att_data = await att.download()
     if not os.path.exists(filename):
@@ -64,10 +64,11 @@ async def save_attachment(client: interactions.Client, att: interactions.Attachm
         del ze_filename[-4:]
         extension = filename[-4:]
         for i in range(1, 101):
-            if not os.path.exists(f"{''.join(ze_filename)}_{i}{extension}"):
-                with open(f"{''.join(ze_filename)}_{i}{extension}", 'wb') as outfile:
+            nom_du_fichier = f"{''.join(ze_filename)}_{i}{extension}"
+            if not os.path.exists(nom_du_fichier):
+                with open(nom_du_fichier, 'wb') as outfile:
                     outfile.write(att_data.getbuffer())
-                break
+                    return nom_du_fichier
 
 
 def contain_image(msg: discord.Message) -> bool:

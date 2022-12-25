@@ -3,7 +3,8 @@ import interactions
 
 from dotenv import load_dotenv
 from discord_components import DiscordComponents
-from utils.func import detect_message
+from utils.func import detect_message, save_attachment
+from datetime import datetime
 
 load_dotenv()  # prépare le chargement du token
 TOKEN = os.getenv("TOKEN")  # charge le token
@@ -46,24 +47,26 @@ async def on_message_create(msg: interactions.Message):
     await detect_message(msg, kazooha)
     if msg.type == interactions.MessageType.CHANNEL_PINNED_MESSAGE:
         await msg.delete()
-    elif msg.content.startswith("!guess") and len(msg.attachments) == 1 and msg.attachments[0].content_type.startswith("image"):
-        await guess(msg)
+    # elif msg.content.startswith("!guess") and len(msg.attachments) == 1 and msg.attachments[0].content_type.startswith("image"):
+        # await guess(msg)
     elif msg.content.startswith("!guess") and len(msg.attachments) != 1:
         await msg.reply("il faut une image dans votre message")
 
     # ma_led.stop()
 
-
+"""
 async def guess(msg: interactions.Message):
     send_channel = await interactions.get(kazooha, interactions.Channel, object_id=int(os.getenv("SEND_CHANNEL")))
     embed = interactions.Embed(
         title="Nouveau guess soumis!",
         description=f"Soumis par: <@{msg.author.id}>"
     )
-    embed.set_image(url=msg.attachments[0].url)
+    ze_file = interactions.File(await save_attachment(kazooha, msg.attachments[0], f"data/games/geoguessr/guess/{msg.author.username}/{datetime.now().day}"))
+    # TODO trouver comment récupérer le nom de l'image
+    embed.set_image(url=f"attachment://{}")
     await send_channel.send(embeds=embed)
     await msg.reply(f"<@{msg.author.id}>", embeds=interactions.Embed(title="Votre guess a bien été envoyée aux modérateurs"))
     await msg.delete()
-
+"""
 
 kazooha.start()
