@@ -29,13 +29,13 @@ kazooha.load('interactions.ext.files')
 
 kazooha.load("commands.context.info")
 kazooha.load("commands.context.rickroll")
-kazooha.load("commands.context.guess")
+# kazooha.load("commands.context.guess")
 
 kazooha.load("commands.slash.idtotime")
 kazooha.load("commands.slash.dossiers_confidentiels")
 kazooha.load("commands.slash.showartifacts")
 kazooha.load("commands.slash.showbetaartifacts")
-kazooha.load("commands.slash.genshingeoguessr")
+# kazooha.load("commands.slash.genshingeoguessr")
 kazooha.load("commands.slash.showbooks")
 kazooha.load("commands.slash.givemats")
 kazooha.load("commands.slash.help")
@@ -49,8 +49,8 @@ async def on_message_create(msg: interactions.Message):
         await msg.delete()
     # elif msg.content.startswith("!guess") and len(msg.attachments) == 1 and msg.attachments[0].content_type.startswith("image"):
         # await guess(msg)
-    elif msg.content.startswith("!guess") and len(msg.attachments) != 1:
-        await msg.reply("il faut une image dans votre message")
+    # elif msg.content.startswith("!guess") and len(msg.attachments) != 1:
+        # await msg.reply("il faut une image dans votre message")
 
     # ma_led.stop()
 
