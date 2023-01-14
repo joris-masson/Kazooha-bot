@@ -44,6 +44,7 @@ class ShowArtifacts(Extension):
                            SelectOption(label="Briseur de glace", value="Briseur de glace"),
                            SelectOption(label="Chanceux", value="Chanceux"),
                            SelectOption(label="Chevalerie ensanglantée", value="Chevalerie ensanglantee"),
+                           SelectOption(label="Chronique du Pavillon du désert", value="Chronique du Pavillon du desert"),
                            SelectOption(label="Coeur du brave", value="Coeur du brave"),
                            SelectOption(label="Coeur du gardien", value="Coeur du gardien"),
                            SelectOption(label="Coeur du voyageur", value="coeur du voyageur"),
@@ -55,9 +56,8 @@ class ShowArtifacts(Extension):
                            SelectOption(label="Erudit", value="Erudit"),
                            SelectOption(label="Exilé", value="Exile"),
                            SelectOption(label="Flamme blème", value="Flamme bleme"),
+                           SelectOption(label="Fleur du paradis perdu", value="Fleur du paradis perdu"),
                            SelectOption(label="Instructeur", value="Instruteur"),
-                           SelectOption(label="Marcheur du feu", value="Marcheur du feu"),
-                           SelectOption(label="Médecin itinérant", value="Medecin itinerant"),
                        ],
                        custom_id="sel_artifacts"
                     )
@@ -71,6 +71,8 @@ class ShowArtifacts(Extension):
                     SelectMenu(
                         placeholder="Liste des sets disponibles",
                         options=[
+                            SelectOption(label="Marcheur du feu", value="Marcheur du feu"),
+                            SelectOption(label="Médecin itinérant", value="Medecin itinerant"),
                             SelectOption(label="Metéore inversé", value="Meteore inverse"),
                             SelectOption(label="Miracle", value="Miracle"),
                             SelectOption(label="Ombre de la Verte Chasseuse", value="Ombre de la Verte Chasseuse"),

@@ -38,6 +38,7 @@ kazooha.load("commands.slash.showbetaartifacts")
 # kazooha.load("commands.slash.genshingeoguessr")
 kazooha.load("commands.slash.showbooks")
 kazooha.load("commands.slash.givemats")
+kazooha.load("commands.slash.sendtext")
 kazooha.load("commands.slash.help")
 
 
