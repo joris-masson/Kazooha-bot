@@ -15,7 +15,7 @@ class Info(interactions.Extension):
         log(f"Des infos sur {ctx.target.user.username} ont été demandées par {ctx.user.username}")
         if ctx.user.id == 171028477682647040:
             await ctx.send(
-                f"C'est {ctx.target.user.username}#{ctx.target.discriminator}!\nID: `{ctx.target.id}`", ephemeral=True)
+                f"C'est {ctx.target.user.username}#{ctx.target.discriminator}!\nID: `{ctx.target.id}\nBio: {ctx.target.bio}`", ephemeral=True)
         else:
             await ctx.send(f"C'est {ctx.target.user.username}!", ephemeral=True)
 

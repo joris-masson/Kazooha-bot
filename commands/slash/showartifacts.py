@@ -100,7 +100,7 @@ class ShowArtifacts(Extension):
         embeds = []
         for page in range(1, len(dico_artifacts[the_book]) + 1):
             embed = Embed(title=f"{interaction[0]} - page {page}", description=dico_artifacts[the_book][page])
-            embed.set_thumbnail(url=f"http://176.159.155.219:53134/images/artifacts/icons/{the_book}/{page}.png")
+            embed.set_thumbnail(url=f"http://jo.narukami-edition.fr:53134/images/artifacts/icons/{the_book}/{page}.png")
             embeds.append(embed)
         les_pages = []
         for embed in embeds:

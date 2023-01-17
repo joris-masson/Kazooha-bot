@@ -10,7 +10,7 @@ from utils.functions import log
 
 async def detect_message(msg: interactions.Message, client: interactions.Client) -> None:
     date = datetime.datetime.now().strftime("%d-%m-%Y")
-    if not msg.author.bot and not len(msg.content) == 0:
+    if not msg.author.bot and len(msg.content) != 0:
         guild = await msg.get_guild()
         channel = await msg.get_channel()
         ze_time = datetime.datetime.now().strftime("%H:%M:%S")
