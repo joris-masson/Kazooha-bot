@@ -4,7 +4,7 @@ import os
 from utils.func import save_attachment
 
 
-class DemandChannelConcours:
+class DemandChannelConcoursOrig:
     def __init__(self, client: interactions.Client, ctx: interactions.CommandContext, channel: interactions.Channel):
         self.ID = ctx.author.id
         self.client = client
@@ -18,17 +18,17 @@ class DemandChannelConcours:
     async def send_demand_msg(self):
         embed = interactions.Embed(
             title="Nouvelle participation!",
-            description=f"Bienvenue dans le fil pour soumettre votre participation!\nPour soumettre votre participation, veuillez envoyer votre image **dans le même message** que votre titre/description\nVotre **titre** __doit être à la première ligne__, et votre **description**... __surtout pas sur la première ligne__\nEnsuite appuyez sur le bouton __**Envoyer**__(vous pouvez aussi annuler en appuyant sur le bouton **Annuler**)"
+            description=f"Bienvenue dans le fil pour soumettre votre photo originale, envoyez la, puis appuyez sur **Envoyer**!"
         )
 
         button_accept = interactions.Button(
             label="Envoyer",
-            custom_id="but_accept",
+            custom_id="but_accept_orig",
             style=3
         )
         button_refuse = interactions.Button(
             label="Annuler",
-            custom_id="but_refuse",
+            custom_id="but_refuse_orig",
             style=4
         )
         self.demand_message = await self.channel.send(f"<@{self.ctx.author.id}>", embeds=embed, components=interactions.spread_to_rows(button_accept, button_refuse))
