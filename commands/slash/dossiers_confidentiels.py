@@ -27,6 +27,7 @@ class DossiersConfidentiels(Extension):
                         SelectOption(label="Columbina", value="Columbina"),
                         SelectOption(label="Dainsleif", value="Dainsleif"),
                         SelectOption(label="Istaroth", value="Istaroth"),
+                        SelectOption(label="Nabu Malikata", value="Nabu_malikata"),
                         SelectOption(label="La Mère de la Nuit", value="Night_mother"),
                         SelectOption(label="Le Sibling", value="Traveler_sibling"),
                         SelectOption(label="Le Traveler", value="Travelerp"),
@@ -35,7 +36,6 @@ class DossiersConfidentiels(Extension):
                         SelectOption(label="Pierro", value="Pierro"),
                         SelectOption(label="Pushpavatika", value="Pushpavatika"),
                         SelectOption(label="Rhinedottir", value="Rhinedottir"),
-
                     ],
                     custom_id="sel_dossiers",
                 )
