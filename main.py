@@ -41,6 +41,7 @@ kazooha.load("commands.slash.showbooks")
 kazooha.load("commands.slash.givemats")
 kazooha.load("commands.slash.sendtext")
 kazooha.load("commands.slash.help")
+kazooha.load("commands.slash.admin")
 
 
 @kazooha.event
