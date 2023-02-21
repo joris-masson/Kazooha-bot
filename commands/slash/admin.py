@@ -35,7 +35,7 @@ class Admin(interactions.Extension):
             serv_emotes.append(f"<:{emote.name}:{emote.id}>")
         for channel in await the_serv.get_all_channels():
             print(f"Je compte dans {channel.name}\n{str(res)}")
-            if channel.type == interactions.ChannelType.GUILD_TEXT:
+            if channel.type == interactions.ChannelType.GUILD_TEXT or channel.type == interactions.ChannelType.PRIVATE_THREAD or channel.type == interactions.ChannelType.PUBLIC_THREAD:
                 try:
                     for message in await channel.history(maximum=1000).flatten():
                         if not message.author.bot:
