@@ -6,7 +6,7 @@ import discord
 import os
 
 from utils.functions import log
-from database import insert_message
+from utils.database import insert_message
 
 
 async def detect_message(msg: interactions.Message, client: interactions.Client) -> None:
