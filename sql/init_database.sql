@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS Kazooha;
+CREATE TABLE IF NOT EXISTS Messages (
+    id BIGINT NOT NULL PRIMARY KEY,
+    guildId BIGINT NOT NULL,
+    guildName VARCHAR(100) NOT NULL,
+    channelId BIGINT NOT NULL,
+    channelName VARCHAR(100) NOT NULL,
+    authorId BIGINT NOT NULL,
+    authorName VARCHAR(100) NOT NULL,
+    sentTime BIGINT NOT NULL,
+    content VARCHAR(4000) NOT NULL
+)

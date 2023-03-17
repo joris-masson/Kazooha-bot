@@ -2,7 +2,7 @@ import os
 import interactions
 
 from dotenv import load_dotenv
-from discord_components import DiscordComponents
+# from discord_components import DiscordComponents
 from utils.func import detect_message, save_attachment
 from datetime import datetime
 
@@ -22,7 +22,7 @@ kazooha = interactions.Client(
         ]
     )
 )
-DiscordComponents(kazooha)
+# DiscordComponents(kazooha)
 
 
 kazooha.load('interactions.ext.files')
@@ -46,6 +46,7 @@ kazooha.load("commands.slash.admin")
 
 @kazooha.event
 async def on_message_create(msg: interactions.Message):
+
     # ma_led.set_color("cyan")
     await detect_message(msg, kazooha)
     if msg.type == interactions.MessageType.CHANNEL_PINNED_MESSAGE:

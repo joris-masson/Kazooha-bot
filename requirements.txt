@@ -1,0 +1,9 @@
+discord-py-interactions
+python-dotenv
+requests
+saucenao_api
+imagehash
+bs4
+interactions-files
+dinteractions-Paginator
+mysql-connector
