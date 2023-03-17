@@ -4,6 +4,8 @@ import interactions
 from dotenv import load_dotenv
 # from discord_components import DiscordComponents
 from utils.func import detect_message, save_attachment
+from utils.database import open_connection
+from utils.functions import remove_emojis
 from datetime import datetime
 
 load_dotenv()  # prépare le chargement du token
@@ -57,6 +59,28 @@ async def on_message_create(msg: interactions.Message):
         # await msg.reply("il faut une image dans votre message")
 
     # ma_led.stop()
+
+
+@kazooha.event
+async def on_message_update(a, msg: interactions.Message):
+    msg_content = remove_emojis(msg.content)
+    db = open_connection()
+    cursor = db.cursor()
+    cursor.execute(f"UPDATE Messages SET content='{msg_content}', modified='1' WHERE id='{msg.id}'")
+    db.commit()
+    cursor.close()
+    db.close()
+
+
+@kazooha.event
+async def on_message_delete(msg: interactions.Message):
+    db = open_connection()
+    cursor = db.cursor()
+    cursor.execute(f"UPDATE Messages SET deleted='1' WHERE id='{msg.id}'")
+    db.commit()
+    cursor.close()
+    db.close()
+
 
 """
 async def guess(msg: interactions.Message):
