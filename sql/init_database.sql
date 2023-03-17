@@ -7,6 +7,6 @@ CREATE TABLE IF NOT EXISTS Messages (
     channelName VARCHAR(100) NOT NULL,
     authorId BIGINT NOT NULL,
     authorName VARCHAR(100) NOT NULL,
-    sentTime BIGINT NOT NULL,
+    sentTime TIMESTAMP NOT NULL,
     content VARCHAR(4000) NOT NULL
 )

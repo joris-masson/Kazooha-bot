@@ -41,8 +41,8 @@ async def insert_message(msg: interactions.Message) -> None:
     author_name = emoji_pattern.sub(r'', msg.author.username)
     msg_content = emoji_pattern.sub(r'', msg.content)
     cursor = db.cursor()
-    cursor.execute(
-        f"INSERT INTO Kazooha.Messages (id, guildId, guildName, channelId, channelName, authorId, authorName, sentTime, content) VALUE ('{msg.id}', '{msg.guild_id}', '{guild_name}', '{msg.channel_id}', '{channel_name}', '{msg.author.id}', '{author_name}', '{convert_discord_id_to_time(int(msg.id))}', '{msg_content}');")
+    print(msg.timestamp)
+    cursor.execute(f"INSERT INTO Kazooha.Messages (id, guildId, guildName, channelId, channelName, authorId, authorName, sentTime, content) VALUE ('{msg.id}', '{msg.guild_id}', '{guild_name}', '{msg.channel_id}', '{channel_name}', '{msg.author.id}', '{author_name}', CURRENT_TIMESTAMP, '{msg_content}');")
     db.commit()
     cursor.close()
     db.close()
