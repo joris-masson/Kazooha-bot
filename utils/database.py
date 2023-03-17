@@ -3,7 +3,7 @@ import mysql.connector
 import interactions
 
 from dotenv import load_dotenv
-from functions import remove_emojis
+from utils.functions import remove_emojis
 
 load_dotenv()
 HOST = os.getenv("DATABASE_HOST")
