@@ -7,3 +7,4 @@ bs4
 interactions-files
 dinteractions-Paginator
 mysql-connector
+emoji==1.7.0

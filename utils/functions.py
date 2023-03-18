@@ -7,6 +7,7 @@ import imagehash
 import re
 import os
 import interactions
+import emoji
 
 from saucenao_api import SauceNao
 from saucenao_api.errors import LongLimitReachedError, ShortLimitReachedError
@@ -26,8 +27,16 @@ emoji_pattern = re.compile("["
                            u"\U0001F1E0-\U0001F1FF"  # flags (iOS)
                            u"\U00002702-\U000027B0"
                            u"\U000024C2-\U0001F251"
-                           u"\U0001F9C2"
-                           u"\U0001F958"
+                           u"\U0001f926-\U0001f937"
+                           u'\U00010000-\U0010ffff'
+                           u"\u200d"
+                           u"\u2640-\u2642"
+                           u"\u2600-\u2B55"
+                           u"\u23cf"
+                           u"\u23e9"
+                           u"\u231a"
+                           u"\u3030"
+                           u"\ufe0f"
                            "'"
                            "]+", flags=re.UNICODE)
 
@@ -148,4 +157,4 @@ def has_at_least_one_role(user: interactions.Member, role_id_list: list[int]) ->
 
 
 def remove_emojis(string: str) -> str:
-    return emoji_pattern.sub(r'', string)
+    return emoji.get_emoji_regexp().sub(u'', string)
