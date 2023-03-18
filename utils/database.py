@@ -21,11 +21,7 @@ def open_connection() -> mysql.connector.connection.MySQLConnection:
     )
 
 
-async def insert_message(msg: interactions.Message, modified=False) -> None:
-    if modified:
-        modified = 1
-    else:
-        modified = 0
+async def insert_message(msg: interactions.Message, modified=0) -> None:
     db = open_connection()
     msg_guild = await msg.get_guild()
     guild_name = remove_emojis(msg_guild.name)
@@ -38,6 +34,7 @@ async def insert_message(msg: interactions.Message, modified=False) -> None:
     db.commit()
     cursor.close()
     db.close()
+    print(f"[DB ] - Message inséré: {msg_content}")
 
 
 def is_in_messages(msg_id: int) -> bool:

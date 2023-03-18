@@ -64,7 +64,7 @@ async def on_message_create(msg: interactions.Message):
 @kazooha.event
 async def on_message_update(a, msg: interactions.Message):
     if not is_in_messages(int(msg.id)):
-        await insert_message(msg, modified=True)
+        await insert_message(msg, modified=1)
     else:
         msg_content = remove_emojis(msg.content)
         db = open_connection()
