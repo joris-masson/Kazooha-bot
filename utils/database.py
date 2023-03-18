@@ -21,7 +21,11 @@ def open_connection() -> mysql.connector.connection.MySQLConnection:
     )
 
 
-async def insert_message(msg: interactions.Message) -> None:
+async def insert_message(msg: interactions.Message, modified=False) -> None:
+    if modified:
+        modified = 1
+    else:
+        modified = 0
     db = open_connection()
     msg_guild = await msg.get_guild()
     guild_name = remove_emojis(msg_guild.name)
@@ -30,7 +34,17 @@ async def insert_message(msg: interactions.Message) -> None:
     author_name = remove_emojis(msg.author.username)
     msg_content = remove_emojis(msg.content)
     cursor = db.cursor()
-    cursor.execute(f"INSERT INTO Kazooha.Messages (id, guildId, guildName, channelId, channelName, authorId, authorName, sentTime, content, modified, deleted) VALUE ('{msg.id}', '{msg.guild_id}', '{guild_name}', '{msg.channel_id}', '{channel_name}', '{msg.author.id}', '{author_name}', CURRENT_TIMESTAMP, '{msg_content}', '0', '0');")
+    cursor.execute(f"INSERT INTO Kazooha.Messages (id, guildId, guildName, channelId, channelName, authorId, authorName, sentTime, content, modified, deleted) VALUE ('{msg.id}', '{msg.guild_id}', '{guild_name}', '{msg.channel_id}', '{channel_name}', '{msg.author.id}', '{author_name}', CURRENT_TIMESTAMP, '{msg_content}', '{modified}', '0');")
     db.commit()
     cursor.close()
     db.close()
+
+
+def is_in_messages(msg_id: int) -> bool:
+    db = open_connection()
+    cursor = db.cursor()
+    cursor.execute(f"SELECT id FROM Messages WHERE id='{msg_id}'")
+    res = len(cursor.fetchall())
+    cursor.close()
+    db.close()
+    return res != 0

@@ -4,7 +4,7 @@ import interactions
 from dotenv import load_dotenv
 # from discord_components import DiscordComponents
 from utils.func import detect_message, save_attachment
-from utils.database import open_connection
+from utils.database import *
 from utils.functions import remove_emojis
 from datetime import datetime
 
@@ -63,13 +63,16 @@ async def on_message_create(msg: interactions.Message):
 
 @kazooha.event
 async def on_message_update(a, msg: interactions.Message):
-    msg_content = remove_emojis(msg.content)
-    db = open_connection()
-    cursor = db.cursor()
-    cursor.execute(f"UPDATE Messages SET content='{msg_content}', modified='1' WHERE id='{msg.id}'")
-    db.commit()
-    cursor.close()
-    db.close()
+    if not is_in_messages(int(msg.id)):
+        await insert_message(msg, modified=True)
+    else:
+        msg_content = remove_emojis(msg.content)
+        db = open_connection()
+        cursor = db.cursor()
+        cursor.execute(f"UPDATE Messages SET content='{msg_content}', modified='1' WHERE id='{msg.id}'")
+        db.commit()
+        cursor.close()
+        db.close()
 
 
 @kazooha.event
