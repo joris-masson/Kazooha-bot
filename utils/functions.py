@@ -157,4 +157,4 @@ def has_at_least_one_role(user: interactions.Member, role_id_list: list[int]) ->
 
 
 def remove_emojis(string: str) -> str:
-    return re.sub("'", '', emoji.get_emoji_regexp().sub(u'', string))
+    return re.sub("'", ' ', emoji.get_emoji_regexp().sub(u'', string))
