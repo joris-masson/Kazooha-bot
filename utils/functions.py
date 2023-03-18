@@ -27,6 +27,7 @@ emoji_pattern = re.compile("["
                            u"\U00002702-\U000027B0"
                            u"\U000024C2-\U0001F251"
                            u"\U0001F9C2"
+                           u"\U0001F958"
                            "'"
                            "]+", flags=re.UNICODE)
 
