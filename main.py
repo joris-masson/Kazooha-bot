@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 # from discord_components import DiscordComponents
 from utils.func import detect_message, save_attachment
 from utils.database import *
-from utils.functions import remove_emojis
+from utils.functions import remove_emojis, delete_msg_if_no_role
 from datetime import datetime
 
 load_dotenv()  # prépare le chargement du token
@@ -48,11 +48,12 @@ kazooha.load("commands.slash.admin")
 
 @kazooha.event
 async def on_message_create(msg: interactions.Message):
-
     # ma_led.set_color("cyan")
     await detect_message(msg, kazooha)
     if msg.type == interactions.MessageType.CHANNEL_PINNED_MESSAGE:
         await msg.delete()
+    else:
+        await delete_msg_if_no_role(msg)
     # elif msg.content.startswith("!guess") and len(msg.attachments) == 1 and msg.attachments[0].content_type.startswith("image"):
         # await guess(msg)
     # elif msg.content.startswith("!guess") and len(msg.attachments) != 1:

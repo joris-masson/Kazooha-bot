@@ -158,3 +158,9 @@ def has_at_least_one_role(user: interactions.Member, role_id_list: list[int]) ->
 
 def remove_emojis(string: str) -> str:
     return re.sub("'", ' ', emoji.get_emoji_regexp().sub(u'', string))
+
+
+async def delete_msg_if_no_role(msg: interactions.Message) -> None:
+    if len(msg.member.roles) == 0 and msg.guild_id in [706647025021747310, 952557533514592286]:
+        await msg.author.send("Vous n'êtes pas autorisé à envoyer des messages sans avoir au moins un rôle.")
+        await msg.delete("Utilisateur sans rôle")
