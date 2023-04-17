@@ -3,7 +3,7 @@ from data.artifacts import ancien_rituel_royal, rideau_du_gladiateur, amour_cher
     tenacite_du_millelithe, erudit, echos_d_une_offrande, artiste_martial, dompteur_de_foudre, roche_ancienne, \
     palourde_aux_teintes_oceaniques, miracle, medecin_itinerant, aventurier, berserker, exile, \
     coquille_des_reves_opulents, chanceux, bande_vagabonde, coeur_du_voyageur, marcheur_du_feu, ombre_de_la_verte_chasseuse, reve_dore, sorciere_des_flammes_ardentes, souvenir_de_foret, \
-    au_dela_cinabrin, embleme_du_destin_brise, flamme_bleme, meteore_inverse, reminiscence_nostalgique, fleur_du_paradis_perdu, chronique_du_pavillon_du_desert
+    au_dela_cinabrin, embleme_du_destin_brise, flamme_bleme, meteore_inverse, reminiscence_nostalgique, fleur_du_paradis_perdu, chronique_du_pavillon_du_desert, reve_de_la_nymphe, lueur_du_vourukasha
 
 from data.artifacts.beta import neige_et_glace
 
@@ -47,5 +47,7 @@ dico_artifacts = {
     "tenacite_du_millelithe": tenacite_du_millelithe.artifact,
     "neige_et_glace": neige_et_glace.artifact,
     "fleur_du_paradis_perdu": fleur_du_paradis_perdu.artifact,
-    "chronique_du_pavillon_du_desert": chronique_du_pavillon_du_desert.artifact
+    "chronique_du_pavillon_du_desert": chronique_du_pavillon_du_desert.artifact,
+    "reve_de_la_nymphe": reve_de_la_nymphe.artifact,
+    "lueur_du_vourukasha": lueur_du_vourukasha.artifact
 }

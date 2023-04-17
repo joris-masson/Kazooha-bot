@@ -71,6 +71,7 @@ class ShowArtifacts(Extension):
                     SelectMenu(
                         placeholder="Liste des sets disponibles",
                         options=[
+                            SelectOption(label="Lueur du Vourukasha", value="Lueur du Vourukasha"),
                             SelectOption(label="Marcheur du feu", value="Marcheur du feu"),
                             SelectOption(label="Médecin itinérant", value="Medecin itinerant"),
                             SelectOption(label="Metéore inversé", value="Meteore inverse"),
@@ -78,6 +79,8 @@ class ShowArtifacts(Extension):
                             SelectOption(label="Ombre de la Verte Chasseuse", value="Ombre de la Verte Chasseuse"),
                             SelectOption(label="Palourde aux teintes océaniques", value="Palourde aux teintes oceaniques"),
                             SelectOption(label="Parieur", value="Parieur"),
+                            SelectOption(label="Reminiscence Nostalgique", value="Reminiscence Nostalgique"),
+                            SelectOption(label="Rêve de la Nymphe", value="Reve de la Nymphe"),
                             SelectOption(label="Rêve Doré", value="Reve Dore"),
                             SelectOption(label="Rideau du Gladiateur", value="Rideu du Gladiateur"),
                             SelectOption(label="Roche ancienne", value="Roche ancienne"),
