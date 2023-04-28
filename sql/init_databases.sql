@@ -16,9 +16,10 @@ CREATE TABLE IF NOT EXISTS Kazooha.Messages (
     deleted BOOLEAN
 );
 
+DROP TABLE Kazooha.GameUid;
 CREATE TABLE IF NOT EXISTS Kazooha.GameUid (
-    discordId BIGINT NOT NULL PRIMARY KEY,
-    game INT NOT NULL,
+    discordId BIGINT NOT NULL,
+    game VARCHAR(100) NOT NULL,
     server VARCHAR(100),
-    uid BIGINT NOT NULL
+    uid BIGINT NOT NULL PRIMARY KEY
 );
