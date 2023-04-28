@@ -161,7 +161,10 @@ def remove_emojis(string: str) -> str:
 
 
 async def delete_msg_if_no_role(msg: interactions.Message) -> None:
-    if len(msg.member.roles) == 0 and msg.guild_id in [706647025021747310, 952557533514592286]:
-        await msg.author.send("Vous n'êtes pas autorisé à envoyer des messages sans avoir au moins un rôle.")
-        await msg.delete("Utilisateur sans rôle")
-        log("Message supprimé")
+    try:
+        if len(msg.member.roles) == 0 and msg.guild_id in [706647025021747310, 952557533514592286]:
+            await msg.author.send("Vous n'êtes pas autorisé à envoyer des messages sans avoir au moins un rôle.")
+            await msg.delete("Utilisateur sans rôle")
+            log("Message supprimé")
+    except AttributeError:
+        pass
