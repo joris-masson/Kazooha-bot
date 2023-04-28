@@ -10,7 +10,7 @@ class Uid(interactions.Extension):
         self.game_names = {
             "genshin": ["genshin", "gi", "genshinimpact"],
             "honkai": ["honkai", "honkaiimpact", "hi3", "hi", "3rd", "honkaiimpact3rd"],
-            "star_rail": ["star", "rail", "hsr", "starrail"]
+            "star_rail": ["honkaistarrail", "star", "rail", "hsr", "starrail"]
         }
 
     @interactions.extension_command(
@@ -55,12 +55,6 @@ class Uid(interactions.Extension):
                 type=interactions.OptionType.SUB_COMMAND,
                 options=[
                     interactions.Option(
-                        name="jeu",
-                        description="Le jeu",
-                        type=interactions.OptionType.STRING,
-                        required=True
-                    ),
-                    interactions.Option(
                         name="uid",
                         description="L'UID à retirer",
                         type=interactions.OptionType.STRING,
@@ -74,13 +68,13 @@ class Uid(interactions.Extension):
                 type=interactions.OptionType.SUB_COMMAND,
                 options=[
                     interactions.Option(
-                        name="jeu",
-                        description="Le jeu",
+                        name="uid",
+                        description="L'ancien UID",
                         type=interactions.OptionType.STRING,
                         required=True
                     ),
                     interactions.Option(
-                        name="uid",
+                        name="nouvel_uid",
                         description="L'UID qui remplacera l'ancien",
                         type=interactions.OptionType.STRING,
                         required=True
@@ -89,22 +83,23 @@ class Uid(interactions.Extension):
             )
         ]
     )
-    async def uid(self, ctx: interactions.CommandContext, sub_command: str, uid="", jeu=""):
+    async def uid(self, ctx: interactions.CommandContext, sub_command: str, uid="", jeu="", nouvel_uid=""):
         try:
             log(f"{__name__} utilisé par @{ctx.author.name}({ctx.author.id}) dans #{ctx.channel.name}({ctx.channel.id}) sur le serveur {ctx.guild.name}({ctx.guild.id})")
         except AttributeError:
             log(f"{__name__} utilisé")
 
-        jeu = await self.get_game(ctx, jeu)
         if jeu is not None:
             if sub_command == "ajouter" and await self.is_uid_good(ctx, uid):
+                jeu = await self.get_game(ctx, jeu)
                 await self.ajouter(ctx, uid, jeu)
             elif sub_command == "liste":
+                jeu = await self.get_game(ctx, jeu)
                 await self.liste(ctx, jeu)
             elif sub_command == "retirer" and await self.is_uid_good(ctx, uid):
-                await self.retirer(ctx, uid, jeu)
-            elif sub_command == "modifier" and await self.is_uid_good(ctx, uid):
-                await self.modifier(ctx, uid, jeu)
+                await self.retirer(ctx, uid)
+            elif sub_command == "modifier" and await self.is_uid_good(ctx, uid) and await self.is_uid_good(ctx, nouvel_uid):
+                await self.modifier(ctx, uid, nouvel_uid)
 
     async def ajouter(self, ctx: interactions.CommandContext, uid: str, jeu: str):
         db = open_connection()
@@ -138,11 +133,23 @@ class Uid(interactions.Extension):
         )
         await ctx.send(embeds=embed, ephemeral=True)
 
-    async def retirer(self, ctx: interactions.CommandContext, uid: str, jeu: str):
-        await ctx.send("Commande non implémentée pour le moment")
+    async def retirer(self, ctx: interactions.CommandContext, uid: str):
+        db = open_connection()
+        cursor = db.cursor()
+        cursor.execute(f"DELETE FROM Kazooha.GameUid WHERE uid='{uid}'")
+        db.commit()
+        cursor.close()
+        db.close()
+        await ctx.send("UID supprimé!", ephemeral=True)
 
-    async def modifier(self, ctx: interactions.CommandContext, uid: str, jeu: str):
-        await ctx.send("Commande non implémentée pour le moment")
+    async def modifier(self, ctx: interactions.CommandContext, uid: str, new_uid: str):
+        db = open_connection()
+        cursor = db.cursor()
+        cursor.execute(f"UPDATE Kazooha.GameUid SET uid='{new_uid}' WHERE uid='{uid}'")
+        db.commit()
+        cursor.close()
+        db.close()
+        await ctx.send("UID mis à jour!", ephemeral=True)
 
     async def get_game(self, ctx: interactions.CommandContext, jeu: str) -> str or None:
         jeu = jeu.lower().replace(' ', '')
