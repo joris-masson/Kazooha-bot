@@ -96,14 +96,14 @@ class Uid(interactions.Extension):
             log(f"{__name__} utilisé")
 
         jeu = await self.get_game(ctx, jeu)
-        if jeu is not None and await self.is_uid_good(ctx, uid):
-            if sub_command == "ajouter":
+        if jeu is not None:
+            if sub_command == "ajouter" and await self.is_uid_good(ctx, uid):
                 await self.ajouter(ctx, uid, jeu)
             elif sub_command == "liste":
                 await self.liste(ctx, jeu)
-            elif sub_command == "retirer":
+            elif sub_command == "retirer" and await self.is_uid_good(ctx, uid):
                 await self.retirer(ctx, uid, jeu)
-            elif sub_command == "modifier":
+            elif sub_command == "modifier" and await self.is_uid_good(ctx, uid):
                 await self.modifier(ctx, uid, jeu)
 
     async def ajouter(self, ctx: interactions.CommandContext, uid: str, jeu: str):
