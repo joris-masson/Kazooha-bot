@@ -42,6 +42,7 @@ kazooha.load("commands.slash.concours")
 kazooha.load("commands.slash.showbooks")
 kazooha.load("commands.slash.givemats")
 kazooha.load("commands.slash.sendtext")
+kazooha.load("commands.slash.uid")
 kazooha.load("commands.slash.help")
 kazooha.load("commands.slash.admin")
 

@@ -45,3 +45,14 @@ def is_in_messages(msg_id: int) -> bool:
     cursor.close()
     db.close()
     return res != 0
+
+
+def get_all_messages_from_channel(channel_id: int):
+    db = open_connection()
+    cursor = db.cursor()
+    cursor.execute(f"SELECT * FROM Messages WHERE channelId = {channel_id}")
+    res = cursor.fetchall()
+    db.close()
+    cursor.close()
+
+    return res
