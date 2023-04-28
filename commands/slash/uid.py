@@ -134,22 +134,24 @@ class Uid(interactions.Extension):
         await ctx.send(embeds=embed, ephemeral=True)
 
     async def retirer(self, ctx: interactions.CommandContext, uid: str):
-        db = open_connection()
-        cursor = db.cursor()
-        cursor.execute(f"DELETE FROM Kazooha.GameUid WHERE uid='{uid}'")
-        db.commit()
-        cursor.close()
-        db.close()
-        await ctx.send("UID supprimé!", ephemeral=True)
+        if await self.is_author_good(ctx, uid):
+            db = open_connection()
+            cursor = db.cursor()
+            cursor.execute(f"DELETE FROM Kazooha.GameUid WHERE uid='{uid}'")
+            db.commit()
+            cursor.close()
+            db.close()
+            await ctx.send("UID supprimé!", ephemeral=True)
 
     async def modifier(self, ctx: interactions.CommandContext, uid: str, new_uid: str):
-        db = open_connection()
-        cursor = db.cursor()
-        cursor.execute(f"UPDATE Kazooha.GameUid SET uid='{new_uid}' WHERE uid='{uid}'")
-        db.commit()
-        cursor.close()
-        db.close()
-        await ctx.send("UID mis à jour!", ephemeral=True)
+        if await self.is_author_good(ctx, uid):
+            db = open_connection()
+            cursor = db.cursor()
+            cursor.execute(f"UPDATE Kazooha.GameUid SET uid='{new_uid}' WHERE uid='{uid}'")
+            db.commit()
+            cursor.close()
+            db.close()
+            await ctx.send("UID mis à jour!", ephemeral=True)
 
     async def get_game(self, ctx: interactions.CommandContext, jeu: str) -> str or None:
         jeu = jeu.lower().replace(' ', '')
@@ -179,6 +181,19 @@ class Uid(interactions.Extension):
             return True
         else:
             await ctx.send("Format de l'UID invalide", ephemeral=True)
+            return False
+
+    async def is_author_good(self, ctx: interactions.CommandContext, uid: str) -> bool:
+        db = open_connection()
+        cursor = db.cursor()
+        cursor.execute(f"SELECT discordId FROM Kazooha.GameUid WHERE uid='{uid}'")
+        discord_id = cursor.fetchall()[0]
+        cursor.close()
+        db.close()
+        if ctx.author.id == discord_id:
+            return True
+        else:
+            await ctx.send("Vous n'avez pas l'autorisation de modifier ou de supprimer un UID qui ne vous appartient pas.", ephemeral=True)
             return False
 
 
