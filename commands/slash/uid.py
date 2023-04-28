@@ -8,9 +8,9 @@ class Uid(interactions.Extension):
         log(f"'{__name__}' initialisé")
         self.client: interactions.Client = client
         self.game_names = {
-            "genshin": ["genshin", "gi"],
-            "honkai": ["honkai", "honkaiimpact", "hi3", "hi", "3rd"],
-            "star_rail": ["star", "rail", "hsr"]
+            "genshin": ["genshin", "gi", "genshinimpact"],
+            "honkai": ["honkai", "honkaiimpact", "hi3", "hi", "3rd", "honkaiimpact3rd"],
+            "star_rail": ["star", "rail", "hsr", "starrail"]
         }
 
     @interactions.extension_command(
@@ -146,6 +146,7 @@ class Uid(interactions.Extension):
 
     async def get_game(self, ctx: interactions.CommandContext, jeu: str) -> str or None:
         jeu = jeu.lower().replace(' ', '')
+        print(jeu)
         for game in self.game_names:
             if jeu in self.game_names[game]:
                 return game
