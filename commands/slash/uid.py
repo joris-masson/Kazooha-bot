@@ -1,6 +1,10 @@
+import os
 import interactions
+import genshin
+
 from utils.functions import log
 from utils.database import open_connection
+from dotenv import load_dotenv
 
 
 class Uid(interactions.Extension):
@@ -104,7 +108,20 @@ class Uid(interactions.Extension):
     async def ajouter(self, ctx: interactions.CommandContext, uid: str, jeu: str):
         db = open_connection()
         cursor = db.cursor()
-        cursor.execute(f"INSERT INTO Kazooha.GameUid(discordId, game, server, uid) VALUE ('{int(ctx.author.id)}', '{jeu}', '{self.get_server(jeu, uid)}', '{int(uid)}')")
+        if jeu == "genshin":
+            user_info = await self.get_genshin_user_info(uid)
+            if user_info is not None:
+                cursor.execute(f"INSERT INTO Kazooha.GameUid(discordId, game, server, uid, nickname, level) VALUE ('{int(ctx.author.id)}', '{jeu}', '{self.get_server(jeu, uid)}', '{int(uid)}', '{user_info.info.nickname}', '{user_info.info.level}')")
+            else:
+                cursor.execute(f"INSERT INTO Kazooha.GameUid(discordId, game, server, uid) VALUE ('{int(ctx.author.id)}', '{jeu}', '{self.get_server(jeu, uid)}', '{int(uid)}')")
+        elif jeu == "honkai":
+            user_info = await self.get_honkai_user_info(uid)
+            if user_info is not None:
+                cursor.execute(f"INSERT INTO Kazooha.GameUid(discordId, game, server, uid, nickname, level) VALUE ('{int(ctx.author.id)}', '{jeu}', '{self.get_server(jeu, uid)}', '{int(uid)}', '{user_info.info.nickname}', '{user_info.info.level}')")
+            else:
+                cursor.execute(f"INSERT INTO Kazooha.GameUid(discordId, game, server, uid) VALUE ('{int(ctx.author.id)}', '{jeu}', '{self.get_server(jeu, uid)}', '{int(uid)}')")
+        else:
+            cursor.execute(f"INSERT INTO Kazooha.GameUid(discordId, game, server, uid) VALUE ('{int(ctx.author.id)}', '{jeu}', '{self.get_server(jeu, uid)}', '{int(uid)}')")
         db.commit()
         cursor.close()
         db.close()
@@ -113,7 +130,7 @@ class Uid(interactions.Extension):
     async def liste(self, ctx: interactions.CommandContext, jeu: str):
         db = open_connection()
         cursor = db.cursor()
-        cursor.execute(f"SELECT * FROM Kazooha.GameUid WHERE game='{jeu}'")
+        cursor.execute(f"SELECT * FROM Kazooha.GameUid WHERE game='{jeu}' ORDER BY discordId")
         uids = cursor.fetchall()
         cursor.close()
         db.close()
@@ -124,8 +141,13 @@ class Uid(interactions.Extension):
 
             server = uid[2]
             user_id = uid[3]
+            nickname = uid[4]
+            level = uid[5]
 
-            desc += f"({server})<@{discord_id}> -> {user_id}\n"
+            if nickname is not None and level is not None:
+                desc += f"({server})<@{discord_id}>({nickname} Lv.{level}) -> {user_id}\n"
+            else:
+                desc += f"({server})<@{discord_id}> -> {user_id}\n"
 
         embed = interactions.Embed(
             title=f"Joueurs pour {jeu}",
@@ -155,7 +177,6 @@ class Uid(interactions.Extension):
 
     async def get_game(self, ctx: interactions.CommandContext, jeu: str) -> str or None:
         jeu = jeu.lower().replace(' ', '')
-        print(jeu)
         for game in self.game_names:
             if jeu in self.game_names[game]:
                 return game
@@ -195,6 +216,26 @@ class Uid(interactions.Extension):
         else:
             await ctx.send("Vous n'avez pas l'autorisation de modifier ou de supprimer un UID qui ne vous appartient pas.", ephemeral=True)
             return False
+
+    async def get_genshin_user_info(self, uid: str) -> genshin.models.PartialGenshinUserStats or None:
+        load_dotenv()
+        client = genshin.Client(game=genshin.Game.GENSHIN)
+        client.set_cookies(ltuid=os.getenv("LAB_LTUID"), ltoken=os.getenv("LAB_LTOKEN"))
+        try:
+            res = await client.get_partial_genshin_user(int(uid))
+            return res
+        except genshin.errors.DataNotPublic:
+            return None
+
+    async def get_honkai_user_info(self, uid: str) -> genshin.models.HonkaiUserStats or None:
+        load_dotenv()
+        client = genshin.Client(game=genshin.Game.HONKAI)
+        client.set_cookies(ltuid=os.getenv("LAB_LTUID"), ltoken=os.getenv("LAB_LTOKEN"))
+        try:
+            res = await client.get_honkai_user(int(uid))
+            return res
+        except genshin.errors.DataNotPublic:
+            return None
 
 
 def setup(client):

@@ -8,3 +8,4 @@ interactions-files
 dinteractions-Paginator
 mysql-connector
 emoji==1.7.0
+genshin

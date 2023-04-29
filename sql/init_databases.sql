@@ -21,5 +21,7 @@ CREATE TABLE IF NOT EXISTS Kazooha.GameUid (
     discordId BIGINT NOT NULL,
     game VARCHAR(100) NOT NULL,
     server VARCHAR(100),
-    uid BIGINT NOT NULL PRIMARY KEY
+    uid BIGINT NOT NULL PRIMARY KEY,
+    nickname VARCHAR(255),
+    level INT
 );
