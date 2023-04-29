@@ -29,8 +29,9 @@ kazooha = interactions.Client(
 
 kazooha.load('interactions.ext.files')
 
-kazooha.load("commands.context.info")
+# kazooha.load("commands.context.info")
 kazooha.load("commands.context.rickroll")
+kazooha.load("commands.context.uid")
 # kazooha.load("commands.context.guess")
 
 kazooha.load("commands.slash.idtotime")
