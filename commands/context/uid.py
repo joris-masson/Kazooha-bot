@@ -36,9 +36,9 @@ class Uid(interactions.Extension):
                     desc += f"**[{game}]**({server}) -> {user_id}\n"
 
             embed = interactions.Embed(title=f"UIDs de {ctx.target.user.username}", description=desc)
-            await ctx.send(embeds=embed)
+            await ctx.send(embeds=embed, ephemeral=True)
         else:
-            await ctx.send(f"{ctx.target.user.username} n'a renseigné aucun UID.")
+            await ctx.send(f"{ctx.target.user.username} n'a renseigné aucun UID.", ephemeral=True)
 
 
 def setup(client):
