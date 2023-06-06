@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 # from discord_components import DiscordComponents
 from utils.func import detect_message, save_attachment
 from utils.database import *
-from utils.functions import remove_emojis, delete_msg_if_no_role
+from utils.functions import remove_emojis, delete_msg_if_no_role, log
 from datetime import datetime
 
 load_dotenv()  # prépare le chargement du token
@@ -87,6 +87,11 @@ async def on_message_delete(msg: interactions.Message):
     cursor.close()
     db.close()
 
+
+@kazooha.event
+async def on_ready():
+    for guild in kazooha.guilds:
+        log(f"Bot prêt dans {guild.name}({guild.id})")
 
 """
 async def guess(msg: interactions.Message):
