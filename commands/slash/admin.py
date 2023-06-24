@@ -13,9 +13,14 @@ class Admin(interactions.Extension):
         name="admin",
         options=[
             interactions.Option(
-            name="count_emotes",
-            description="fais un petit compte des emotes les plus utilisées sur un serveur",
-            type=interactions.OptionType.SUB_COMMAND
+                name="count_emotes",
+                description="fais un petit compte des emotes les plus utilisées sur un serveur",
+                type=interactions.OptionType.SUB_COMMAND
+            ),
+            interactions.Option(
+                name="test",
+                description="test",
+                type=interactions.OptionType.SUB_COMMAND
             )
         ]
     )
@@ -26,6 +31,8 @@ class Admin(interactions.Extension):
             log(f"{__name__} utilisé")
         if sub_command == "count_emotes":
             await self.count_emotes(ctx)
+        elif sub_command == "test":
+            await self.test(ctx)
 
     async def count_emotes(self, ctx):
         the_serv = await ctx.get_guild()
@@ -52,6 +59,10 @@ class Admin(interactions.Extension):
         print(f"Jéfini")
         for emote in sorted(res, key=res.get, reverse=True):
             print(f"{emote}: {res[emote]}")
+
+    async def test(self, ctx):
+        await ctx.send("aaaaaaaaaaa")
+
 
 def setup(client):
     Admin(client)
