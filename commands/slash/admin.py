@@ -1,7 +1,9 @@
+import os
 import interactions
 import re
 
 from utils.functions import log
+from random import shuffle
 
 
 class Admin(interactions.Extension):
@@ -18,8 +20,8 @@ class Admin(interactions.Extension):
                 type=interactions.OptionType.SUB_COMMAND
             ),
             interactions.Option(
-                name="test",
-                description="test",
+                name="give_marqueurs",
+                description="Donne les marqueurs, mélangés",
                 type=interactions.OptionType.SUB_COMMAND
             )
         ]
@@ -29,10 +31,13 @@ class Admin(interactions.Extension):
             log(f"{__name__} utilisé par @{ctx.author.name}({ctx.author.id}) dans #{ctx.channel.name}({ctx.channel.id}) sur le serveur {ctx.guild.name}({ctx.guild.id})")
         except AttributeError:
             log(f"{__name__} utilisé")
-        if sub_command == "count_emotes":
-            await self.count_emotes(ctx)
-        elif sub_command == "test":
-            await self.test(ctx)
+        if ctx.author.id != 171028477682647040:
+            await ctx.send("Vous n'avez pas l'autorisation de lancer cette commande", ephemeral=True)
+        else:
+            if sub_command == "count_emotes":
+                await self.count_emotes(ctx)
+            elif sub_command == "give_marqueurs":
+                await self.give_marqueurs(ctx)
 
     async def count_emotes(self, ctx):
         the_serv = await ctx.get_guild()
@@ -60,8 +65,18 @@ class Admin(interactions.Extension):
         for emote in sorted(res, key=res.get, reverse=True):
             print(f"{emote}: {res[emote]}")
 
-    async def test(self, ctx):
-        await ctx.send("aaaaaaaaaaa")
+    async def give_marqueurs(self, ctx):
+        img_list = os.listdir("data/commands/admin/give_marqueurs/img")
+        shuffle(img_list)
+        for participant in [int(img_name[:-4]) for img_name in img_list]:
+            for img_name in img_list:
+                if participant != int(img_name[:-4]):
+                    embed = interactions.Embed(description=f"Marqueur de <@{img_name[:-4]}>.")
+                    marqueur_image = interactions.File(f"data/commands/admin/give_marqueurs/img/{img_name}")
+                    embed.set_image(f"attachment://{img_name}")
+                    await ctx.send(f"<@{participant}>", embeds=embed, files=marqueur_image)
+                    print(f"{participant} -> {img_name}")
+                    img_list.remove(img_name)
 
 
 def setup(client):
