@@ -67,16 +67,32 @@ class Admin(interactions.Extension):
 
     async def give_marqueurs(self, ctx):
         img_list = os.listdir("data/commands/admin/give_marqueurs/img")
-        shuffle(img_list)
-        for participant in [int(img_name[:-4]) for img_name in img_list]:
-            for img_name in img_list:
-                if participant != int(img_name[:-4]):
-                    embed = interactions.Embed(description=f"Marqueur de <@{img_name[:-4]}>.")
-                    marqueur_image = interactions.File(f"data/commands/admin/give_marqueurs/img/{img_name}")
-                    embed.set_image(f"attachment://{img_name}")
-                    await ctx.send(f"<@{participant}>", embeds=embed, files=marqueur_image)
-                    print(f"{participant} -> {img_name}")
-                    img_list.remove(img_name)
+        dict_attributions = self.attribute_all(img_list)
+        for participant in dict_attributions:
+            embed = interactions.Embed(description=f"Marqueur de <@{dict_attributions[participant]}>.")
+            marqueur_image = interactions.File(f"data/commands/admin/give_marqueurs/img/{dict_attributions[participant]}.png")
+            embed.set_image(f"attachment://{dict_attributions[participant]}.png")
+            await ctx.send(f"<@{participant}>", embeds=embed, files=marqueur_image)
+
+    def attribute_all(self, img_list: list[str]) -> dict[int, int]:
+        res = {}
+        while len(res) != len(img_list):
+            ze_list = img_list.copy()
+            shuffle(ze_list)
+            for participant in [int(img_name[:-4]) for img_name in img_list]:
+                for img_name in ze_list:
+                    act_img = int(img_name[:-4])
+                    if participant != act_img and self.check_if_inversion(participant, act_img, res):
+                        res[participant] = act_img
+                        ze_list.remove(img_name)
+                        break
+        return res
+
+    def check_if_inversion(self, participant: int, img_name: int, res_dict: dict[int, int]) -> bool:
+        for id_participant in res_dict:
+            if img_name == id_participant and res_dict[id_participant] == participant:
+                return False
+        return True
 
 
 def setup(client):
