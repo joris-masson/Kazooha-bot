@@ -43,6 +43,7 @@ class ShowArtifacts(Extension):
                            SelectOption(label="Berserker", value="Berserker"),
                            SelectOption(label="Briseur de glace", value="Briseur de glace"),
                            SelectOption(label="Chanceux", value="Chanceux"),
+                           SelectOption(label="Chasseur de la Maréchaussée", value="Chasseur de la Marechaussee"),
                            SelectOption(label="Chevalerie ensanglantée", value="Chevalerie ensanglantee"),
                            SelectOption(label="Chronique du Pavillon du désert", value="Chronique du Pavillon du desert"),
                            SelectOption(label="Coeur du brave", value="Coeur du brave"),
@@ -57,7 +58,6 @@ class ShowArtifacts(Extension):
                            SelectOption(label="Exilé", value="Exile"),
                            SelectOption(label="Flamme blème", value="Flamme bleme"),
                            SelectOption(label="Fleur du paradis perdu", value="Fleur du paradis perdu"),
-                           SelectOption(label="Instructeur", value="Instruteur"),
                        ],
                        custom_id="sel_artifacts"
                     )
@@ -71,6 +71,7 @@ class ShowArtifacts(Extension):
                     SelectMenu(
                         placeholder="Liste des sets disponibles",
                         options=[
+                            SelectOption(label="Instructeur", value="Instruteur"),
                             SelectOption(label="Lueur du Vourukasha", value="Lueur du Vourukasha"),
                             SelectOption(label="Marcheur du feu", value="Marcheur du feu"),
                             SelectOption(label="Médecin itinérant", value="Medecin itinerant"),
@@ -87,6 +88,7 @@ class ShowArtifacts(Extension):
                             SelectOption(label="Sorcière des flammes", value="Sorciere des flammes"),
                             SelectOption(label="Souvenir de forêt", value="Souvenir de foret"),
                             SelectOption(label="Ténacité du Millelithe", value="Tenacite du Millelithe"),
+                            SelectOption(label="Troupe dorée", value="Troupe doree")
                         ],
                         custom_id="sel_artifacts"
                     )
