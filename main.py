@@ -31,7 +31,7 @@ kazooha.load('interactions.ext.files')
 
 kazooha.load("events.givemats")
 
-# kazooha.load("commands.context.info")
+kazooha.load("commands.context.info")
 kazooha.load("commands.context.rickroll")
 kazooha.load("commands.context.uid")
 # kazooha.load("commands.context.guess")

@@ -39,7 +39,7 @@ class Admin(interactions.Extension):
             elif sub_command == "give_marqueurs":
                 await self.give_marqueurs(ctx)
 
-    async def count_emotes(self, ctx):
+    async def count_emotes(self, ctx: interactions.CommandContext):
         the_serv = await ctx.get_guild()
         res = {}
         serv_emotes = []
@@ -65,7 +65,7 @@ class Admin(interactions.Extension):
         for emote in sorted(res, key=res.get, reverse=True):
             print(f"{emote}: {res[emote]}")
 
-    async def give_marqueurs(self, ctx):
+    async def give_marqueurs(self, ctx: interactions.CommandContext):
         img_list = os.listdir("data/commands/admin/give_marqueurs/img")
         dict_attributions = self.attribute_all(img_list)
         for participant in dict_attributions:
@@ -93,7 +93,6 @@ class Admin(interactions.Extension):
             if img_name == id_participant and res_dict[id_participant] == participant:
                 return False
         return True
-
 
 def setup(client):
     Admin(client)
