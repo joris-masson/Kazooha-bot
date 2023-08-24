@@ -30,7 +30,7 @@ class GiveMats(interactions.Extension):
         self.method.start()
 
     async def method(self):
-        if ((self.start_hour <= datetime.now().hour < self.start_hour + 1) and not self.is_same_day()) or not self.message_exists():
+        if ((self.start_hour <= datetime.now().hour < self.start_hour + 1) and not self.is_same_day()) or not self.message_exists() or (not self.is_same_day() and self.message_exists()):
             if self.send_channel is None:
                 self.send_channel = await interactions.get(self.client, interactions.Channel, object_id=int(os.getenv("MATS_CHANNEL_ID")))
             a = MatsImageMaker(self.dico_day[datetime.now().weekday()])
