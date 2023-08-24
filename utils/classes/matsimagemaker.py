@@ -53,7 +53,7 @@ class MatsImageMaker:
         db = open_connection()
         cursor = db.cursor()
         for day in self.days:
-            cursor.execute(f"SELECT name, dungeon FROM Weapon WHERE farmableDay='{day}' ORDER BY dungeon")
+            cursor.execute(f"SELECT name, dungeon FROM Weapon WHERE (farmableDay='{day}' AND obtenable=1) ORDER BY dungeon")
             for name, dungeon in cursor.fetchall():
                 res.append((name, dungeon))
         cursor.execute("SELECT name, dungeon FROM Weapon WHERE farmableDay='All'")
@@ -66,7 +66,7 @@ class MatsImageMaker:
         db = open_connection()
         cursor = db.cursor()
         for day in self.days:
-            cursor.execute(f"SELECT name, dungeon FROM `Character` WHERE farmableDay='{day}' ORDER BY dungeon")
+            cursor.execute(f"SELECT name, dungeon FROM `Character` WHERE (farmableDay='{day}' AND obtenable=1) ORDER BY dungeon")
             for name, dungeon in cursor.fetchall():
                 res.append((name, dungeon))
         cursor.execute("SELECT name, dungeon FROM `Character` WHERE farmableDay='All'")
