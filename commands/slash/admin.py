@@ -3,6 +3,7 @@ import interactions
 import re
 
 from utils.functions import log
+from utils.database import open_connection
 from random import shuffle
 
 
@@ -23,6 +24,11 @@ class Admin(interactions.Extension):
                 name="give_marqueurs",
                 description="Donne les marqueurs, mélangés",
                 type=interactions.OptionType.SUB_COMMAND
+            ),
+            interactions.Option(
+                name="send_photos",
+                description="Oui",
+                type=interactions.OptionType.SUB_COMMAND
             )
         ]
     )
@@ -38,6 +44,8 @@ class Admin(interactions.Extension):
                 await self.count_emotes(ctx)
             elif sub_command == "give_marqueurs":
                 await self.give_marqueurs(ctx)
+            elif sub_command == "send_photos":
+                await self.send_photos(ctx)
 
     async def count_emotes(self, ctx: interactions.CommandContext):
         the_serv = await ctx.get_guild()
@@ -73,6 +81,23 @@ class Admin(interactions.Extension):
             marqueur_image = interactions.File(f"data/commands/admin/give_marqueurs/img/{dict_attributions[participant]}.png")
             embed.set_image(f"attachment://{dict_attributions[participant]}.png")
             await ctx.send(f"<@{participant}>", embeds=embed, files=marqueur_image)
+
+    async def send_photos(self, ctx: interactions.CommandContext):
+        db = open_connection()
+        cursor = db.cursor()
+        cursor.execute("SELECT id, title, descriptionP, avatarUrl FROM Photo;")
+        data = cursor.fetchall()
+        cursor.close()
+        db.close()
+
+        for entry in data:
+            sender = await interactions.get(self.client, interactions.User, object_id=entry[0])
+            sender_name = sender.username
+            embed = interactions.Embed(title=entry[1], description=entry[2])
+            embed.set_author(sender_name, icon_url=entry[3])
+            photo = interactions.File(f"data/commands/admin/send_photos/img/{entry[0]}.png")
+            embed.set_image(f"attachment://{entry[0]}.png")
+            await ctx.send(embeds=embed, files=photo)
 
     def attribute_all(self, img_list: list[str]) -> dict[int, int]:
         res = {}
