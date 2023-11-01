@@ -19,3 +19,6 @@ for elem in res:
     elem = elem[0]
     if not os.path.isfile(rf"../../../data/img/persos/{elem}.png"):
         print(f"erreur avec {elem}")
+
+cursor.close()
+db.close()
