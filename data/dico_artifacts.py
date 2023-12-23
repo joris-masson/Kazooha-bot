@@ -3,7 +3,7 @@ from data.artifacts import ancien_rituel_royal, rideau_du_gladiateur, amour_cher
     tenacite_du_millelithe, erudit, echos_d_une_offrande, artiste_martial, dompteur_de_foudre, roche_ancienne, \
     palourde_aux_teintes_oceaniques, miracle, medecin_itinerant, aventurier, berserker, exile, \
     coquille_des_reves_opulents, chanceux, bande_vagabonde, coeur_du_voyageur, marcheur_du_feu, ombre_de_la_verte_chasseuse, reve_dore, sorciere_des_flammes_ardentes, souvenir_de_foret, \
-    au_dela_cinabrin, embleme_du_destin_brise, flamme_bleme, meteore_inverse, reminiscence_nostalgique, fleur_du_paradis_perdu, chronique_du_pavillon_du_desert, reve_de_la_nymphe, lueur_du_vourukasha, chasseur_de_la_marechaussee, troupe_doree
+    au_dela_cinabrin, embleme_du_destin_brise, flamme_bleme, meteore_inverse, reminiscence_nostalgique, fleur_du_paradis_perdu, chronique_du_pavillon_du_desert, reve_de_la_nymphe, lueur_du_vourukasha, chasseur_de_la_marechaussee, troupe_doree, chanson_des_jours_d_antan, murmure_nocturne_en_foret_d_echos
 
 from data.artifacts.beta import neige_et_glace
 
@@ -18,6 +18,7 @@ dico_artifacts = {
     "berserker": berserker.artifact,
     "briseur_de_glace": briseur_de_glace.artifact,
     "chanceux": chanceux.artifact,
+    "chanson_des_jours_d_antan": chanson_des_jours_d_antan.artifact,
     "chevalerie_ensanglantee": chevalerie_ensanglantee.artifact,
     "coeur_du_brave": coeur_du_brave.artifact,
     "coeur_du_gardien": coeur_du_gardien.artifact,
@@ -35,6 +36,7 @@ dico_artifacts = {
     "medecin_itinerant": medecin_itinerant.artifact,
     "meteore_inverse": meteore_inverse.artifact,
     "miracle": miracle.artifact,
+    "murmure_nocturne_en_foret_d_echos": murmure_nocturne_en_foret_d_echos.artifact,
     "ombre_de_la_verte_chasseuse": ombre_de_la_verte_chasseuse.artifact,
     "palourde_aux_teintes_oceaniques": palourde_aux_teintes_oceaniques.artifact,
     "reminiscence_nostalgique": reminiscence_nostalgique.artifact,

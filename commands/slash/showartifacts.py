@@ -44,6 +44,7 @@ class ShowArtifacts(Extension):
                            SelectOption(label="Berserker", value="Berserker", emoji=emojis["berserker"]),
                            SelectOption(label="Briseur de glace", value="Briseur de glace", emoji=emojis["briseur_de_glace"]),
                            SelectOption(label="Chanceux", value="Chanceux", emoji=emojis["chanceux"]),
+                           SelectOption(label="Chanson des jours d'antan", value="Chanson des jours d antan", emoji=emojis["chanson_des_jours_d_antan"]),
                            SelectOption(label="Chasseur de la Maréchaussée", value="Chasseur de la Marechaussee", emoji=emojis["chasseur_de_la_marechaussee"]),
                            SelectOption(label="Chevalerie ensanglantée", value="Chevalerie ensanglantee", emoji=emojis["chevalerie_ensanglantee"]),
                            SelectOption(label="Chronique du Pavillon du désert", value="Chronique du Pavillon du desert", emoji=emojis["chronique_du_pavillon_du_desert"]),
@@ -57,8 +58,7 @@ class ShowArtifacts(Extension):
                            SelectOption(label="Emblème du destin brisé", value="Embleme du destin brise", emoji=emojis["embleme_du_destin_brise"]),
                            SelectOption(label="Erudit", value="Erudit", emoji=emojis["erudit"]),
                            SelectOption(label="Exilé", value="Exile", emoji=emojis["exile"]),
-                           SelectOption(label="Flamme blème", value="Flamme bleme", emoji=emojis["flamme_bleme"]),
-                           SelectOption(label="Fleur du paradis perdu", value="Fleur du paradis perdu", emoji=emojis["fleur_du_paradis_perdu"]),
+                           SelectOption(label="Flamme blème", value="Flamme bleme", emoji=emojis["flamme_bleme"])
                        ],
                        custom_id="sel_artifacts"
                     )
@@ -72,12 +72,14 @@ class ShowArtifacts(Extension):
                     SelectMenu(
                         placeholder="Liste des sets disponibles",
                         options=[
+                            SelectOption(label="Fleur du paradis perdu", value="Fleur du paradis perdu", emoji=emojis["fleur_du_paradis_perdu"]),
                             SelectOption(label="Instructeur", value="Instruteur", emoji=emojis["instructeur"]),
                             SelectOption(label="Lueur du Vourukasha", value="Lueur du Vourukasha", emoji=emojis["lueur_du_vourukasha"]),
                             SelectOption(label="Marcheur du feu", value="Marcheur du feu", emoji=emojis["marcheur_du_feu"]),
                             SelectOption(label="Médecin itinérant", value="Medecin itinerant", emoji=emojis["medecin_itinerant"]),
                             SelectOption(label="Metéore inversé", value="Meteore inverse", emoji=emojis["meteore_inverse"]),
                             SelectOption(label="Miracle", value="Miracle", emoji=emojis["miracle"]),
+                            SelectOption(label="Murmure nocturne en forêt d'échos", value="Murmure nocturne en foret d echos", emoji=emojis["murmure_nocturne_en_foret_d_echo"]),
                             SelectOption(label="Ombre de la Verte Chasseuse", value="Ombre de la Verte Chasseuse", emoji=emojis["ombre_de_la_verte_chasseuse"]),
                             SelectOption(label="Palourde aux teintes océaniques", value="Palourde aux teintes oceaniques", emoji=emojis["palourde_aux_teintes_oceaniques"]),
                             SelectOption(label="Parieur", value="Parieur", emoji=emojis["parieur"]),
@@ -127,6 +129,7 @@ class ShowArtifacts(Extension):
         serv = await interactions.get(self.client, interactions.Guild, object_id=1142078973929603212)
         for emote in serv.emojis:
             res[emote.name] = emote
+        print(res)
         return res
 
 
