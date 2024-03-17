@@ -1,0 +1,1 @@
+update User set blacklisted=1 where (blacklisted=0 and country!='FR');
