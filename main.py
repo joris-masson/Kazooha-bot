@@ -12,10 +12,9 @@ kazooha = Client(
     intents=Intents.ALL
 )
 
-kazooha.load_extension("commands.slash.test")
+kazooha.load_extension("commands.slash.dossiers")
 kazooha.load_extension("commands.slash.idtotime")
-
-kazooha.reload_extension("commands.slash.idtotime")
+kazooha.load_extension("commands.slash.test")
 
 
 @listen()
