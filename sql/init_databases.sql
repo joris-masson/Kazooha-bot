@@ -51,3 +51,15 @@ CREATE TABLE IF NOT EXISTS Kazooha.Material
     region  VARCHAR(25) NOT NULL,
     day     VARCHAR(25)
 );
+
+DROP TABLE IF EXISTS Kazooha.Leak;
+CREATE TABLE IF NOT EXISTS Kazooha.Leak
+(
+    id VARCHAR(20) NOT NULL PRIMARY KEY,
+    timestamp INT(20) NOT NULL,
+    title VARCHAR(200) NOT NULL,
+    link VARCHAR(50) NOT NULL,
+    author_name VARCHAR(50) NOT NULL,
+    media_link VARCHAR(300),
+    sent BOOLEAN NOT NULL DEFAULT 0
+);
