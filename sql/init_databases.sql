@@ -52,7 +52,7 @@ CREATE TABLE IF NOT EXISTS Kazooha.Material
     day     VARCHAR(25)
 );
 
-DROP TABLE IF EXISTS Kazooha.Leak;
+# DROP TABLE IF EXISTS Kazooha.Leak;
 CREATE TABLE IF NOT EXISTS Kazooha.Leak
 (
     id VARCHAR(20) NOT NULL PRIMARY KEY,
@@ -64,11 +64,11 @@ CREATE TABLE IF NOT EXISTS Kazooha.Leak
     sent BOOLEAN NOT NULL DEFAULT 0
 );
 
-DROP TABLE IF EXISTS Kazooha.MessageIA;
+# DROP TABLE IF EXISTS Kazooha.MessageIA;
 CREATE TABLE IF NOT EXISTS Kazooha.MessageIa(
-    id INT NOT NULL PRIMARY KEY,
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     discordUserId BIGINT NOT NULL,
     messageNumber INT NOT NULL,
-    sender VARCHAR(20),
-    content VARCHAR(1024)
+    userContent VARCHAR(1024),
+    botContent VARCHAR(1024)
 );
