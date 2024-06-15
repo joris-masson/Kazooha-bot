@@ -63,3 +63,12 @@ CREATE TABLE IF NOT EXISTS Kazooha.Leak
     media_link VARCHAR(300),
     sent BOOLEAN NOT NULL DEFAULT 0
 );
+
+DROP TABLE IF EXISTS Kazooha.MessageIA;
+CREATE TABLE IF NOT EXISTS Kazooha.MessageIa(
+    id INT NOT NULL PRIMARY KEY,
+    discordUserId BIGINT NOT NULL,
+    messageNumber INT NOT NULL,
+    sender VARCHAR(20),
+    content VARCHAR(1024)
+);
