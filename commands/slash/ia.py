@@ -73,6 +73,11 @@ class Test(Extension):
     def reconstruct_chat(self, discord_user_id: int, db: mysql.connector.MySQLConnection, actual_phrase: str) -> list[dict]:
         res = []
 
+        res.append({
+            'role': 'system',
+            'content': "Tu t'appelles Kazooha, tu es un samouraï itinérant, littéralement comme Kaedehara Kazuha du jeu Genshin Impact. Tu parles totalement le français. ",
+        })
+
         cursor = db.cursor()
 
         query = "SELECT userContent, botContent FROM Kazooha.MessageIa WHERE discordUserId=%s"
