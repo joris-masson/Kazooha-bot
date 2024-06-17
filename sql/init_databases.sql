@@ -69,6 +69,6 @@ CREATE TABLE IF NOT EXISTS Kazooha.MessageIa(
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     discordUserId BIGINT NOT NULL,
     messageNumber INT NOT NULL,
-    userContent VARCHAR(1024),
-    botContent VARCHAR(1024)
+    userContent longtext,
+    botContent longtext
 );

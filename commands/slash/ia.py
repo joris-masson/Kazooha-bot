@@ -12,7 +12,7 @@ from utils.util import open_db_connection
 class Test(Extension):
     @slash_command(
         name="ia",
-        description="Pour discuter avec l'IA !"
+        description="Pour discuter avec l'IA !",
     )
     @slash_option(
         name="phrase",
