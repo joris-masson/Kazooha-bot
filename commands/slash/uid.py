@@ -162,5 +162,4 @@ class Uid(Extension):
         discord_id = cursor.fetchall()[0]
         cursor.close()
         db.close()
-        print(ctx.author.id, discord_id)
         return ctx.author.id == discord_id[0]
