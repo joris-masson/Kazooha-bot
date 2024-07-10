@@ -1,5 +1,7 @@
 from interactions import Extension, StringSelectMenu, Embed, File, SlashContext, ComponentContext, slash_command, component_callback
 
+from utils.util import log
+
 
 class Dossiers(Extension):
     @slash_command(
@@ -7,6 +9,8 @@ class Dossiers(Extension):
         description="Affiche une image contenant des informations sur un personnage du lore de Genshin Impact"
     )
     async def command(self, ctx: SlashContext):
+        log("SLASH", f"Commande slash `/dossiers_confidentiels` utilisée par {ctx.author.username}({ctx.author.id}) dans #{ctx.channel.name}({ctx.channel.id}) sur {ctx.guild.name}({ctx.guild.id})")
+
         select = StringSelectMenu(
             "Alice", "Asmoday", "Columbina", "Dainsleif", "Istaroth", "Nabu Malikata", "Night Mother",
             "Paimon", "Phanes", "Pierro", "Pushpavatika", "Rhinedottir", "Le Sibling", "Le Traveler",
@@ -20,6 +24,7 @@ class Dossiers(Extension):
 
     @component_callback("dossiers_select_id")
     async def callback(self, ctx: ComponentContext):
+        log("CALLBACK", f"[dossiers_confidentiels] - Affichage informations sur \"{ctx.values[0]}\"")
         match ctx.values[0]:
             case "Nabu Malikata":
                 selected_dossier = "Nabu_malikata"

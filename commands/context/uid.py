@@ -1,6 +1,6 @@
 from interactions import Extension, user_context_menu, Embed, ContextMenuContext
 
-from utils.util import open_db_connection
+from utils.util import open_db_connection, log
 
 
 class Uid(Extension):
@@ -8,6 +8,8 @@ class Uid(Extension):
         name="Lister les UID"
     )
     async def command(self, ctx: ContextMenuContext):
+        log("CONTEXT", f"Commande contexte 'uid' utilisée par {ctx.author.username}({ctx.author.id}) sur {ctx.target.user.username}({ctx.target.user.id}).")
+
         db = open_db_connection()
         cursor = db.cursor()
 

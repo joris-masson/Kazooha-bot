@@ -3,6 +3,7 @@ import mysql.connector
 
 
 from dotenv import load_dotenv
+from datetime import datetime
 
 
 def convert_discord_id_to_time(discord_id: int) -> int:
@@ -22,3 +23,11 @@ def open_db_connection() -> mysql.connector.MySQLConnection:
         password=password,
         database="Kazooha"
     )
+
+def log(prefix: str, thing: str):
+    date = datetime.now().strftime("%H:%M:%S")
+    filename = datetime.now().strftime("%d-%m-%Y")
+    ze_log = f"[{prefix}] - [{date}] - {thing}\n"
+    print(ze_log, end='')
+    with open(f"logs/{filename}.log", 'a', encoding='utf-8') as log_file:
+        log_file.write(ze_log)

@@ -1,6 +1,6 @@
 from interactions import Extension, SlashContext, SlashCommandChoice, OptionType, Embed, slash_command, slash_option
 
-from utils.util import open_db_connection
+from utils.util import open_db_connection, log
 
 
 class Uid(Extension):
@@ -28,12 +28,15 @@ class Uid(Extension):
         opt_type=OptionType.STRING,
     )
     async def ajouter(self, ctx: SlashContext, jeu: str, uid: str) -> None:
+        log("SLASH", log("SLASH", f"Commande slash `/uid ajouter {jeu} {uid}` utilisée par {ctx.author.username}({ctx.author.id}) dans #{ctx.channel.name}({ctx.channel.id}) sur {ctx.guild.name}({ctx.guild.id})"))
+
         db = open_db_connection()
         cursor = db.cursor()
 
         cursor.execute(f"INSERT INTO Kazooha.GameUid(discordId, game, server, uid) VALUE ('{int(ctx.author.id)}', '{jeu}', '{self.get_server(jeu, uid)}', '{int(uid)}')")
 
         db.commit()
+        log("DB", f"Ajout d'un nouvel UID dans Kazooha.GameUid -> ({ctx.author.id}, {jeu}, {self.get_server(jeu, uid)}, {uid})")
         cursor.close()
         db.close()
         await ctx.send("UID ajouté !", ephemeral=True)
@@ -56,6 +59,9 @@ class Uid(Extension):
         ]
     )
     async def liste(self, ctx: SlashContext, jeu: str) -> None:
+        log("SLASH", log("SLASH",
+                         f"Commande slash `/uid liste {jeu}` utilisée par {ctx.author.username}({ctx.author.id}) dans #{ctx.channel.name}({ctx.channel.id}) sur {ctx.guild.name}({ctx.guild.id})"))
+
         db = open_db_connection()
         cursor = db.cursor()
 
@@ -76,9 +82,9 @@ class Uid(Extension):
             level = uid[5]
 
             if nickname is not None and level is not None:
-                desc += f"[**{game}**] - ({server})<@{discord_id}>({nickname} Lv.{level}) -> `{user_id}`\n"
+                desc += f"({server})<@{discord_id}>({nickname} Lv.{level}) -> `{user_id}`\n"
             else:
-                desc += f"[**{game}**] - ({server})<@{discord_id}> -> `{user_id}`\n"
+                desc += f"({server})<@{discord_id}> -> `{user_id}`\n"
 
         embed = Embed(
             title=f"Joueurs pour {jeu}",
@@ -98,11 +104,14 @@ class Uid(Extension):
         opt_type=OptionType.STRING
     )
     async def retirer(self, ctx: SlashContext, uid: str):
+        log("SLASH", log("SLASH", f"Commande slash `/uid retirer {uid}` utilisée par {ctx.author.username}({ctx.author.id}) dans #{ctx.channel.name}({ctx.channel.id}) sur {ctx.guild.name}({ctx.guild.id})"))
+
         if await self.is_author_good(ctx, uid):
             db = open_db_connection()
             cursor = db.cursor()
             cursor.execute(f"DELETE FROM Kazooha.GameUid WHERE uid='{uid}'")
             db.commit()
+            log("DB", f"Suppression de '{uid}' de Kazooha.GameUid")
             cursor.close()
             db.close()
             await ctx.send("UID supprimé !", ephemeral=True)
@@ -127,17 +136,19 @@ class Uid(Extension):
         opt_type=OptionType.STRING
     )
     async def modifier(self, ctx: SlashContext, uid: str, new_uid: str):
+        log("SLASH", log("SLASH", f"Commande slash `/uid modifier {uid} {new_uid}` utilisée par {ctx.author.username}({ctx.author.id}) dans #{ctx.channel.name}({ctx.channel.id}) sur {ctx.guild.name}({ctx.guild.id})"))
+
         if await self.is_author_good(ctx, uid):
             db = open_db_connection()
             cursor = db.cursor()
             cursor.execute(f"UPDATE Kazooha.GameUid SET uid='{new_uid}' WHERE uid='{uid}'")
             db.commit()
+            log("DB", f"Modification de l'UID {uid} vers {new_uid} dans Kazooha.GameUid")
             cursor.close()
             db.close()
             await ctx.send("UID mis à jour !", ephemeral=True)
         else:
-            await ctx.send(
-                "Vous n'avez pas l'autorisation de modifier un UID qui ne vous appartient pas.", ephemeral=True)
+            await ctx.send("Vous n'avez pas l'autorisation de modifier un UID qui ne vous appartient pas.", ephemeral=True)
 
     def get_server(self, jeu: str, uid: str) -> str:
         if jeu == "genshin" or jeu == "star_rail":
