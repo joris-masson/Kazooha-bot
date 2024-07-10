@@ -72,3 +72,24 @@ CREATE TABLE IF NOT EXISTS Kazooha.MessageIa(
     userContent longtext,
     botContent longtext
 );
+
+/* ----- SITE WEB ----- */
+
+# DROP TABLE IF EXISTS Kazooha.User;
+CREATE TABLE IF NOT EXISTS Kazooha.User (
+    ip VARCHAR(50) NOT NULL PRIMARY KEY,
+    country VARCHAR(10),
+    discordId BIGINT,
+    blacklisted INT(1) NOT NULL DEFAULT 0
+);
+
+# DROP TABLE IF EXISTS Kazooha.Photo;
+CREATE TABLE IF NOT EXISTS Kazooha.Photo (
+    id           BIGINT               NOT NULL PRIMARY KEY,
+    dateS        DATETIME             NOT NULL,
+    author       VARCHAR(255)         NOT NULL,
+    title        VARCHAR(255),
+    descriptionP TEXT                 NOT NULL,
+    showResult   VARCHAR(1) DEFAULT 0 NOT NULL,
+    avatarUrl    VARCHAR(255)         NOT NULL
+);

@@ -12,11 +12,14 @@ kazooha = Client(
     intents=Intents.ALL
 )
 
+kazooha.load_extension("commands.context.uid")
+
 kazooha.load_extension("commands.event.leak")
 
 kazooha.load_extension("commands.slash.dossiers")
 kazooha.load_extension("commands.slash.idtotime")
-kazooha.load_extension("commands.slash.ia")
+# kazooha.load_extension("commands.slash.ia")
+kazooha.load_extension("commands.slash.uid")
 kazooha.load_extension("commands.slash.test")
 
 
