@@ -19,7 +19,6 @@ class Leak(Extension):
             load_dotenv()
             leak_channel = self.bot.get_channel(os.getenv("LEAK_CHANNEL_ID"))
 
-            print(new_leaks)
             for leak in new_leaks:
                 title = leak[2]
                 footer = EmbedFooter(f"/u/{leak[4]}")
