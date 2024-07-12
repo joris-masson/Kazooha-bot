@@ -1,3 +1,4 @@
+name = "Chroniques d'un ivrogne"
 book = {
     1: """Dans la cité où coule à flots le vin de dent-de-lion, les verres d’alcool précèdent souvent les histoires et racontars en tous genres.
 Les fables les plus étonnantes ne manquent jamais de se répandre de verre en verre, racontées entre les hoquets des habitués enivrés. Ces histoires partagent quelque chose en commun avec les éclats des ivrognes ou le balancement induit par le mal de mer : elles sont terriblement distrayantes.

@@ -1,3 +1,4 @@
+name = "Ballade de l'écuyer"
 book = {
     1: """Dans chaque rue de Mondstadt j’ai déambulé.
 J’y ai respiré l’odeur de la déchéance et des jeux.

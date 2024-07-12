@@ -1,3 +1,4 @@
+name = "Archives de Jueyun"
 book = {
     1: """De nombreuses statues de pierre sont encore visibles à travers les larges terres de Liyue. Elles furent érigées pour la plupart par les gens du pays, qui y priaient pour obtenir récoltes abondantes et climat clément. On raconte cependant que certaines ont une origine beaucoup plus ancienne.
 Une légende circule, véhiculée autant par les pêcheurs du port de Liyue que par les herboristes du Marais Dihua et les vieux mineurs de la région : en certains endroits de Liyue, les antiques monstres de pierre se réveillent les fraîches nuits d’automne, et observent ce monde qui leur est chaque jour moins familier. Prêtant l’oreille aux sons des grenouilles et insectes les accueillant, ils répondent d’un son guttural remontant de leurs gorges pétrifiées, puis se mettent à arpenter les terres qu’ils protégeaient autrefois.

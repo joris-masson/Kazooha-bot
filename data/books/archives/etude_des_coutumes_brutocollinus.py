@@ -1,3 +1,4 @@
+name = "Étude des coutumes Brutocollinus"
 book = {
     1: """Les Brutocollinus forment un ensemble social tribal primitif. Vivant en petits groupes éparses dans les contrées sauvages, il semblerait qu’ils conçoivent la tribu comme une famille élargie.
 

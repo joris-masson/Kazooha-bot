@@ -1,3 +1,4 @@
+name = "Histoire du chevalier errant"
 book = {
     1: """Située au nord de la région de Liyue, la forêt de pierre de Jueyun est couverte par la brume. Les légendes regorgent parmi les herboristes locaux, qui content maintes histoires d’Adeptes et d’esprits malins.
 L’on raconte par exemple l’histoire de ce marchand d’herbes médicinales nommé Qiangu, venu inspecter la distribution des herbes au Karst Jueyun. À sa, grande ignorance, des brigands le suivirent à travers la montagne, puis, la nuit venue, l’assommèrent et le dépouillèrent, le laissant ligoté dans la vallée.

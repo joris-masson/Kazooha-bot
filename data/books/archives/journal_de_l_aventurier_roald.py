@@ -1,3 +1,4 @@
+name = "Journal de l'aventurier Roald"
 book = {
     1: """J’ai suivi les bancs de sable du Marais Dihua jusqu’ici ; mes bottes sont trempées, j’y ai même trouvé une grenouille égarée en les retirant.
 

@@ -1,3 +1,4 @@
+name = "Anthologie de poèmes Brutocollinus"
 book = {
     1: """Olah ! Olah !
 Yoyo mosi mita !

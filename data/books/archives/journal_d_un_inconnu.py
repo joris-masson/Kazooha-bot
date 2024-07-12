@@ -1,3 +1,4 @@
+name = "Journal d'un inconnu"
 book = {
     1: """Dongdong :
 

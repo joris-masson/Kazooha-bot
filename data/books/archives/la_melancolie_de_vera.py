@@ -1,3 +1,4 @@
+name = "La Mélancolie de Véra"
 book = {
     1: """« Je me dis parfois que ce petit village est tellement ennuyeux… »
 Véra, une jeune fille, se plaignait de nouveau de son village. S’allongeant sur la colline proche, elle ferma les yeux et profita de la douce brise du début de l’été sur son visage.

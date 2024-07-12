@@ -1,3 +1,4 @@
+name = "Journal du vagabond"
 book = {
     1: """Alors que brille la nuit dans l’océan d’étoiles s’élève depuis les flots un chant marin.
 

@@ -1,3 +1,4 @@
+name = "La princesse sanglier"
 book = {
     1: """Dans les mythes et légendes anciens, chaque espèce vivante possède son royaume propre.
 En ces temps-là, Mondstadt était une forêt, où les sangliers vivaient insouciants.

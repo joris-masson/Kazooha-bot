@@ -1,3 +1,4 @@
+name = "Guide de voyage en Teyvat"
 book = {
     1: """__**Mondstadt - partie 1**__
     

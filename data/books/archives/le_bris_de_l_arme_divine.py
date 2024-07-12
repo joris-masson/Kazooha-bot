@@ -1,3 +1,4 @@
+name = "Le Bris de l'arme divine"
 book = {
     1: """—— Affaires officielles ——
 	« Je suis le Grand et Glorieux Général Weiyang, émissaire de la cour impériale en mission royale. J'exige que vous me laissiez passer sur-le-champ !

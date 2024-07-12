@@ -1,3 +1,4 @@
+name = "Le cœur de la source"
 book = {
     1: """Sous le clair de lune cristallin, le garçon en pleurs fit un vœu à la fontaine.
 Un esprit venant de quelque lointain pays, qui avait élu domicile dans la fontaine inoccupée, écoutait en silence son vœu muet.

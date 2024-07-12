@@ -1,3 +1,4 @@
+name = "Contes de l'Allée Toki"
 book = {
     1: """__**Prologue – L’histoire orale des Tanukis d’Inazuma**__
 

@@ -1,3 +1,4 @@
+name = "Forêt de bambou au clair de lune"
 book = {
     1: """Entre les rideaux de feuillage bruissants, en un lieu où se rencontrent le coassement des grenouilles et le chant des cigales, se trouve un coin de forêt fané et sec près des rochers escarpés.
 

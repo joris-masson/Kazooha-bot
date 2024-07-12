@@ -1,3 +1,4 @@
+name = "Perle du cœur"
 book = {
     1: """__**Tome 1 - partie 1**__
     

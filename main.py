@@ -27,6 +27,7 @@ kazooha.load_extension("commands.slash.idtotime")
 # kazooha.load_extension("commands.slash.ia")
 kazooha.load_extension("commands.slash.uid")
 # kazooha.load_extension("commands.slash.test")
+kazooha.load_extension("commands.slash.showbooks")
 
 
 @listen()

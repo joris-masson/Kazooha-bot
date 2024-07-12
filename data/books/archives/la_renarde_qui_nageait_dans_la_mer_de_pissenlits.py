@@ -1,3 +1,4 @@
+name = "La Renarde qui nageait dans la mer de pissenlits"
 book = {
     1: """« Pissenlit, dent-de-lion, vole vers une autre destination ! » murmura-t-il.
 Il souffla sur la fleur, jusqu’à ce que les pétales s’envolent tous les uns après les autres, puis, d’un air sérieux, il ajouta :

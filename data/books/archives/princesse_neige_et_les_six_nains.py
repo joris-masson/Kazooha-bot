@@ -1,3 +1,4 @@
+name = "Princesse Neige et les Six Nains"
 book = {
     1: """Il y a de cela très longtemps, dans le lointain Domaine de la Nuit, la Mère de la Nuit régnait en maitre. Monde figé dans une mortelle immobilité, la lumière n’y éclairait pas les terres, et rien n’y poussait sous le rideau de la nuit. Hormis les hideuses créatures tapies dans les ténèbres, la vie n’y existait pas.
 La Mère de la Nuit était la source de tous les maux, et son Domaine était un immense torrent fétide lui jaillissant des entrailles. Froide et cruelle, elle n’avait ni bouche ni cœur ; mais ses deux yeux restaient en permanence ouverts, surveillant son royaume, et y laissant aller son courroux sans distinction. Elle avait en horreur la faible lueur de la lune passant à travers le sombre ciel, car rien n’était plus insupportable à ses yeux que la lumière du monde extérieur.

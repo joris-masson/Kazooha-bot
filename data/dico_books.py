@@ -1,13 +1,13 @@
-from data.books import anthologie_de_la_poesie_brutocollinus, journal_du_vagabond, \
-    nouvelles_chroniques_des_six_kitsunes, la_renarde_qui_nageait_dans_la_mer_de_pissenlits, \
-    l_epee_solitaire_du_mont_desole, ballade_de_l_ecuyer, la_melancolie_de_vera, etude_des_coutumes_brutocollinus, \
-    chroniques_d_un_ivrogne, journal_d_un_inconnu, la_princesse_sanglier, princesse_neige_et_les_six_nains, \
-    contes_de_l_allee_toki, fleurs_pour_la_princesse_fischl, anthologie_de_poemes_brutocollinus, \
-    guide_de_voyage_en_teyvat, reves_brises, l_archon_invisible, la_legende_de_vennessa, histoire_du_chevalier_errant, \
-    princesse_mina_de_la_nation_dechue, les_guerres_d_hamawaran, la_brise_de_la_foret, le_bris_de_l_arme_divine, \
-    le_coeur_de_la_source, archives_de_jueyun, foret_de_bambou_au_clair_de_lune, perle_du_coeur, \
-    theories_etranges_du_kiyoshiken_shingakeuchi, une_legende_d_epee, coutumes_de_liyue, collection_de_byakuyakoku, \
-    la_tour_de_mondstadt, journal_de_l_aventurier_roald
+from data.books.archives import la_renarde_qui_nageait_dans_la_mer_de_pissenlits, la_tour_de_mondstadt, \
+    theories_etranges_du_kiyoshiken_shingakeuchi, collection_de_byakuyakoku, archives_de_jueyun, \
+    les_guerres_d_hamawaran, anthologie_de_poemes_brutocollinus, guide_de_voyage_en_teyvat, \
+    nouvelles_chroniques_des_six_kitsunes, le_coeur_de_la_source, histoire_du_chevalier_errant, l_archon_invisible, \
+    fleurs_pour_la_princesse_fischl, une_legende_d_epee, reves_brises, contes_de_l_allee_toki, \
+    etude_des_coutumes_brutocollinus, journal_d_un_inconnu, la_brise_de_la_foret, chroniques_d_un_ivrogne, \
+    la_legende_de_vennessa, princesse_neige_et_les_six_nains, journal_du_vagabond, ballade_de_l_ecuyer, \
+    foret_de_bambou_au_clair_de_lune, princesse_mina_de_la_nation_dechue, anthologie_de_la_poesie_brutocollinus, \
+    le_bris_de_l_arme_divine, la_melancolie_de_vera, la_princesse_sanglier, journal_de_l_aventurier_roald, \
+    coutumes_de_liyue, l_epee_solitaire_du_mont_desole, perle_du_coeur
 
 dico_books = {
     "la_renarde_qui_nageait_dans_la_mer_de_pissenlits": la_renarde_qui_nageait_dans_la_mer_de_pissenlits.book,

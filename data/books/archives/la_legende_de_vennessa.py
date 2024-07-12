@@ -1,3 +1,4 @@
+name = "La Légende de Vennessa"
 book = {
     1: """Amis de Mondstadt, buvez !
 À la liberté ! À l’Archon Anémo !

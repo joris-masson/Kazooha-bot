@@ -1,3 +1,4 @@
+name = "La Tour de Mondstadt"
 book = {
     1: """Au temps des aristocrates, une immense tour se dressait sur la grand-place de Mondstadt. Bien qu’elle ait été construite en l’honneur de Barbatos, l’Archon Anémo, elle n’était en réalité qu’un étalage de la richesse et du pouvoir des dirigeants de la cité à destination de la plèbe. Le seul jour où le peuple pouvait en cette triste époque trouver un tant soit peu de répit était le jour du Ludi Harpastum.
 Un jour, Inès, une chanteuse itinérante venant d’une contrée lointaine, arriva à Mondstadt lors du Ludi Harpastum. Sa beauté exotique y fit tourner la tête à plus d’un, et en un instant la place fut remplie d’admirateurs. Enfants et vieillards, nobles comme esclaves voulaient la regarder lancer le Harpastum et l’écouter changer des ballades étrangères.

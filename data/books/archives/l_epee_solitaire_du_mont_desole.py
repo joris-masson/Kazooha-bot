@@ -1,3 +1,4 @@
+name = "L'Épée solitaire du mont désolé"
 book = {
     1: """L’épée solitaire perçait la nuit, son éclat plus brillant que celui des étoiles et de la lune. Le vent froid d’automne soufflait sur les montagnes, suivant la danse tourbillonnante de l’épée.
 

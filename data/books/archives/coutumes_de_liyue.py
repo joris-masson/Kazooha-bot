@@ -1,3 +1,4 @@
+name = "Coutumes de Liyue"
 book = {
     1: """La coutume à Liyue veut que lors d’un mariage, la mariée jette un bouquet d’hortensias en direction des invités. Celui ou celle qui l’attrape se voit conférer bonne fortune pour l’année à venir : les marchands verront fleurir leurs affaires, les pauvres s’enrichiront, les célibataires trouveront l’âme sœur, et les couples auront une année harmonieuse, ne se disputant plus pour un rien.
 

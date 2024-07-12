@@ -1,3 +1,4 @@
+name = "La Brise de la Forêt"
 book = {
     1: """—— Passages choisis —— Partie 1
 
