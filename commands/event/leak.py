@@ -1,7 +1,7 @@
 import os
 
-from interactions import Task, IntervalTrigger, Extension, Embed, EmbedFooter, File, listen, slash_command
-from utils.util import open_db_connection
+from interactions import Task, IntervalTrigger, Extension, Embed, EmbedFooter, listen
+from utils.util import open_db_connection, log
 from dotenv import load_dotenv
 
 
@@ -32,9 +32,11 @@ class Leak(Extension):
                 embed.set_image(url=leak[5])
 
                 await leak_channel.send(embeds=embed)
+                log("EVENT", f"Le leak \"{title}\" a été envoyé.")
 
                 query = f"UPDATE Kazooha.Leak SET sent=1 WHERE id='{leak[0]}'"
                 cursor.execute(query)
+                log("DB", f"Le leak d'ID `{leak[0]}` a été update: `sent=0` -> `sent=1`")
             db.commit()
             cursor.close()
             db.close()

@@ -24,10 +24,12 @@ def open_db_connection() -> mysql.connector.MySQLConnection:
         database="Kazooha"
     )
 
+
 def log(prefix: str, thing: str):
-    date = datetime.now().strftime("%H:%M:%S")
-    filename = datetime.now().strftime("%d-%m-%Y")
-    ze_log = f"[{prefix}] - [{date}] - {thing}\n"
-    print(ze_log, end='')
-    with open(f"logs/{filename}.log", 'a', encoding='utf-8') as log_file:
-        log_file.write(ze_log)
+    if thing is not None:
+        date = datetime.now().strftime("%H:%M:%S")
+        filename = datetime.now().strftime("%d-%m-%Y")
+        ze_log = f"[{prefix}] - [{date}] - {thing}\n"
+        print(ze_log, end='')
+        with open(f"logs/{filename}.log", 'a', encoding='utf-8') as log_file:
+            log_file.write(ze_log)
