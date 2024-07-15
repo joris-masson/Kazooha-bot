@@ -59,7 +59,9 @@ class ShowBooks(Extension):
         db = open_db_connection()
         cursor = db.cursor()
 
-        cursor.execute(f"SELECT name, descriptions, pages FROM Kazooha.Book WHERE name='{livre}'")
+        query = f"SELECT name, descriptions, pages FROM Kazooha.Book WHERE name=%s"
+        values = (livre, )
+        cursor.execute(query, values)
         raw_book_info = cursor.fetchall()[0]
 
         cursor.close()
