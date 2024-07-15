@@ -25,6 +25,7 @@ class Dossiers(Extension):
     @component_callback("dossiers_select_id")
     async def callback(self, ctx: ComponentContext):
         log("CALLBACK", f"[dossiers_confidentiels] - Affichage informations sur \"{ctx.values[0]}\"")
+
         match ctx.values[0]:
             case "Nabu Malikata":
                 selected_dossier = "Nabu_malikata"

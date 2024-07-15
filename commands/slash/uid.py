@@ -28,7 +28,7 @@ class Uid(Extension):
         opt_type=OptionType.STRING,
     )
     async def ajouter(self, ctx: SlashContext, jeu: str, uid: str) -> None:
-        log("SLASH", log("SLASH", f"Commande slash `/uid ajouter {jeu} {uid}` utilisée par {ctx.author.username}({ctx.author.id}) dans #{ctx.channel.name}({ctx.channel.id}) sur {ctx.guild.name}({ctx.guild.id})"))
+        log("SLASH", log("SLASH", f"Commande slash `/uid ajouter jeu:{jeu} uid:{uid}` utilisée par {ctx.author.username}({ctx.author.id}) dans #{ctx.channel.name}({ctx.channel.id}) sur {ctx.guild.name}({ctx.guild.id})"))
 
         db = open_db_connection()
         cursor = db.cursor()
@@ -59,8 +59,7 @@ class Uid(Extension):
         ]
     )
     async def liste(self, ctx: SlashContext, jeu: str) -> None:
-        log("SLASH", log("SLASH",
-                         f"Commande slash `/uid liste {jeu}` utilisée par {ctx.author.username}({ctx.author.id}) dans #{ctx.channel.name}({ctx.channel.id}) sur {ctx.guild.name}({ctx.guild.id})"))
+        log("SLASH", log("SLASH", f"Commande slash `/uid liste jeu:{jeu}` utilisée par {ctx.author.username}({ctx.author.id}) dans #{ctx.channel.name}({ctx.channel.id}) sur {ctx.guild.name}({ctx.guild.id})"))
 
         db = open_db_connection()
         cursor = db.cursor()
@@ -104,7 +103,7 @@ class Uid(Extension):
         opt_type=OptionType.STRING
     )
     async def retirer(self, ctx: SlashContext, uid: str):
-        log("SLASH", log("SLASH", f"Commande slash `/uid retirer {uid}` utilisée par {ctx.author.username}({ctx.author.id}) dans #{ctx.channel.name}({ctx.channel.id}) sur {ctx.guild.name}({ctx.guild.id})"))
+        log("SLASH", log("SLASH", f"Commande slash `/uid retirer uid:{uid}` utilisée par {ctx.author.username}({ctx.author.id}) dans #{ctx.channel.name}({ctx.channel.id}) sur {ctx.guild.name}({ctx.guild.id})"))
 
         if await self.is_author_good(ctx, uid):
             db = open_db_connection()
@@ -136,7 +135,7 @@ class Uid(Extension):
         opt_type=OptionType.STRING
     )
     async def modifier(self, ctx: SlashContext, uid: str, new_uid: str):
-        log("SLASH", log("SLASH", f"Commande slash `/uid modifier {uid} {new_uid}` utilisée par {ctx.author.username}({ctx.author.id}) dans #{ctx.channel.name}({ctx.channel.id}) sur {ctx.guild.name}({ctx.guild.id})"))
+        log("SLASH", log("SLASH", f"Commande slash `/uid modifier uid:{uid} new_uid:{new_uid}` utilisée par {ctx.author.username}({ctx.author.id}) dans #{ctx.channel.name}({ctx.channel.id}) sur {ctx.guild.name}({ctx.guild.id})"))
 
         if await self.is_author_good(ctx, uid):
             db = open_db_connection()

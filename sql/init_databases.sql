@@ -69,8 +69,16 @@ CREATE TABLE IF NOT EXISTS Kazooha.MessageIa(
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     discordUserId BIGINT NOT NULL,
     messageNumber INT NOT NULL,
-    userContent longtext,
-    botContent longtext
+    userContent LONGTEXT,
+    botContent LONGTEXT
+);
+
+# DROP TABLE IF EXISTS Kazooha.Book;
+CREATE TABLE IF NOT EXISTS Kazooha.Book(
+    name VARCHAR(255) NOT NULL PRIMARY KEY,
+    descriptions LONGTEXT NOT NULL,
+    pages LONGTEXT,
+    type VARCHAR(50)
 );
 
 /* ----- SITE WEB ----- */
