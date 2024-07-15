@@ -10,7 +10,7 @@ class Leak(Extension):
     async def on_startup(self):
         self.send_new_leaks.start()
 
-    @Task.create(IntervalTrigger(hours=1))
+    @Task.create(IntervalTrigger(minutes=5))
     async def send_new_leaks(self):
         new_leaks = self.check_new_leaks()
         if new_leaks is not None:
