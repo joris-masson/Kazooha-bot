@@ -20,9 +20,13 @@ class GiveMats(Extension):
             channel = self.bot.get_channel(os.getenv("MATS_CHANNEL_ID"))
             data = (generate_embeds(True), generate_embeds(False))
             if not self.message_exists():
+                log("EVENT", "Les messages n'existent pas, envoi programmé.")
+                log("EVENT", "Envoi du message des personnages...")
                 chars_message = await channel.send("Personnages à farmer aujourd'hui", embeds=data[0][0], files=data[0][1])
+                log("EVENT", "Envoi du message des armes...")
                 weaps_message = await channel.send("Armes à farmer aujourd'hui", embeds=data[1][0], files=data[1][1])
                 with open(r"data/events/givemats/last_day.txt", 'w') as last_day_file:
+                    log("EVENT", "Mise à jour de 'last_day.txt'.")
                     last_day_file.write(f"{str(datetime.now().day)}\n{str(chars_message.id)}\n{str(weaps_message.id)}")
             else:
                 chars_message_id = 0
@@ -45,6 +49,8 @@ class GiveMats(Extension):
                         pass
                 with open(rf"data/events/givemats/last_day.txt", 'w') as last_day_file:
                     last_day_file.write(f"{str(datetime.now().day)}\n{str(chars_message_id)}\n{str(weaps_message_id)}")
+        else:
+            log("EVENT", "Ce n'est pas l'heure de l'envoi.")
 
     def check_can_be_sent(self):
         start_hour = 5
