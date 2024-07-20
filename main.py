@@ -17,7 +17,7 @@ log("PRELOAD", "Chargement des extensions...")
 
 # ---- events -----
 log("PRELOAD", "Chargement des évènements...")
-# kazooha.load_extension("commands.event.leak")
+kazooha.load_extension("commands.event.leak")
 kazooha.load_extension("commands.event.givemats")
 
 # ----- context commands ----
