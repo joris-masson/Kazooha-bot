@@ -54,7 +54,7 @@ class GiveMats(Extension):
 
     def check_can_be_sent(self):
         start_hour = 5
-        return ((start_hour <= datetime.now().hour < start_hour + 1) and not self.is_same_day()) or not self.message_exists() or not self.is_same_day()
+        return ((start_hour <= datetime.now().hour < start_hour + 1) and not self.is_same_day()) or not self.message_exists()
 
     def is_same_day(self):
         with open(r"data/events/givemats/last_day.txt", 'r') as last_day_file:

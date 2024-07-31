@@ -1,4 +1,4 @@
-from interactions import Embed, EmbedAttachment, File, Timestamp
+from interactions import Embed, File, Timestamp
 from math import ceil
 from PIL import Image
 from datetime import datetime
