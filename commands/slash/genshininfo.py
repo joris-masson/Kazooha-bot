@@ -23,9 +23,13 @@ class GenshinInfo(Extension):
             user_data = await client.get_full_genshin_user(int(uid))
             detailed_infos = await get_genshin_player_info(uid)
 
+            nickname = detailed_infos["nickname"]
+            ar = detailed_infos["adventure_rank"]
+            icon = detailed_infos["icon"]
+
             embed = Embed(
-                title=f"{detailed_infos["nickname"]} (AR {detailed_infos["adventure_rank"]})",
-                thumbnail=detailed_infos["icon"]
+                title=f"{nickname} (AR {ar})",
+                thumbnail=icon
             ).add_field(
                 name="Personnages possédés",
                 value=user_data.stats.characters,
