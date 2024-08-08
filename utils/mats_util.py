@@ -94,9 +94,9 @@ def generate_images(region: str, elements: list[str], chars: bool) -> None:
     image.save(f"data/out/givemats/mats_{'chars' if chars else 'weaps'}_{region.lower()}.png", quality=100)
 
 
-def calculate_pic_size(elements: list[str]) -> tuple[int, int]:
-    width = MAX_COLUMNS * SINGLE_PIC_SIZE[0]
-    height = ceil(len(elements) / MAX_COLUMNS) * SINGLE_PIC_SIZE[1]
+def calculate_pic_size(elements: list, max_colums: int = MAX_COLUMNS) -> tuple[int, int]:
+    width = max_colums * SINGLE_PIC_SIZE[0]
+    height = ceil(len(elements) / max_colums) * SINGLE_PIC_SIZE[1]
     return width, height
 
 
