@@ -3,7 +3,7 @@ from interactions import Extension, user_context_menu, Embed, ContextMenuContext
 from utils.util import open_db_connection, log
 
 
-class Uid(Extension):
+class ContextUid(Extension):
     @user_context_menu(
         name="Lister les UID"
     )

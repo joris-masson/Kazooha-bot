@@ -64,13 +64,13 @@ def generate_embeds(chars: bool) -> tuple[list[Embed], list[File]]:
 
     for region in elements:
         generate_images(region, elements[region], chars)
-        region_image = File(f"data/img/regions/{region}.png")
+        #region_image = File(f"data/img/regions/{region}.png")
         image = File(f"data/out/givemats/mats_{'chars' if chars else 'weaps'}_{region.lower()}.png")
         embed = Embed(title=region, timestamp=Timestamp.fromtimestamp(datetime.now().timestamp()))
-        embed.set_thumbnail(f"attachment://{region}.png")
+        #embed.set_thumbnail(f"attachment://{region}.png")
         embed.set_image(f"attachment://mats_{'chars' if chars else 'weaps'}_{region.lower()}.png")
         res[0].append(embed)
-        res[1].append(region_image)
+        #res[1].append(region_image)
         res[1].append(image)
 
     return res
@@ -80,6 +80,8 @@ def generate_images(region: str, elements: list[str], chars: bool) -> None:
     log("IMAGE", f"Génération de l'image des matériaux de la région {region}")
     image = Image.new("RGBA", calculate_pic_size(elements), color=(0, 0, 0, 0))
     image_list = get_image_list(elements, chars)
+    if len(image_list) < 1:
+        return
     pos_x = 0
     pos_y = 0
     pic_counter = 0

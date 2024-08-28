@@ -1,5 +1,5 @@
 import os
-from interactions import Extension, Task, IntervalTrigger, OptionType, Embed, slash_command, slash_option, listen
+from interactions import Extension, Task, IntervalTrigger, OptionType, Embed, SlashContext, slash_command, slash_option, listen
 from datetime import datetime
 from dotenv import load_dotenv
 from utils.util import log
@@ -10,6 +10,13 @@ class GiveMats(Extension):
     @listen()
     async def on_startup(self):
         self.send_mats.start()
+
+    """@slash_command(name="send")
+    async def command(self, ctx: SlashContext):
+        await ctx.defer(ephemeral=True)
+        data = (generate_embeds(True), generate_embeds(False))
+        await ctx.send("Personnages à farmer aujourd'hui", embeds=data[0][0], files=data[0][1], ephemeral=True)
+        await ctx.send("Armes à farmer aujourd'hui", embeds=data[1][0], files=data[1][1], ephemeral=True)"""
 
     @Task.create(IntervalTrigger(minutes=30))
     async def send_mats(self):

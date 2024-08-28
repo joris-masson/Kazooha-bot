@@ -22,7 +22,7 @@ kazooha.load_extension("commands.event.givemats")
 
 # ----- context commands ----
 log("PRELOAD", "Chargement des commandes de contexte...")
-kazooha.load_extension("commands.context.uid")
+kazooha.load_extension("commands.context.contextuid")
 
 # ----- slash commands -----
 log("PRELOAD", "Chargement des commandes slash...")
