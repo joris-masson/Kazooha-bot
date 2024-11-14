@@ -20,7 +20,7 @@ class GenshinInfo(Extension):
         await ctx.defer(ephemeral=True)
         try:
             client = get_genshin_client()
-            user_data = await client.get_full_genshin_user(int(uid))
+            user_data = await client.get_genshin_user(int(uid))
             detailed_infos = await get_genshin_player_info(uid)
 
             nickname = detailed_infos["nickname"]
@@ -42,10 +42,6 @@ class GenshinInfo(Extension):
                 name="Jours d'activité",
                 value=user_data.stats.days_active,
                 inline=True,
-            ).add_field(
-                name="Abysses",
-                value=f"{user_data.abyss.current.max_floor} ({user_data.abyss.current.total_stars} étoiles)",
-                inline=True
             )
             img_name = prepare_player_characters_image(uid, detailed_infos["characters"])
             image = File(img_name[0])
