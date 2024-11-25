@@ -1,9 +1,12 @@
 import os
 import mysql.connector
+import json
 
-
+from interactions import Embed, EmbedAuthor
 from dotenv import load_dotenv
 from datetime import datetime
+
+from utils.messagetosend import MessageToSend
 
 
 def convert_discord_id_to_time(discord_id: int) -> int:
@@ -33,3 +36,26 @@ def log(prefix: str, thing: str):
         print(ze_log, end='')
         with open(f"logs/{filename}.log", 'a', encoding='utf-8') as log_file:
             log_file.write(ze_log)
+
+
+def prepare_message(message_name: str) -> MessageToSend:
+    loaded_json: dict = {}
+    with open(message_name, 'r') as json_file:
+        loaded_json = json.load(json_file)
+
+    embeds: list[Embed] = []
+    for embed in loaded_json["embeds"]:
+        embed_to_add = Embed(
+            title=embed["title"],
+            description=embed["description"],
+            author=EmbedAuthor(embed["author"]),
+        )
+        for field in embed["fields"]:
+            embed_to_add.add_field(
+                name=field["name"],
+                value=field["value"],
+                inline=field["inline"]
+            )
+        embeds.append(embed_to_add)
+
+    return MessageToSend(loaded_json["content"], embeds)
