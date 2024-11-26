@@ -2,7 +2,7 @@ import os
 import mysql.connector
 import json
 
-from interactions import Embed, EmbedAuthor
+from interactions import Embed, EmbedAuthor, EmbedFooter, EmbedAttachment
 from dotenv import load_dotenv
 from datetime import datetime
 
@@ -41,21 +41,37 @@ def log(prefix: str, thing: str):
 def prepare_message(message_name: str) -> MessageToSend:
     loaded_json: dict = {}
     with open(message_name, 'r') as json_file:
-        loaded_json = json.load(json_file)
+        loaded_json: dict = json.load(json_file)
 
     embeds: list[Embed] = []
-    for embed in loaded_json["embeds"]:
-        embed_to_add = Embed(
-            title=embed["title"],
-            description=embed["description"],
-            author=EmbedAuthor(embed["author"]),
-        )
-        for field in embed["fields"]:
-            embed_to_add.add_field(
-                name=field["name"],
-                value=field["value"],
-                inline=field["inline"]
+    if len(loaded_json["embeds"]) != 0:
+        for embed in loaded_json["embeds"]:
+            embed_to_add = Embed(
+                title=embed["title"] if "title" in embed.keys() else None,
+                url=embed["url"] if "url" in embed.keys() else None,
+                description=embed["description"] if "description" in embed.keys() else None,
+                author=EmbedAuthor(
+                    name=embed["author"]["name"] if "name" in embed["author"].keys() else None,
+                    url=embed["author"]["url"] if "url" in embed["author"].keys() else None,
+                    icon_url=embed["author"]["icon_url"] if "icon_url" in embed["author"].keys() else None
+                ) if "author" in embed.keys() else None,
+                thumbnail=EmbedAttachment(
+                    url=embed["thumbnail"]["url"]
+                ) if "thumbnail" in embed.keys() else None,
+                color=embed["color"] if "color" in embed.keys() else None,
+                footer=EmbedFooter(
+                    text=embed["footer"]["text"] if "text" in embed["footer"].keys() else None,
+                    icon_url=embed["footer"]["icon_url"] if "icon_url" in embed["footer"].keys() else None
+                ) if "footer" in embed.keys() else None,
+                timestamp=embed["timestamp"] if "timestamp" in embed.keys() else None
             )
-        embeds.append(embed_to_add)
+            if len(embed["fields"]) != 0:
+                for field in embed["fields"]:
+                    embed_to_add.add_field(
+                        name=field["name"],
+                        value=field["value"],
+                        inline=field["inline"]
+                    )
+            embeds.append(embed_to_add)
 
     return MessageToSend(loaded_json["content"], embeds)
