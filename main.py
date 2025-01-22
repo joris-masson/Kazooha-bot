@@ -3,7 +3,7 @@ import os
 import interactions.api.events
 from interactions import Client, Intents, Activity, Status, listen
 from dotenv import load_dotenv
-from utils.util import log, open_db_connection
+from utils.util import log, db_message_create, db_message_delete, db_message_update, db_get_message
 
 load_dotenv()
 TOKEN = os.getenv("TOKEN")
@@ -44,47 +44,48 @@ async def on_ready():
 
 @kazooha.listen(event_name="on_message_create")
 async def on_message_create(event: interactions.api.events.discord.MessageCreate):
-    message_id = event.message.id
-    author_id = event.message.author.id
-    content = event.message.content
-
-    db = open_db_connection()
-    cursor = db.cursor()
-
-    cursor.execute(f"INSERT INTO Kazooha.Message(id, discordUserId, content) VALUES ({message_id}, {author_id}, '{content}')")
-
-    db.commit()
-
-    cursor.close()
-    db.close()
+    if not event.message.author.bot:
+        db_message_create(event.message)
 
 
 @kazooha.listen(event_name="on_message_delete")
 async def on_message_delete(event: interactions.api.events.MessageDelete):
-    log_channel = await kazooha.fetch_channel(LOG_CHANNEL_ID)
+    if not event.message.author.bot:
+        message = db_message_delete(event.message)
+        log_channel = await kazooha.fetch_channel(LOG_CHANNEL_ID)
 
-    embed = interactions.models.Embed(title=f"Message supprimé")
+        embed = interactions.models.Embed(title=f"Message supprimé")
 
-    try:
-        embed.description = f"Le message de <@{event.message.author.id}> a été supprimé dans le salon <#{event.message.channel.id}>\n\n >>> {event.message.content}"
-    except AttributeError:
-        embed.description = f"Le message de quelqu'un a été supprimé dans le salon <#{event.message.channel.id}>\n\n *Message indisponible*"
+        try:
+            embed.description = f"Le message de <@{event.message.author.id}> a été supprimé dans le salon <#{event.message.channel.id}>\n\n >>> {event.message.content}"
+        except AttributeError:
+            try:
+                embed.description = f"Le message de <@{message[4]}> a été supprimé dans le salon <#{message[2]}>\n\n >>> {message[5]}"
+            except TypeError:
+                embed.description = f"Le message de quelqu'un a été supprimé dans le salon <#{message[2]}>\n\n *Message indisponible"
 
-    await log_channel.send(embeds=embed)
+        await log_channel.send(embeds=embed)
 
 
 @kazooha.listen(event_name="on_message_update")
 async def on_message_update(event: interactions.api.events.discord.MessageUpdate):
-    log_channel = await kazooha.fetch_channel(LOG_CHANNEL_ID)
+    if not event.after.author.bot:
+        messages = db_message_update(event.after)
+        log_channel = await kazooha.fetch_channel(LOG_CHANNEL_ID)
 
-    embed = interactions.models.Embed(title=f"Message modifié")
+        embed = interactions.models.Embed(title=f"Message modifié")
 
-    try:
-        embed.description = f"Le message de <@{event.after.author.id}> a été modifié dans le salon <#{event.after.channel.id}>\n\n {event.before.content}\n __**en**__ \n{event.after.content}"
-    except AttributeError:
-        embed.description = f"Le message de quelqu'un a été modifié dans le salon <#{event.after.channel.id}>"
+        try:
+            embed.description = f"Le message de <@{event.after.author.id}> a été modifié dans le salon <#{event.after.channel.id}>\n\n {event.before.content}\n __**en**__ \n{event.after.content}"
+        except AttributeError:
+            try:
+                message_before = messages[0]
+                message_after = messages[1]
+                embed.description = f"Le message de <@{message_after[4]}> a été modifié dans le salon <#{message_after[2]}>\n\n {message_before[5]}\n __**en**__ \n{message_after[5]}"
+            except TypeError:
+                embed.description = f"Le message de quelqu'un a été modifié dans le salon <#{event.after.channel.id}>\n\n *Comparaison indisponible*"
 
-    await log_channel.send(embeds=embed)
+        await log_channel.send(embeds=embed)
 
 log("PRELOAD", "Bot lancé.")
 kazooha.start(TOKEN)

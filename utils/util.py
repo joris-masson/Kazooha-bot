@@ -1,4 +1,6 @@
 import os
+
+import interactions
 import mysql.connector
 import json
 
@@ -75,3 +77,84 @@ def prepare_message(message_name: str) -> MessageToSend:
             embeds.append(embed_to_add)
 
     return MessageToSend(loaded_json["content"], embeds)
+
+
+def db_message_create(message: interactions.Message):
+    message_id = message.id
+    author_id = message.author.id
+    guild_id = message.guild.id
+    channel_id = message.channel.id
+    content = message.content
+
+    db = open_db_connection()
+    cursor = db.cursor()
+
+    cursor.execute(f"INSERT INTO Kazooha.Message(id, discordGuildId, discordChannelId, discordAuthorId, content) VALUES ({message_id}, {guild_id}, {channel_id}, {author_id}, '{content}')")
+
+    db.commit()
+
+    cursor.close()
+    db.close()
+
+    return db_get_message(message_id)
+
+
+def db_message_delete(message: interactions.Message):
+    db = open_db_connection()
+    cursor = db.cursor()
+
+    cursor.execute(f"UPDATE Kazooha.Message SET deleted=1 WHERE id={message.id}")
+
+    db.commit()
+
+    cursor.close()
+    db.close()
+
+    return db_get_message(message.id)
+
+
+def db_message_update(message_after: interactions.Message):
+    db = open_db_connection()
+    cursor = db.cursor()
+
+    db_before = db_get_message(message_after.id)
+    if db_before is not None:
+        cursor.execute(f"INSERT INTO Kazooha.Message(id, discordGuildId, discordChannelId, version, discordAuthorId, content, modified) VALUES({db_before[0]}, {db_before[1]}, {db_before[2]}, {db_before[3] + 1}, {db_before[4]}, '{message_after.content}', 1) ")
+
+        db.commit()
+
+        cursor.close()
+        db.close()
+
+        return db_before, db_get_message(message_after.id)
+
+
+def db_get_message(message_id: int):
+    db = open_db_connection()
+    cursor = db.cursor()
+
+    cursor.execute(f"SELECT * FROM Kazooha.Message WHERE id={message_id} AND version={db_get_last_version_of_message(message_id)}")
+
+    message = cursor.fetchone()
+
+    cursor.close()
+    db.close()
+
+    return message
+
+
+def db_get_last_version_of_message(message_id: int) -> int:
+    db = open_db_connection()
+    cursor = db.cursor()
+
+    cursor.execute(f"SELECT version FROM Kazooha.Message WHERE id={message_id}")
+    all_versions = cursor.fetchall()
+
+    cursor.close()
+    db.close()
+
+    last = 1
+    for version in all_versions:
+        if version[0] > last:
+            last = version[0]
+    return last
